@@ -1,0 +1,389 @@
+@base <http://movie.chatbot.org/>.
+@prefix mcb: <http://movie.chatbot.org/>.
+@prefix schema: <http://schema.org/>.
+@prefix onyx: <http://www.gsi.dit.upm.es/ontologies/onyx/ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema>.
+@prefix owl: <http://www.w3.org/2002/07/owl>.
+@prefix wnaffect: <http://www.gsi.dit.upm.es/ontologies/wnaffect/ns#>.
+
+<mcb:hasActor>
+	rdf:type owl:ObjectProperty;
+	rdfs:range schema:Person;
+	rdfs:domain schema:Movie.
+
+<mcb:hasId>
+	rdf:type owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasTitle>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasGenre>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasLanguage>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<schema:Person>
+	rdf:type owl:Class.
+
+<schema:Movie>
+	rdf:type owl:Class.
+
+<mcb:actorIsPerson>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasActor;
+	owl:allValuesFrom schema:Person.
+
+<mcb:atLeastOneGenre>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasGenre;
+	owl:minCardinality "1"^^xsd:nonNegativeInteger.
+
+<mcb:anyNumberOfLanguages>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasLanguage;
+	owl:minCardinality "0"^^xsd:nonNegativeInteger.
+
+<#Hate>
+	onyx:hasEmotionCategory wnaffect:Hate.
+
+<#Dislike>
+	onyx:hasEmotionCategory wnaffect:Dislike.
+
+<#Anger>
+	onyx:hasEmotionCategory wnaffect:Anger.
+
+<#Anxiety>
+	onyx:hasEmotionCategory wnaffect:Anxiety.
+
+<#Ingratitude>
+	onyx:hasEmotionCategory wnaffect:Ingratitude.
+
+<#Humility>
+	onyx:hasEmotionCategory wnaffect:Humility.
+
+<#Compassion>
+	onyx:hasEmotionCategory wnaffect:Compassion.
+
+<#Daze>
+	onyx:hasEmotionCategory wnaffect:Daze.
+
+<#Sadness>
+	onyx:hasEmotionCategory wnaffect:Sadness.
+
+<#Negative-Fear>
+	onyx:hasEmotionCategory wnaffect:Negative-Fear.
+
+<#Despair>
+	onyx:hasEmotionCategory wnaffect:Despair.
+
+<#Shame>
+	onyx:hasEmotionCategory wnaffect:Shame.
+
+<#Love>
+	onyx:hasEmotionCategory wnaffect:Love.
+
+<#Calmness>
+	onyx:hasEmotionCategory wnaffect:Calmness.
+
+<#Affection>
+	onyx:hasEmotionCategory wnaffect:Affection.
+
+<#Self-Pride>
+	onyx:hasEmotionCategory wnaffect:Self-Pride.
+
+<#Enthusiasm>
+	onyx:hasEmotionCategory wnaffect:Enthusiasm.
+
+<#Positivie-Fear>
+	onyx:hasEmotionCategory wnaffect:Positivie-Fear.
+
+<#Liking>
+	onyx:hasEmotionCategory wnaffect:Liking.
+
+<#Joy>
+	onyx:hasEmotionCategory wnaffect:Joy.
+
+<#Positive-Expectation>
+	onyx:hasEmotionCategory wnaffect:Positive-Expectation.
+
+<#Fearlessness>
+	onyx:hasEmotionCategory wnaffect:Fearlessness.
+
+<#Positive-Hope>
+	onyx:hasEmotionCategory wnaffect:Positive-Hope.
+
+<#Levity>
+	onyx:hasEmotionCategory wnaffect:Levity.
+
+<#Gratitude>
+	onyx:hasEmotionCategory wnaffect:Gratitude.
+
+<#Neutral-Unconcern>
+	onyx:hasEmotionCategory wnaffect:Neutral-Unconcern.
+
+<#Apathy>
+	onyx:hasEmotionCategory wnaffect:Apathy.
+
+<#Surprise>
+	onyx:hasEmotionCategory wnaffect:Surprise.
+
+<#Ambiguous-Agitation>
+	onyx:hasEmotionCategory wnaffect:Ambiguous-Agitation.
+
+<#FrancoNero>
+	rdf:type schema:Person;
+	schema:name "Franco Nero".
+
+<#JohnSaxon>
+	rdf:type schema:Person;
+	schema:name "John Saxon".
+
+<#Floyd'RedCrow'Westerman>
+	rdf:type schema:Person;
+	schema:name "Floyd 'Red Crow' Westerman".
+
+<#DavidHess>
+	rdf:type schema:Person;
+	schema:name "David Hess".
+
+<#RodrigoObregn>
+	rdf:type schema:Person;
+	schema:name "Rodrigo Obregn".
+
+<#CliveRiche>
+	rdf:type schema:Person;
+	schema:name "Clive Riche".
+
+<#EnnioGirolami>
+	rdf:type schema:Person;
+	schema:name "Ennio Girolami".
+
+<#BobbyRhodes>
+	rdf:type schema:Person;
+	schema:name "Bobby Rhodes".
+
+<#MarieLouiseSinclair>
+	rdf:type schema:Person;
+	schema:name "Marie Louise Sinclair".
+
+<#BorisKhmelnitskiy>
+	rdf:type schema:Person;
+	schema:name "Boris Khmelnitskiy".
+
+<#ViktorGajnov>
+	rdf:type schema:Person;
+	schema:name "Viktor Gajnov".
+
+<#KnifewingSegura>
+	rdf:type schema:Person;
+	schema:name "Knifewing Segura".
+
+<#MelodyRobertson>
+	rdf:type schema:Person;
+	schema:name "Melody Robertson".
+
+<#IgorAlimov>
+	rdf:type schema:Person;
+	schema:name "Igor Alimov".
+
+<#tt0110207-aggregateRating>
+	schema:ratingCount 322;
+	schema:ratingValue 6.3;
+	schema:bestRating 10;
+	schema:itemReviewed <#tt0110207>.
+
+<#tt0110207>
+	rdf:type schema:Movie;
+	mcb:hasId "tt0110207";
+	mcb:hasTitle "Jonathan degli orsi (1994)  IMDb";
+	schema:duration "1h28min";
+	schema:dateCreated "1994";
+	schema:text "    A young boy witnesses his parents' murder. Later as he grows up he befriends a bear in the wilderness and the chief of a local Indian tribe and he stays with the Indians but makes an enemy of the chief's son. As he enters adulthood he sets out to find the men responsible for his parents' deaths.";
+	schema:aggregateRating <#tt0110207-aggregateRating>;
+	mcb:hasActor <#FrancoNero>;
+	mcb:hasActor <#JohnSaxon>;
+	mcb:hasActor <#Floyd'RedCrow'Westerman>;
+	mcb:hasActor <#DavidHess>;
+	mcb:hasActor <#RodrigoObregn>;
+	mcb:hasActor <#CliveRiche>;
+	mcb:hasActor <#EnnioGirolami>;
+	mcb:hasActor <#BobbyRhodes>;
+	mcb:hasActor <#MarieLouiseSinclair>;
+	mcb:hasActor <#BorisKhmelnitskiy>;
+	mcb:hasActor <#ViktorGajnov>;
+	mcb:hasActor <#KnifewingSegura>;
+	mcb:hasActor <#MelodyRobertson>;
+	mcb:hasActor <#IgorAlimov>;
+	schema:character "Jonathan";
+	schema:character "FredGoodwin";
+	schema:character "ChiefTawanka";
+	schema:character "Maddock";
+	schema:character "Kaspar";
+	schema:character "Musician";
+	schema:character "Goodwin'sMercenary";
+	schema:character "Williamson";
+	schema:character "BrothelMadam";
+	schema:character "ReligiousMercenary";
+	schema:character "TallMercenary";
+	schema:character "Chatow";
+	schema:character "Shaya";
+	schema:character "Jonathanasaboy";
+	schema:image "https://m.media-amazon.com/images/M/MV5BY2QwNmNiMzMtOGU3My00ZjYxLTgxNzAtZmFlMGM5ODI1ODhmXkEyXkFqcGdeQXVyMTg2NjYzOA@@._V1_UY1200_CR107,0,630,1200_AL_.jpg".
+
+<#tt0110207-Blaise_B>
+	schema:about <#tt0110207>;
+	schema:author "Blaise_B";
+	schema:dateCreated "Sat Jan 11 2003 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 8;
+	schema:headline " I was not disappointed.";
+	schema:reviewBody "The two Men behind the great Keoma Enzo G. Castellari and Franco Nero have here returned to familiar territory with perhaps a broader and more accessible read not quite as good vision of much the same character. Or at least he has the same hat.While Jonathan Degli Orsi doesn't have the uncompromising feverish fantasy feel of its predecessor it is perfectly convincing in its chosen setting a forested wilderness about to be exploited by a wouldbe oil magnate John Saxon that is currently inhabited by an Indian tribe and their sacred burial ground. Enter Jonathan Nero an orphaned white man of Polish descent who has been raised by bears and the aforementioned tribe. After leaving his adoptive family to seek revenge for his parents' murder a quest which has brought him face to face with the futility of his rage he returns to his true people the ones who raised him only to find them under attack by the world he wants nothing to do with.And what do you think he does?This film could be seen as Castellari and Nero's answer to the previous year's Unforgiven as it both pays tribute to and meditates on themes of the Western genre the meditation is coming from a similarly aged and wisened point of view. For my money this particular meditationtribute is more clever more accomplished and has a much wider scope. It is beautifully filmed excellently acted and superbly written. It has a soundtrack that while not having much to do with Spaghetti Westerns enhances the story quite well. In one way it improves over Keoma in that it contains songs with lyrics that actually COMPLIMENT the film rather than taking away from it.This film's winks and nods to the bygone Spaghetti genre are all quite clever some of them made me laugh out loud. Watch as Castellari actually provides a realworld explanation for the mysterious fog that always rolls in for the climactic shootout. There's also a great scene that I'm sure was meant to evoke Django the Bastard as well as plenty of references to the director's own Keoma. What's really cool though is that this film doesn't try to BE a Spaghetti Western while doing this. It finds its own place in the scheme of things. It very much feels like a nineties kind of film but a damn good one.Castellari's Peckinpahstyle action has come a long way and is a pleasure to watch. The actor who plays Jonathan as a child is quite good and has an uncanny charisma. I would definitely urge fans of Keoma Castellari and Nero to seek out this rather difficulttofind film. Like I said I was not disappointed.I would also encourage fans of Dances With Wolves type dramas to check out this one and see how it ought to be done.".
+
+<#tt0110207-Blaise_B-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "The two Men behind the great Keoma Enzo G. Castellari and Franco Nero have here returned to familiar territory with perhaps a broader and more accessible read not quite as good vision of much the same character. Or at least he has the same hat.While Jonathan Degli Orsi doesn't have the uncompromising feverish fantasy feel of its predecessor it is perfectly convincing in its chosen setting a forested wilderness about to be exploited by a wouldbe oil magnate John Saxon that is currently inhabited by an Indian tribe and their sacred burial ground. Enter Jonathan Nero an orphaned white man of Polish descent who has been raised by bears and the aforementioned tribe. After leaving his adoptive family to seek revenge for his parents' murder a quest which has brought him face to face with the futility of his rage he returns to his true people the ones who raised him only to find them under attack by the world he wants nothing to do with.And what do you think he does?This film could be seen as Castellari and Nero's answer to the previous year's Unforgiven as it both pays tribute to and meditates on themes of the Western genre the meditation is coming from a similarly aged and wisened point of view. For my money this particular meditationtribute is more clever more accomplished and has a much wider scope. It is beautifully filmed excellently acted and superbly written. It has a soundtrack that while not having much to do with Spaghetti Westerns enhances the story quite well. In one way it improves over Keoma in that it contains songs with lyrics that actually COMPLIMENT the film rather than taking away from it.This film's winks and nods to the bygone Spaghetti genre are all quite clever some of them made me laugh out loud. Watch as Castellari actually provides a realworld explanation for the mysterious fog that always rolls in for the climactic shootout. There's also a great scene that I'm sure was meant to evoke Django the Bastard as well as plenty of references to the director's own Keoma. What's really cool though is that this film doesn't try to BE a Spaghetti Western while doing this. It finds its own place in the scheme of things. It very much feels like a nineties kind of film but a damn good one.Castellari's Peckinpahstyle action has come a long way and is a pleasure to watch. The actor who plays Jonathan as a child is quite good and has an uncanny charisma. I would definitely urge fans of Keoma Castellari and Nero to seek out this rather difficulttofind film. Like I said I was not disappointed.I would also encourage fans of Dances With Wolves type dramas to check out this one and see how it ought to be done.";
+	onyx:describesObject <#tt0110207>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0110207-Blaise_B>.
+
+<#tt0110207-Blaise_B-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0110207/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0110207-Blaise_B-random>.
+
+<#tt0110207-marc_366>
+	schema:about <#tt0110207>;
+	schema:author "marc_366";
+	schema:dateCreated "Wed Mar 02 2005 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 7;
+	schema:headline " Nineties Spaghetti Western Stands Proud and Equal to its Predecessors";
+	schema:reviewBody "The Franco Nero and Enzo Castellari collaboration is best known for Keoma which is generally and rightly accepted to be one of the last great Spaghetti Westerns. Filmed twenty years later this film  although not particularly well known or lauded  stands up to the high quality set by its predecessor.Jonathan of the Bears continues on the racism themes noted within Keoma concentrating on an orphan's relationship with the indians and bear that nurtured him following his parent's execution and the greedy white man that has no respect for the nature or beliefs of the natives.This film is very touching dealing with the sensitive issue of the plight of the indians and other minority races whilst maintaining the exciting shootouts that we expect to see in our spaghetti westerns. In particular the opening sequence that charts the death of Jonathan's parents and his development from man to boy  the majority of which is shot in black and white  is very moving.It is not the easiest of films to find but I would definitely recommend it particularly for those people that enjoyed Keoma.".
+
+<#tt0110207-marc_366-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "The Franco Nero and Enzo Castellari collaboration is best known for Keoma which is generally and rightly accepted to be one of the last great Spaghetti Westerns. Filmed twenty years later this film  although not particularly well known or lauded  stands up to the high quality set by its predecessor.Jonathan of the Bears continues on the racism themes noted within Keoma concentrating on an orphan's relationship with the indians and bear that nurtured him following his parent's execution and the greedy white man that has no respect for the nature or beliefs of the natives.This film is very touching dealing with the sensitive issue of the plight of the indians and other minority races whilst maintaining the exciting shootouts that we expect to see in our spaghetti westerns. In particular the opening sequence that charts the death of Jonathan's parents and his development from man to boy  the majority of which is shot in black and white  is very moving.It is not the easiest of films to find but I would definitely recommend it particularly for those people that enjoyed Keoma.";
+	onyx:describesObject <#tt0110207>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0110207-marc_366>.
+
+<#tt0110207-marc_366-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0110207/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0110207-marc_366-random>.
+
+<#tt0110207-Aylmer>
+	schema:about <#tt0110207>;
+	schema:author "Aylmer";
+	schema:dateCreated "Thu Nov 08 2007 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 5;
+	schema:headline " The last of the Spaghetti Westerns?";
+	schema:reviewBody "I think not... there's been a few since then such as My West with Harvey Keitel but maybe this shall be the last notable one by one of the few remaining original Spaghetti Western directors Enzo G. Castellari.As some you know the Italian film industry was in complete disarray by the end of the 1980's as they failed to be able to compete against American films and video sales. By 1990 Italian film was relegated mostly to low budget art films and TV movies but in the early 90's the dissolution of the Soviet Union brought about a continuance of the spirit of cooperation between Italy and Russia not enjoyed much since the early 70's. Several big budget coproductions emerged in these first few years but largely became fiasco's such as the only recently finished QUIET FLOWS THE DON and the everlanguishing GENGHIS KHAN. In the true spirit of Italian copycat filmmaking with DANCES WITH WOLVES garnering much critical and financial praise at the time it only made sense to try a Spaghetti Western in the vast expanses of the largely untouched motherland. Hire on Castellari who in turn brings a few of his regulars but strangely no Romano Puppo David Hess John Saxon and you get a highly entertaining oddly cast and strangely themed last gasp of a nearly forgotten genre.Franco Nero produces put up the money in a retread down memory lane and plays a part that would have better suited him 15 years earlier and it did when it was called KEOMA as a gunslinger raised by Indians and befriended by a bear. He's out for revenge against the thugs who killed his birth parents while trying to stop an evil politician Saxon from ruining the environment with oil prospecting plus he still has an old rivalry to settle with his step brother. There's also a local ruffian played by Roderigo Obregon I am guessing that he was being groomed by the Italian film industry to be the next Werner Pochath  to play a creepy sleaze bag in every film who kidnaps Nero's woman.While this is easily one of Enzo's most technically polished films... especially in terms of cinematography with MANY beautiful shots JONATHAN is lacking much of the fun and originality of Enzo's previous efforts. It's still a good film but pales in comparison to KEOMA to which it owes very much if not everything. Characteristically for Castellari it's loaded with slow motion though editor Moriani is no Amicucci or Tomassi and there's a few film injokes like the chief villain Goodwin being named after Enzo's soninlaw Greg Goodwin. Many of the action sequences are rather unbelievable or borderline ridiculous and a lot of the Native American extras look more like Kazakhs or Uzbekhs to me but I'm just nitpicking.Considering the rest of Italy's output at the time it's amazing this film is as good as it is. A shame it never got a proper distribution as well as a shame that it didn't rekickstart Castellari's career.".
+
+<#tt0110207-Aylmer-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "I think not... there's been a few since then such as My West with Harvey Keitel but maybe this shall be the last notable one by one of the few remaining original Spaghetti Western directors Enzo G. Castellari.As some you know the Italian film industry was in complete disarray by the end of the 1980's as they failed to be able to compete against American films and video sales. By 1990 Italian film was relegated mostly to low budget art films and TV movies but in the early 90's the dissolution of the Soviet Union brought about a continuance of the spirit of cooperation between Italy and Russia not enjoyed much since the early 70's. Several big budget coproductions emerged in these first few years but largely became fiasco's such as the only recently finished QUIET FLOWS THE DON and the everlanguishing GENGHIS KHAN. In the true spirit of Italian copycat filmmaking with DANCES WITH WOLVES garnering much critical and financial praise at the time it only made sense to try a Spaghetti Western in the vast expanses of the largely untouched motherland. Hire on Castellari who in turn brings a few of his regulars but strangely no Romano Puppo David Hess John Saxon and you get a highly entertaining oddly cast and strangely themed last gasp of a nearly forgotten genre.Franco Nero produces put up the money in a retread down memory lane and plays a part that would have better suited him 15 years earlier and it did when it was called KEOMA as a gunslinger raised by Indians and befriended by a bear. He's out for revenge against the thugs who killed his birth parents while trying to stop an evil politician Saxon from ruining the environment with oil prospecting plus he still has an old rivalry to settle with his step brother. There's also a local ruffian played by Roderigo Obregon I am guessing that he was being groomed by the Italian film industry to be the next Werner Pochath  to play a creepy sleaze bag in every film who kidnaps Nero's woman.While this is easily one of Enzo's most technically polished films... especially in terms of cinematography with MANY beautiful shots JONATHAN is lacking much of the fun and originality of Enzo's previous efforts. It's still a good film but pales in comparison to KEOMA to which it owes very much if not everything. Characteristically for Castellari it's loaded with slow motion though editor Moriani is no Amicucci or Tomassi and there's a few film injokes like the chief villain Goodwin being named after Enzo's soninlaw Greg Goodwin. Many of the action sequences are rather unbelievable or borderline ridiculous and a lot of the Native American extras look more like Kazakhs or Uzbekhs to me but I'm just nitpicking.Considering the rest of Italy's output at the time it's amazing this film is as good as it is. A shame it never got a proper distribution as well as a shame that it didn't rekickstart Castellari's career.";
+	onyx:describesObject <#tt0110207>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0110207-Aylmer>.
+
+<#tt0110207-Aylmer-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0110207/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0110207-Aylmer-random>.
+
+<#tt0110207-Bunuel1976>
+	schema:about <#tt0110207>;
+	schema:author "Bunuel1976";
+	schema:dateCreated "Thu Feb 14 2008 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 8;
+	schema:headline " JONATHAN OF THE BEARS Enzo G. Castellari 1993 12";
+	schema:reviewBody "Director Castellari reteams with starcoproducer Franco Nero in this ItaloRussian production which is a belated followup of sorts to their earlier acclaimed collaboration KEOMA 1976. This newer venture shares with that earlier one not only its Western setting and a similarly grizzled longhaired hero but also a touch of pretentiousness and a painful song score composed by the unsympathetic minstrel figure who appears intermittently throughout! The film starts well enough with the black and white flashback to the hero's traumatic witnessing as a young boy of his parents' slaying by a trio of greedy badmen after their gold while the segments featuring the boy's interaction with a playful bear cub are also quite amiable. However we have seen the white man among the Redskins scenario  albeit incongruously played here by Mongols  which follows soon after complete with their seemingly interminable quasimystical passages far too often for those scenes to propose anything new. Equally predictable are David Hess' villainous overtaking of a town Nero falling foul of Hess and his henchmen and their various confrontations interestingly Hess had to complete his part in a short space of time because he couldn't get along with Nero  with whom he had previously acted in HITCHHIKE 1977.Things are enlivened by the late entrance of powerful entrepreneur John Saxon who with his aged group of gunslingers wipes the town clean of Hess and their unaccountably campy rivals  a group of studsporting leatherwearing barechested musclemen!! Like Keoma before him Franco Nero's character here occasionally steps outside of himself and is witness to his own past experiences as a child also he suffers greatly at the hands of the current villain including crucifixion. The climactic confrontation staged again as was KEOMA's in a barnyard is appropriately rousing and ends the film on a positive note which redeems some of its earlier flaws.".
+
+<#tt0110207-Bunuel1976-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Director Castellari reteams with starcoproducer Franco Nero in this ItaloRussian production which is a belated followup of sorts to their earlier acclaimed collaboration KEOMA 1976. This newer venture shares with that earlier one not only its Western setting and a similarly grizzled longhaired hero but also a touch of pretentiousness and a painful song score composed by the unsympathetic minstrel figure who appears intermittently throughout! The film starts well enough with the black and white flashback to the hero's traumatic witnessing as a young boy of his parents' slaying by a trio of greedy badmen after their gold while the segments featuring the boy's interaction with a playful bear cub are also quite amiable. However we have seen the white man among the Redskins scenario  albeit incongruously played here by Mongols  which follows soon after complete with their seemingly interminable quasimystical passages far too often for those scenes to propose anything new. Equally predictable are David Hess' villainous overtaking of a town Nero falling foul of Hess and his henchmen and their various confrontations interestingly Hess had to complete his part in a short space of time because he couldn't get along with Nero  with whom he had previously acted in HITCHHIKE 1977.Things are enlivened by the late entrance of powerful entrepreneur John Saxon who with his aged group of gunslingers wipes the town clean of Hess and their unaccountably campy rivals  a group of studsporting leatherwearing barechested musclemen!! Like Keoma before him Franco Nero's character here occasionally steps outside of himself and is witness to his own past experiences as a child also he suffers greatly at the hands of the current villain including crucifixion. The climactic confrontation staged again as was KEOMA's in a barnyard is appropriately rousing and ends the film on a positive note which redeems some of its earlier flaws.";
+	onyx:describesObject <#tt0110207>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0110207-Bunuel1976>.
+
+<#tt0110207-Bunuel1976-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0110207/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0110207-Bunuel1976-random>.
+
+<#tt0110207-Jigo>
+	schema:about <#tt0110207>;
+	schema:author "Jigo";
+	schema:dateCreated "Sat Jul 03 1999 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 7;
+	schema:headline " good sequel of Keoma  Violent Breed  but more an adventure movie than a western";
+	schema:reviewBody "That's Castelari's sequel to Keoma  Violent Breed. Although it's more a wildlife  adventure movie than a western it's quite good !".
+
+<#tt0110207-Jigo-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "That's Castelari's sequel to Keoma  Violent Breed. Although it's more a wildlife  adventure movie than a western it's quite good !";
+	onyx:describesObject <#tt0110207>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0110207-Jigo>.
+
+<#tt0110207-Jigo-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0110207/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0110207-Jigo-random>.
+
+<#tt0110207-bruceloren>
+	schema:about <#tt0110207>;
+	schema:author "bruceloren";
+	schema:dateCreated "Sun Dec 27 2020 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 3;
+	schema:headline " SPAGHETTI WESTERN TESTAMENT";
+	schema:reviewBody "They don't make movies like this anymore as they don't make them in the 90's cuz when this came out the genre was dead and buried 20 years before. So the fact two giants of spaghetti western director Castellari and actor Franco Nero returned for a last Hurr its enough to forgive and forget the many flaws of the movie. Nostalgic.".
+
+<#tt0110207-bruceloren-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "They don't make movies like this anymore as they don't make them in the 90's cuz when this came out the genre was dead and buried 20 years before. So the fact two giants of spaghetti western director Castellari and actor Franco Nero returned for a last Hurr its enough to forgive and forget the many flaws of the movie. Nostalgic.";
+	onyx:describesObject <#tt0110207>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0110207-bruceloren>.
+
+<#tt0110207-bruceloren-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0110207/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0110207-bruceloren-random>.
+
+<#tt0110207-znowhite01>
+	schema:about <#tt0110207>;
+	schema:author "znowhite01";
+	schema:dateCreated "Wed Jun 06 2007 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:headline " 90s Enzo";
+	schema:reviewBody "E.C. is back after a long string of unspectacular flops dating back almost twenty years before the release of this late entry Spaghettio. Franco Nero returns in a sloppy longhaired guise emulated after his titular Keoma but the similarities to that masterpiece end right about there unless you want to count the atrocious narrating vocal musicals that are so selfabsorbed and confident in their strangeness I have to give the makers some ballsy credit. The film comes off as pretentious propaganda tackling numerous themes unsuccessfully the most blatant and offensive being racial prejudice and oil production. And naturally given its release date when revisionist Westerns were all the rage in Hollywood we're deprived of proper bloody action and served CBS miniseries drama and cues. I counted only one decent slowmo Enzo battle and that consisted mainly of dangerous horse stunts not balletic squibs and shooting spray. The bear subplot was a new idea albeit handled with a lacking child performance which somehow finds its way into every dramatic arc for the rest of the feature. The most amusing instant comes during a fight where the participants turn into their younger counterparts! The lil' cub was pretty cute though.David Hess and John Saxon provide some legitimate villainry. Even Enzo's reallife papa adds a bearded grittiness to his role. On the technical side this is the most polished work Castellari has done. Gone are the paintball squibs shoddy camerawork and cheap pyrotechnics but all this guerrilla charm is a trade off for the stock orchestral music and dramatic fodder. I'll take The Big Racket any day. Hell Light Blast.".
+
+<#tt0110207-znowhite01-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "E.C. is back after a long string of unspectacular flops dating back almost twenty years before the release of this late entry Spaghettio. Franco Nero returns in a sloppy longhaired guise emulated after his titular Keoma but the similarities to that masterpiece end right about there unless you want to count the atrocious narrating vocal musicals that are so selfabsorbed and confident in their strangeness I have to give the makers some ballsy credit. The film comes off as pretentious propaganda tackling numerous themes unsuccessfully the most blatant and offensive being racial prejudice and oil production. And naturally given its release date when revisionist Westerns were all the rage in Hollywood we're deprived of proper bloody action and served CBS miniseries drama and cues. I counted only one decent slowmo Enzo battle and that consisted mainly of dangerous horse stunts not balletic squibs and shooting spray. The bear subplot was a new idea albeit handled with a lacking child performance which somehow finds its way into every dramatic arc for the rest of the feature. The most amusing instant comes during a fight where the participants turn into their younger counterparts! The lil' cub was pretty cute though.David Hess and John Saxon provide some legitimate villainry. Even Enzo's reallife papa adds a bearded grittiness to his role. On the technical side this is the most polished work Castellari has done. Gone are the paintball squibs shoddy camerawork and cheap pyrotechnics but all this guerrilla charm is a trade off for the stock orchestral music and dramatic fodder. I'll take The Big Racket any day. Hell Light Blast.";
+	onyx:describesObject <#tt0110207>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0110207-znowhite01>.
+
+<#tt0110207-znowhite01-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0110207/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0110207-znowhite01-random>.

@@ -1,0 +1,1184 @@
+@base <http://movie.chatbot.org/>.
+@prefix mcb: <http://movie.chatbot.org/>.
+@prefix schema: <http://schema.org/>.
+@prefix onyx: <http://www.gsi.dit.upm.es/ontologies/onyx/ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema>.
+@prefix owl: <http://www.w3.org/2002/07/owl>.
+@prefix wnaffect: <http://www.gsi.dit.upm.es/ontologies/wnaffect/ns#>.
+
+<mcb:hasActor>
+	rdf:type owl:ObjectProperty;
+	rdfs:range schema:Person;
+	rdfs:domain schema:Movie.
+
+<mcb:hasId>
+	rdf:type owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasTitle>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasGenre>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasLanguage>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<schema:Person>
+	rdf:type owl:Class.
+
+<schema:Movie>
+	rdf:type owl:Class.
+
+<mcb:actorIsPerson>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasActor;
+	owl:allValuesFrom schema:Person.
+
+<mcb:atLeastOneGenre>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasGenre;
+	owl:minCardinality "1"^^xsd:nonNegativeInteger.
+
+<mcb:anyNumberOfLanguages>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasLanguage;
+	owl:minCardinality "0"^^xsd:nonNegativeInteger.
+
+<#Hate>
+	onyx:hasEmotionCategory wnaffect:Hate.
+
+<#Dislike>
+	onyx:hasEmotionCategory wnaffect:Dislike.
+
+<#Anger>
+	onyx:hasEmotionCategory wnaffect:Anger.
+
+<#Anxiety>
+	onyx:hasEmotionCategory wnaffect:Anxiety.
+
+<#Ingratitude>
+	onyx:hasEmotionCategory wnaffect:Ingratitude.
+
+<#Humility>
+	onyx:hasEmotionCategory wnaffect:Humility.
+
+<#Compassion>
+	onyx:hasEmotionCategory wnaffect:Compassion.
+
+<#Daze>
+	onyx:hasEmotionCategory wnaffect:Daze.
+
+<#Sadness>
+	onyx:hasEmotionCategory wnaffect:Sadness.
+
+<#Negative-Fear>
+	onyx:hasEmotionCategory wnaffect:Negative-Fear.
+
+<#Despair>
+	onyx:hasEmotionCategory wnaffect:Despair.
+
+<#Shame>
+	onyx:hasEmotionCategory wnaffect:Shame.
+
+<#Love>
+	onyx:hasEmotionCategory wnaffect:Love.
+
+<#Calmness>
+	onyx:hasEmotionCategory wnaffect:Calmness.
+
+<#Affection>
+	onyx:hasEmotionCategory wnaffect:Affection.
+
+<#Self-Pride>
+	onyx:hasEmotionCategory wnaffect:Self-Pride.
+
+<#Enthusiasm>
+	onyx:hasEmotionCategory wnaffect:Enthusiasm.
+
+<#Positivie-Fear>
+	onyx:hasEmotionCategory wnaffect:Positivie-Fear.
+
+<#Liking>
+	onyx:hasEmotionCategory wnaffect:Liking.
+
+<#Joy>
+	onyx:hasEmotionCategory wnaffect:Joy.
+
+<#Positive-Expectation>
+	onyx:hasEmotionCategory wnaffect:Positive-Expectation.
+
+<#Fearlessness>
+	onyx:hasEmotionCategory wnaffect:Fearlessness.
+
+<#Positive-Hope>
+	onyx:hasEmotionCategory wnaffect:Positive-Hope.
+
+<#Levity>
+	onyx:hasEmotionCategory wnaffect:Levity.
+
+<#Gratitude>
+	onyx:hasEmotionCategory wnaffect:Gratitude.
+
+<#Neutral-Unconcern>
+	onyx:hasEmotionCategory wnaffect:Neutral-Unconcern.
+
+<#Apathy>
+	onyx:hasEmotionCategory wnaffect:Apathy.
+
+<#Surprise>
+	onyx:hasEmotionCategory wnaffect:Surprise.
+
+<#Ambiguous-Agitation>
+	onyx:hasEmotionCategory wnaffect:Ambiguous-Agitation.
+
+<#GingerRogers>
+	rdf:type schema:Person;
+	schema:name "Ginger Rogers".
+
+<#FredAllen>
+	rdf:type schema:Person;
+	schema:name "Fred Allen".
+
+<#VictorMoore>
+	rdf:type schema:Person;
+	schema:name "Victor Moore".
+
+<#MarilynMonroe>
+	rdf:type schema:Person;
+	schema:name "Marilyn Monroe".
+
+<#DavidWayne>
+	rdf:type schema:Person;
+	schema:name "David Wayne".
+
+<#EveArden>
+	rdf:type schema:Person;
+	schema:name "Eve Arden".
+
+<#PaulDouglas>
+	rdf:type schema:Person;
+	schema:name "Paul Douglas".
+
+<#EddieBracken>
+	rdf:type schema:Person;
+	schema:name "Eddie Bracken".
+
+<#MitziGaynor>
+	rdf:type schema:Person;
+	schema:name "Mitzi Gaynor".
+
+<#LouisCalhern>
+	rdf:type schema:Person;
+	schema:name "Louis Calhern".
+
+<#ZsaZsaGabor>
+	rdf:type schema:Person;
+	schema:name "Zsa Zsa Gabor".
+
+<#JamesGleason>
+	rdf:type schema:Person;
+	schema:name "James Gleason".
+
+<#PaulStewart>
+	rdf:type schema:Person;
+	schema:name "Paul Stewart".
+
+<#JaneDarwell>
+	rdf:type schema:Person;
+	schema:name "Jane Darwell".
+
+<#tt0045317-aggregateRating>
+	schema:ratingCount 1,793;
+	schema:ratingValue 6.3;
+	schema:bestRating 10;
+	schema:itemReviewed <#tt0045317>.
+
+<#tt0045317>
+	rdf:type schema:Movie;
+	mcb:hasId "tt0045317";
+	mcb:hasTitle "We're Not Married! (1952)  IMDb";
+	schema:duration "1h26min";
+	schema:dateCreated "1952";
+	schema:text "    A Justice of the Peace performed weddings a few days before his license was valid. A few years later five couples learn they have never been legally married. Annabel Norris already Mrs. Mississippi and ready to enter the Mrs. America contest is now free to enter the Miss Mississippi contest.";
+	schema:aggregateRating <#tt0045317-aggregateRating>;
+	mcb:hasActor <#GingerRogers>;
+	mcb:hasActor <#FredAllen>;
+	mcb:hasActor <#VictorMoore>;
+	mcb:hasActor <#MarilynMonroe>;
+	mcb:hasActor <#DavidWayne>;
+	mcb:hasActor <#EveArden>;
+	mcb:hasActor <#PaulDouglas>;
+	mcb:hasActor <#EddieBracken>;
+	mcb:hasActor <#MitziGaynor>;
+	mcb:hasActor <#LouisCalhern>;
+	mcb:hasActor <#ZsaZsaGabor>;
+	mcb:hasActor <#JamesGleason>;
+	mcb:hasActor <#PaulStewart>;
+	mcb:hasActor <#JaneDarwell>;
+	schema:character "RamonaGladwyn";
+	schema:character "StevenS.'Steve'Gladwyn";
+	schema:character "JusticeofthePeaceMelvinBush";
+	schema:character "AnnabelJonesNorris";
+	schema:character "JeffNorris";
+	schema:character "KatieWoodruff";
+	schema:character "HectorC.Woodruff";
+	schema:character "WilsonBoswell'Willie'Fisher";
+	schema:character "Patricia'Patsy'ReynoldsFisher";
+	schema:character "FrederickC.'Freddie'Melrose";
+	schema:character "EveMelrose";
+	schema:character "Duffy";
+	schema:character "AttorneyStone";
+	schema:character "Mrs.Bush";
+	schema:image "https://m.media-amazon.com/images/M/MV5BMmQyODc5OGYtMWE3OC00YjdjLTg0MGItNDgxYzlhNjkyOGExXkEyXkFqcGdeQXVyNjE5MjUyOTM@._V1_UY1200_CR85,0,630,1200_AL_.jpg".
+
+<#tt0045317-bensonj>
+	schema:about <#tt0045317>;
+	schema:author "bensonj";
+	schema:dateCreated "Sat Nov 17 2001 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 7;
+	schema:headline " A NICE ENOUGH FILM THAT COULD HAVE BEEN BETTER";
+	schema:reviewBody "The chief virtue of this film is the marvelous casting which could hardly be better.  And there's a pleasing variety to the episodes.  That said the edge to the writing and direction is definitely not as keen as one would like.  To give just one example of the problem A letter is sent to each couple telling them that through a technicality they're not really married.  In the opening sequence we hear the letter dictated.  At the appropriate point in each installment the letter is introduced with a special musical theme and the reader of the letter reacts appropriately. But then each time just to make the point completely clear we are shown a closeup of the identically worded letter.  Another example Paul Douglas dreams of dates with beautiful girls AND DREAMS AND DREAMS...  Also though one suspects that Fred Allen had a hand in the writing of his sequencea parody of radio breakfast coupleshere too the satire is a little too obvious their banter being merely a string of not especially clever product plugs one of them having the miracle ingredient chicken fat.Calhern rises above the heavily ironic divorcelawyer skit and James Gleason gives one of his finest performances as a hick hustler promoting Marilyn Monroe in a fledgling Mrs. America contest.  Had the rest of the film been as sharp as Gleason's well written and well performed characterization it could have been a classic.  The final sequence is the most successful because of the fine unaffected performances of Gaynor and Bracken particularly the latter and probably also because Goulding was most at home with this simple romance.  A point of interest in the film as a whole is how much attitudes about marriage have changed since the film was made.AMC has shown an amusing deleted sequence with Walter Brennan in its HIDDEN HOLLYWOOD series.".
+
+<#tt0045317-bensonj-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "The chief virtue of this film is the marvelous casting which could hardly be better.  And there's a pleasing variety to the episodes.  That said the edge to the writing and direction is definitely not as keen as one would like.  To give just one example of the problem A letter is sent to each couple telling them that through a technicality they're not really married.  In the opening sequence we hear the letter dictated.  At the appropriate point in each installment the letter is introduced with a special musical theme and the reader of the letter reacts appropriately. But then each time just to make the point completely clear we are shown a closeup of the identically worded letter.  Another example Paul Douglas dreams of dates with beautiful girls AND DREAMS AND DREAMS...  Also though one suspects that Fred Allen had a hand in the writing of his sequencea parody of radio breakfast coupleshere too the satire is a little too obvious their banter being merely a string of not especially clever product plugs one of them having the miracle ingredient chicken fat.Calhern rises above the heavily ironic divorcelawyer skit and James Gleason gives one of his finest performances as a hick hustler promoting Marilyn Monroe in a fledgling Mrs. America contest.  Had the rest of the film been as sharp as Gleason's well written and well performed characterization it could have been a classic.  The final sequence is the most successful because of the fine unaffected performances of Gaynor and Bracken particularly the latter and probably also because Goulding was most at home with this simple romance.  A point of interest in the film as a whole is how much attitudes about marriage have changed since the film was made.AMC has shown an amusing deleted sequence with Walter Brennan in its HIDDEN HOLLYWOOD series.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-bensonj>.
+
+<#tt0045317-bensonj-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-bensonj-random>.
+
+<#tt0045317-rick_7>
+	schema:about <#tt0045317>;
+	schema:author "rick_7";
+	schema:dateCreated "Fri Jun 11 2010 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 6;
+	schema:headline " Too gloomy but two of the five stories hit the mark";
+	schema:reviewBody "We're Not Married Edmund Goulding 1952 is a series of starstudded short stories that's at its best when it's being sweet  not cynical. While its structure recalls If I Had a Million which gave each of its main characters 1m to spank on the ventures of their choice the story is reminiscent of Hitchcock's impressively tedious screwball comedy Mr and Mrs Smith. Victor Moore sets the plot in motion as an overeager though slowspeaking justice of the peace who starts marrying people before his licence permits. When the error is uncovered a couple of years later five marriages are struck out with the explanatory letters arriving at some critical juncture giving the couples the chance to stick or twist.As with perhaps my favourite anthology Night on Earth we start with the weakest story. The 'Glad Gladwyns' radio DJs Fred Allen and Ginger Rogers are luvvyduvvy on the air bicker in the office and don't speak at home. Their story is mostly predictable and mostly miserable stuffed with those leaden barbs that cinema enjoyed aiming at its rival medium during this period see also A Letter to Three Wives It's Always Fair Weather  including a string of audio adverts that seem to go on forever. Hmm. Anyway onwards and upwards... The second chapter compensates by being pretty darn great if you can imagine a good version of Lady Godiva Rides Again made in America and lasting about 10 minutes  then it's like that. Marilyn Monroe is the reigning Mrs Mississippi gunning for the regional beauty queen crown until she gets that letter rendering her ineligible. David Wayne is in good form as her stayathome husband changing nappies and avoiding sarky remarks from the postman until his trump card arrives. There are a couple of fantastic jokes in this one which has a modern sense of humour along with its very '50s trappings and buzzes with an energy most of the other segments don't possess.Paul Douglas and Eve Arden are the next couple again we're on slightly bleak ground with the husband's motive for staying put leaving a sour taste  quite aside from not being that funny. Better if no less cheery is part four in which multimillionaire Louis Calhern is given the runaround by canny 'wife' Zsa Zsa Gabor only to find a most unexpected escape route. The scene in which Calhern is framed by his partner's cohorts is funny but we're ultimately asked to root for a bland if trusting financial weasel who's put a third of his money in secret accounts. Admittedly his wife is even more objectionable than he is. Happily the movie saves its best for last with a comic and moving segment reminiscent of star Eddie Bracken's collaborations with Preston Sturges  if lacking the touch of genius associated with that director. Bracken plays a soldier who's about to sail for overseas when he finds out that the baby he's expecting is going to be born out of wedlock. So he calls for his girl to join him and goes AWOL dodging the Military Police as he tries to get hitched. It's madcap in an agreeable way with Bracken ideally cast as the eternally unlucky putupon little guy trying to do the right thing. There's also a small part for Lee Marvin playing Bracken's army buddy. Finally we get a brief coda giving a delayed wrapup to the RogersAllen sequence that possesses more charm than the whole of the earlier chapter and providing a fitting finale for Douglas and Arden. It's not a great film but two of the five segments work really well and there's enough star power for the others to just about skirt by.".
+
+<#tt0045317-rick_7-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "We're Not Married Edmund Goulding 1952 is a series of starstudded short stories that's at its best when it's being sweet  not cynical. While its structure recalls If I Had a Million which gave each of its main characters 1m to spank on the ventures of their choice the story is reminiscent of Hitchcock's impressively tedious screwball comedy Mr and Mrs Smith. Victor Moore sets the plot in motion as an overeager though slowspeaking justice of the peace who starts marrying people before his licence permits. When the error is uncovered a couple of years later five marriages are struck out with the explanatory letters arriving at some critical juncture giving the couples the chance to stick or twist.As with perhaps my favourite anthology Night on Earth we start with the weakest story. The 'Glad Gladwyns' radio DJs Fred Allen and Ginger Rogers are luvvyduvvy on the air bicker in the office and don't speak at home. Their story is mostly predictable and mostly miserable stuffed with those leaden barbs that cinema enjoyed aiming at its rival medium during this period see also A Letter to Three Wives It's Always Fair Weather  including a string of audio adverts that seem to go on forever. Hmm. Anyway onwards and upwards... The second chapter compensates by being pretty darn great if you can imagine a good version of Lady Godiva Rides Again made in America and lasting about 10 minutes  then it's like that. Marilyn Monroe is the reigning Mrs Mississippi gunning for the regional beauty queen crown until she gets that letter rendering her ineligible. David Wayne is in good form as her stayathome husband changing nappies and avoiding sarky remarks from the postman until his trump card arrives. There are a couple of fantastic jokes in this one which has a modern sense of humour along with its very '50s trappings and buzzes with an energy most of the other segments don't possess.Paul Douglas and Eve Arden are the next couple again we're on slightly bleak ground with the husband's motive for staying put leaving a sour taste  quite aside from not being that funny. Better if no less cheery is part four in which multimillionaire Louis Calhern is given the runaround by canny 'wife' Zsa Zsa Gabor only to find a most unexpected escape route. The scene in which Calhern is framed by his partner's cohorts is funny but we're ultimately asked to root for a bland if trusting financial weasel who's put a third of his money in secret accounts. Admittedly his wife is even more objectionable than he is. Happily the movie saves its best for last with a comic and moving segment reminiscent of star Eddie Bracken's collaborations with Preston Sturges  if lacking the touch of genius associated with that director. Bracken plays a soldier who's about to sail for overseas when he finds out that the baby he's expecting is going to be born out of wedlock. So he calls for his girl to join him and goes AWOL dodging the Military Police as he tries to get hitched. It's madcap in an agreeable way with Bracken ideally cast as the eternally unlucky putupon little guy trying to do the right thing. There's also a small part for Lee Marvin playing Bracken's army buddy. Finally we get a brief coda giving a delayed wrapup to the RogersAllen sequence that possesses more charm than the whole of the earlier chapter and providing a fitting finale for Douglas and Arden. It's not a great film but two of the five segments work really well and there's enough star power for the others to just about skirt by.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-rick_7>.
+
+<#tt0045317-rick_7-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-rick_7-random>.
+
+<#tt0045317-MCL1150>
+	schema:about <#tt0045317>;
+	schema:author "MCL1150";
+	schema:dateCreated "Fri Apr 06 2007 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 6;
+	schema:headline " Fred  Ginger! That Ginger but not THAT Fred";
+	schema:reviewBody "Fred Allen Ginger Rogers Victor Moore David Wayne Marilyn Monroe Eve Arden Mitzi Gaynor Eddie Braken Paul Douglas Jane Darnell James Gleason Paul Stewart AND Zsa Zsa Gabor! Now that's MY idea of an allstar cast! Yes We're Not Married is a light comedy for sure but an enjoyable one. I for one got a kick out of the scene in which Zsa Zsa is raking her husband over the coals in a divorce settlement only to find out that she's not actually married! Call it art half imitating life! For anyone who loves films from the 30s40s and 50s this is a minor gem that should be seen at least once. I had thought I'd seen every movie that I'd ever enjoy at least once so this came as a very welcome surprise. I just saw it on AMC which meant lots of commercial stops so look for it on the Fox Movie Channel.".
+
+<#tt0045317-MCL1150-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Fred Allen Ginger Rogers Victor Moore David Wayne Marilyn Monroe Eve Arden Mitzi Gaynor Eddie Braken Paul Douglas Jane Darnell James Gleason Paul Stewart AND Zsa Zsa Gabor! Now that's MY idea of an allstar cast! Yes We're Not Married is a light comedy for sure but an enjoyable one. I for one got a kick out of the scene in which Zsa Zsa is raking her husband over the coals in a divorce settlement only to find out that she's not actually married! Call it art half imitating life! For anyone who loves films from the 30s40s and 50s this is a minor gem that should be seen at least once. I had thought I'd seen every movie that I'd ever enjoy at least once so this came as a very welcome surprise. I just saw it on AMC which meant lots of commercial stops so look for it on the Fox Movie Channel.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-MCL1150>.
+
+<#tt0045317-MCL1150-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-MCL1150-random>.
+
+<#tt0045317-edwagreen>
+	schema:about <#tt0045317>;
+	schema:author "edwagreen";
+	schema:dateCreated "Sat Jul 28 2007 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " We're Not MarriedBetter to Elope After this One 12";
+	schema:reviewBody "Victor Moore as a justice of the peace who didn't realize that his authority to marry people didn't start until January 1. Therefore all people he had previously married prior to this date were determined not to be married legally and were notified accordingly.Here is where the fun begins. As would be the case in comedies many of the couples don't have the best of marriages and some might use this as an excuse to exit from the scene.The most hilarious of the group is the marriage between Zsa Zsa Gabor and Louis Calhern. She tries to get him involved with a hooker so that she can divorce him and under California law qualify for millions due to that state's laws. Does he turn the tables on her when it's determined that they're not married!Marilyn Monroe has a bring fling as a beauty contestant in a Mrs. contest. When she wins she is naturally ineligible as she and David Wayne aren't legally wed. Wayne uses this to his advantage to get Marilyn to stay home and take care of their youngster instead.Thanks to the snafu Eddie Bracken has married Mitzi Gaynor who finds herself pregnant as Bracken receives the news of their illegal marriage while being shipped off in the army. How the 2 manage to wed to provide the legitimacy cover for the baby is quite amusing.Paul Douglas dreams of what the single life could be when he finds out that he is not wed to Eve Arden. Surprisingly Arden is much restrained here. Amazing that her comic gifts were not utilized.Fred Allen is awfully good along with his talkshow host wife Ginger Rogers who battle offair while fooling the public on their morning radio show. Isn't this a takeoff of Dorothy Kilgallen and her husband Dick Kalmar?A pleasant film. Before you wed view the credentials of the person marrying you!".
+
+<#tt0045317-edwagreen-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Victor Moore as a justice of the peace who didn't realize that his authority to marry people didn't start until January 1. Therefore all people he had previously married prior to this date were determined not to be married legally and were notified accordingly.Here is where the fun begins. As would be the case in comedies many of the couples don't have the best of marriages and some might use this as an excuse to exit from the scene.The most hilarious of the group is the marriage between Zsa Zsa Gabor and Louis Calhern. She tries to get him involved with a hooker so that she can divorce him and under California law qualify for millions due to that state's laws. Does he turn the tables on her when it's determined that they're not married!Marilyn Monroe has a bring fling as a beauty contestant in a Mrs. contest. When she wins she is naturally ineligible as she and David Wayne aren't legally wed. Wayne uses this to his advantage to get Marilyn to stay home and take care of their youngster instead.Thanks to the snafu Eddie Bracken has married Mitzi Gaynor who finds herself pregnant as Bracken receives the news of their illegal marriage while being shipped off in the army. How the 2 manage to wed to provide the legitimacy cover for the baby is quite amusing.Paul Douglas dreams of what the single life could be when he finds out that he is not wed to Eve Arden. Surprisingly Arden is much restrained here. Amazing that her comic gifts were not utilized.Fred Allen is awfully good along with his talkshow host wife Ginger Rogers who battle offair while fooling the public on their morning radio show. Isn't this a takeoff of Dorothy Kilgallen and her husband Dick Kalmar?A pleasant film. Before you wed view the credentials of the person marrying you!";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-edwagreen>.
+
+<#tt0045317-edwagreen-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-edwagreen-random>.
+
+<#tt0045317-blanche_2>
+	schema:about <#tt0045317>;
+	schema:author "blanche_2";
+	schema:dateCreated "Thu Mar 26 2009 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 8;
+	schema:headline " Five couples learn they're not legal";
+	schema:reviewBody "Back in the '50s a common sitcom episode was the married couple finding out that they're not legally married.We're Not Married a 1952 film has five such couples including Fred Allen and Ginger Rogers Marilyn Monroe and David Wayne Eve Arden and Paul Douglas Eddie Bracken and Mitzi Gaynor and Louis Calhern and Zsa Zsa Gabor.There were several episodic anthologytype films from this period. We're Not Married deals with five very different couples and what the notice of nonmarriage means to each couple. There's a wealthy man Calhern married to a gold digger Gabor a bickering husband and wife radio couple Allen and Rogers a couple in a slump Paul Douglas and Eve Arden an ambitious young woman and her husband Monroe and Wayne etc.The best is the CalhernGabor and Allen and Rogers make a good team and give bright performances. There are some funny sequences throughout.Mores have changed a lot since this film but it makes for pleasant watching with good direction by Edmund Goulding.".
+
+<#tt0045317-blanche_2-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Back in the '50s a common sitcom episode was the married couple finding out that they're not legally married.We're Not Married a 1952 film has five such couples including Fred Allen and Ginger Rogers Marilyn Monroe and David Wayne Eve Arden and Paul Douglas Eddie Bracken and Mitzi Gaynor and Louis Calhern and Zsa Zsa Gabor.There were several episodic anthologytype films from this period. We're Not Married deals with five very different couples and what the notice of nonmarriage means to each couple. There's a wealthy man Calhern married to a gold digger Gabor a bickering husband and wife radio couple Allen and Rogers a couple in a slump Paul Douglas and Eve Arden an ambitious young woman and her husband Monroe and Wayne etc.The best is the CalhernGabor and Allen and Rogers make a good team and give bright performances. There are some funny sequences throughout.Mores have changed a lot since this film but it makes for pleasant watching with good direction by Edmund Goulding.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-blanche_2>.
+
+<#tt0045317-blanche_2-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-blanche_2-random>.
+
+<#tt0045317-theowinthrop>
+	schema:about <#tt0045317>;
+	schema:author "theowinthrop";
+	schema:dateCreated "Wed May 31 2006 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " If Married Couples Had a Second Chance....";
+	schema:reviewBody "In the early 1950s there were several episodic movies that came out of 20th Century Fox two of which had early performances of Marilyn Monroe. The two were O'HENRY'S FULL HOUSE and this film WE'RE NOT MARRIED! The O'Henry anthology had stories that were funny The Ransom of Red Chief and stories that were moving The Gift of the Magi and stories that were tragic The Last Leaf. But WE'RE NOT MARRIED! was pure comedy and as such worked quite well.It is based on an old plot ploy that turns up in other films like Hitchcock's MR. AND MRS. SMITH. What happens to a married couple after a couple of years of marriage when they discover that there is a flaw in their marriage that invalidates it? Like MR. AND MRS. SMITH the flaw here is the legality of the license...of the justice of the peace. And in WE'RE NOT MARRIED the nice but bumbling justice of the peace is Victor Moore. Moore had gotten word that he was appointed to the job and began marrying as soon as he got the letter. He did not notice that he was not to marry anyone until a particular date. As a result there are at least six couples that he married who are technically living in sin.How do they handle the problem? In MR. AND MRS. SMITH Robert Montgomery's attempt to dismiss it as a minor problem almost destroyed his marriage as Carole Lombard wonders what kind of man he really is. Here the stories are able to look at the situation carefully. The results are far more cynical in three cases.Louis Calhern a millionaire marries Zsa Zsa Gabor a gold digger who arranges to frame him so she can divorce him and get a bundle. Calhern confused and not knowing what to do gets the letter from Moore and suddenly realizes Gabor has no legal standing to do anything this was long before the concept of palimony. Suddenly to the consternation of her attorney Paul Stewart and Gabor not only is Calhern cooperative but he's positively full of information about hidden assets. At the very conclusion he drops the shoe on Zsa Zsa by giving her the letter as a personal message of a deep feeling for her. As he leaves the room we hear her faint.Walter Brennan in a section of the film that was cut originally but has been restored is a backwoods Lothario who loves to charm Hope Emerson. Emerson is married with several kids which Brennan knows about but he keeps saying how he'd love to marry her if only she were free Brennan does this because he really loves Emerson's cooking  charmed by him she is feeding his lying face. Then she gets the letter from Moore and asks Brennan to read it Hope can't read. Brennan realizes what it's about and hastily lies about the contents and says it is junk mail. Then he destroys it. Little does he realize after that sequence ends that Moore and his wife Jane Darwell are discussing the rural address and problems of delivery there and decide to send a second copy just to be certain.Paul Douglas is married to Eve Arden but their marriage is in one of those rut periods. When he gets the letter he starts imagining his new freedom dating another good looking woman each night. Only at the end of this dream does he suddenly envision the cost of such a lifestyle an expensive cost for 1952. At the end he decides to forget about the gorgeous women and look at how nice peaceful and stable that rut he's in really is.There are also stories involving Mitzi Gaynor and Eddie Bracken Marilyn Monroe and David Wayne and possibly best Fred Allan and Ginger Rogers as a bickering couple who are like Dorothy Kilgallen and her husband Dick Kalmar on radio's Breakfast With Dorothy and Dick. While not the greatest of film comedies it's pretty consistently amusing in getting as much mileage out of the central plot ploy. Certainly worth watching and enjoying when it turns up on television.".
+
+<#tt0045317-theowinthrop-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "In the early 1950s there were several episodic movies that came out of 20th Century Fox two of which had early performances of Marilyn Monroe. The two were O'HENRY'S FULL HOUSE and this film WE'RE NOT MARRIED! The O'Henry anthology had stories that were funny The Ransom of Red Chief and stories that were moving The Gift of the Magi and stories that were tragic The Last Leaf. But WE'RE NOT MARRIED! was pure comedy and as such worked quite well.It is based on an old plot ploy that turns up in other films like Hitchcock's MR. AND MRS. SMITH. What happens to a married couple after a couple of years of marriage when they discover that there is a flaw in their marriage that invalidates it? Like MR. AND MRS. SMITH the flaw here is the legality of the license...of the justice of the peace. And in WE'RE NOT MARRIED the nice but bumbling justice of the peace is Victor Moore. Moore had gotten word that he was appointed to the job and began marrying as soon as he got the letter. He did not notice that he was not to marry anyone until a particular date. As a result there are at least six couples that he married who are technically living in sin.How do they handle the problem? In MR. AND MRS. SMITH Robert Montgomery's attempt to dismiss it as a minor problem almost destroyed his marriage as Carole Lombard wonders what kind of man he really is. Here the stories are able to look at the situation carefully. The results are far more cynical in three cases.Louis Calhern a millionaire marries Zsa Zsa Gabor a gold digger who arranges to frame him so she can divorce him and get a bundle. Calhern confused and not knowing what to do gets the letter from Moore and suddenly realizes Gabor has no legal standing to do anything this was long before the concept of palimony. Suddenly to the consternation of her attorney Paul Stewart and Gabor not only is Calhern cooperative but he's positively full of information about hidden assets. At the very conclusion he drops the shoe on Zsa Zsa by giving her the letter as a personal message of a deep feeling for her. As he leaves the room we hear her faint.Walter Brennan in a section of the film that was cut originally but has been restored is a backwoods Lothario who loves to charm Hope Emerson. Emerson is married with several kids which Brennan knows about but he keeps saying how he'd love to marry her if only she were free Brennan does this because he really loves Emerson's cooking  charmed by him she is feeding his lying face. Then she gets the letter from Moore and asks Brennan to read it Hope can't read. Brennan realizes what it's about and hastily lies about the contents and says it is junk mail. Then he destroys it. Little does he realize after that sequence ends that Moore and his wife Jane Darwell are discussing the rural address and problems of delivery there and decide to send a second copy just to be certain.Paul Douglas is married to Eve Arden but their marriage is in one of those rut periods. When he gets the letter he starts imagining his new freedom dating another good looking woman each night. Only at the end of this dream does he suddenly envision the cost of such a lifestyle an expensive cost for 1952. At the end he decides to forget about the gorgeous women and look at how nice peaceful and stable that rut he's in really is.There are also stories involving Mitzi Gaynor and Eddie Bracken Marilyn Monroe and David Wayne and possibly best Fred Allan and Ginger Rogers as a bickering couple who are like Dorothy Kilgallen and her husband Dick Kalmar on radio's Breakfast With Dorothy and Dick. While not the greatest of film comedies it's pretty consistently amusing in getting as much mileage out of the central plot ploy. Certainly worth watching and enjoying when it turns up on television.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-theowinthrop>.
+
+<#tt0045317-theowinthrop-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-theowinthrop-random>.
+
+<#tt0045317-dougdoepke>
+	schema:about <#tt0045317>;
+	schema:author "dougdoepke";
+	schema:dateCreated "Sun Apr 05 2009 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 7;
+	schema:headline " Big Radios Beauty Pageants and a War in Korea";
+	schema:reviewBody "It's a clever premise but the results have dated rather badly. Unfortunately the comedy level never reaches the sparkle it needs though the opening vignette Rogers and Allen comes close. Perhaps that's not surprising given Director Goulding's credits which suggest he's more at home with Bette Davis melodrama than with material of this sort. Also I'm surprised a bigbudget studio like Fox didn't film this in Technicolor which would have added a lot to the atmospherics. Instead we get dour gray tones that undercut the lighthearted mood making the movie look older than it is. But then 1952 was a year Hollywood was looking to retool in the face of TV's onslaught. The following year would see an explosion of wide screen color beyond the reach of the livingroom tube. As a result this comedy venture may have been caught in the transition.To me the AllenRogers sequence is the best. It's actually a rather scathing look at entertainment makebelieve and the relentless assault of commercial advertising. In private life the two are barely speaking while on radio they play a pair of happy marrieds who trade comic barbs in between pushing the sponsors' goofy products. It's rather deftly and bitingly done even though the 57year old Allen looks like he's been on a twoweek bender. In passingnote that even though we see a number of living rooms no TV's are in sight only radios! This was Hollywood in its final stage of denial.The other vignettes are mildly entertaining with a look at a number of performers on the way up the ladder Monroe Marvin Wayne Gaynor. Especially satisfying is the delicious opportunity the letter provides Calhern to turn the tables on the golddigging Gabor and her grasping attorney. At least the screenplay had the good sense not to reconcile these two at the end. But notice how the script insists the others be reconciled in typical 50's happy ending style. This certainly rings hollow in the case of the feuding AllenRogers. Given a second chance it's hard to see how they could possibly stay together. In the case of DouglasArden the most incisive of the vignettes they may be totally bored with one another check the dinner scene but are too complaisant to actually change. That strikes me as maybe not the funniest but at least as the most realistic of the episodes.Anyway whatever the comedy lacks in sparkle it is revealing of its timeradio beauty pageants war in Korea implied in Bracken's troop ship. But I'm afraid that the clever premise plays better than the mild results.".
+
+<#tt0045317-dougdoepke-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "It's a clever premise but the results have dated rather badly. Unfortunately the comedy level never reaches the sparkle it needs though the opening vignette Rogers and Allen comes close. Perhaps that's not surprising given Director Goulding's credits which suggest he's more at home with Bette Davis melodrama than with material of this sort. Also I'm surprised a bigbudget studio like Fox didn't film this in Technicolor which would have added a lot to the atmospherics. Instead we get dour gray tones that undercut the lighthearted mood making the movie look older than it is. But then 1952 was a year Hollywood was looking to retool in the face of TV's onslaught. The following year would see an explosion of wide screen color beyond the reach of the livingroom tube. As a result this comedy venture may have been caught in the transition.To me the AllenRogers sequence is the best. It's actually a rather scathing look at entertainment makebelieve and the relentless assault of commercial advertising. In private life the two are barely speaking while on radio they play a pair of happy marrieds who trade comic barbs in between pushing the sponsors' goofy products. It's rather deftly and bitingly done even though the 57year old Allen looks like he's been on a twoweek bender. In passingnote that even though we see a number of living rooms no TV's are in sight only radios! This was Hollywood in its final stage of denial.The other vignettes are mildly entertaining with a look at a number of performers on the way up the ladder Monroe Marvin Wayne Gaynor. Especially satisfying is the delicious opportunity the letter provides Calhern to turn the tables on the golddigging Gabor and her grasping attorney. At least the screenplay had the good sense not to reconcile these two at the end. But notice how the script insists the others be reconciled in typical 50's happy ending style. This certainly rings hollow in the case of the feuding AllenRogers. Given a second chance it's hard to see how they could possibly stay together. In the case of DouglasArden the most incisive of the vignettes they may be totally bored with one another check the dinner scene but are too complaisant to actually change. That strikes me as maybe not the funniest but at least as the most realistic of the episodes.Anyway whatever the comedy lacks in sparkle it is revealing of its timeradio beauty pageants war in Korea implied in Bracken's troop ship. But I'm afraid that the clever premise plays better than the mild results.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-dougdoepke>.
+
+<#tt0045317-dougdoepke-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-dougdoepke-random>.
+
+<#tt0045317-bkoganbing>
+	schema:about <#tt0045317>;
+	schema:author "bkoganbing";
+	schema:dateCreated "Wed Oct 19 2011 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 6;
+	schema:headline " How Many People Get A Do Over In Marriage?";
+	schema:reviewBody "When Justice of the Peace Victor Moore learns that he jumped the gun in marrying traveling elopers passing through his state it causes great consternation in the lives of five random couples across the USA who discover that We're Not Married. In discussing the matter with the wife played by Jane Darwell he actually comes out with the clever notion that if these folks made a mistake they're getting a second chance at marriage without going through the pangs of divorce.We're Not Married chronicles the lives of these five couples when they learn of the rush to marry mistake caused by Moore when he married them before his commission took effect. Usually the story that gets the most critical acclaim is the one involving Fred Allen and Ginger Rogers who play a nationally broadcast happily married radio couple. That's for public consumption actually these two bicker about everything. Screenwiter Nunnally Johnson was at his satiric best when he spoofed such radio personalities as Tex McCrary and Jinx Falkenberg who did just that kind of broadcast perpetually hawking their sponsor's products.The others are pretty good too. David Wayne and Marilyn Monroe have an unusual arrangement where she goes out and wins beauty contests and he stays home taking care of the kid. The nonmarriage throws them for a while as she as just won the Mrs. Mississippi contest but they make lemonade out of the lemon.Eddie Bracken and Mitzi Gaynor have a more serious problem he's a soldier with orders for Korea she's in a family way. It takes quite a lot to get that situation resolved and not an entirely happy ending for Bracken.The weakest episode by far is Paul Douglas and Eve Arden. I was surprised that Arden who usually gets some of the best lines in her films is strangely muted by the script. They play a couple who has settled into boredom and the episode was the most boring of the bunch.But my favorite is Louis Calhern and Zsa Zsa Gabor. He's an oil millionaire with a gold digging wife who has a bottom feeding lawyer in Paul Stewart. What happens to Zsa Zsa and Stewart is classic.The idea of a marriage suddenly not being legal was tried out in one of Alfred Hitchcock's few comedies Mr.Mrs. Smith with Robert Montgomery and Carole Lombard being the suddenly unmarried couple. We're Not Married increases the idea by a factor of five. I wouldn't say this film is five times better than Hitchcock's but it's still very good and done by people more at home in the genre.".
+
+<#tt0045317-bkoganbing-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "When Justice of the Peace Victor Moore learns that he jumped the gun in marrying traveling elopers passing through his state it causes great consternation in the lives of five random couples across the USA who discover that We're Not Married. In discussing the matter with the wife played by Jane Darwell he actually comes out with the clever notion that if these folks made a mistake they're getting a second chance at marriage without going through the pangs of divorce.We're Not Married chronicles the lives of these five couples when they learn of the rush to marry mistake caused by Moore when he married them before his commission took effect. Usually the story that gets the most critical acclaim is the one involving Fred Allen and Ginger Rogers who play a nationally broadcast happily married radio couple. That's for public consumption actually these two bicker about everything. Screenwiter Nunnally Johnson was at his satiric best when he spoofed such radio personalities as Tex McCrary and Jinx Falkenberg who did just that kind of broadcast perpetually hawking their sponsor's products.The others are pretty good too. David Wayne and Marilyn Monroe have an unusual arrangement where she goes out and wins beauty contests and he stays home taking care of the kid. The nonmarriage throws them for a while as she as just won the Mrs. Mississippi contest but they make lemonade out of the lemon.Eddie Bracken and Mitzi Gaynor have a more serious problem he's a soldier with orders for Korea she's in a family way. It takes quite a lot to get that situation resolved and not an entirely happy ending for Bracken.The weakest episode by far is Paul Douglas and Eve Arden. I was surprised that Arden who usually gets some of the best lines in her films is strangely muted by the script. They play a couple who has settled into boredom and the episode was the most boring of the bunch.But my favorite is Louis Calhern and Zsa Zsa Gabor. He's an oil millionaire with a gold digging wife who has a bottom feeding lawyer in Paul Stewart. What happens to Zsa Zsa and Stewart is classic.The idea of a marriage suddenly not being legal was tried out in one of Alfred Hitchcock's few comedies Mr.Mrs. Smith with Robert Montgomery and Carole Lombard being the suddenly unmarried couple. We're Not Married increases the idea by a factor of five. I wouldn't say this film is five times better than Hitchcock's but it's still very good and done by people more at home in the genre.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-bkoganbing>.
+
+<#tt0045317-bkoganbing-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-bkoganbing-random>.
+
+<#tt0045317-caa821>
+	schema:about <#tt0045317>;
+	schema:author "caa821";
+	schema:dateCreated "Wed Apr 04 2007 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " Classic but entertaining cornball fluff";
+	schema:reviewBody "A previous person described this film as fluff. This is a perfect word to describe it and should contain a capital F.But it's also entertaining and interesting. It has a host of 1930's and 1940's actors and some predating talking pictures as well youngsters Mitzi Gaynor Marilyn Monroe and Lee Marvin latter in an uncredited bit part.The premise is pristine and the plot revolves in a silly fashion around the supposed customs of that period with people scurrying about with issues which wouldn't warrant any dramatic presentation today.The thin plot involves several couples whose marriages were ruled invalid by the governor since they were married by a justiceofthepeace near the end of the year sometime back with his certification not valid until the following January 1st.Rogers and Allen are a pair with a morning couples radio program seemingly consisting of nothing but sponsor plugs and inane nastynice banter with a sham marriage for purely economic purposes. Bracken and Gaynor are a young couple who need to be remarried before his army unit embarks or else their expected child won't be legitimate but according to his sergeant a foul ball. Golddigger Gabor not a stretch here literally faints when the letter from the governor arrives at her wealthy husband's Calhoun office while her lawyer is discussing her plundering his assets during a divorce settlement precipitated by a setup when a fullyclothed impostor who resembles a conservativelydressed elementary teacher poses as his wife in a hotel room for about three minutes while her confederates note the incident. Although released in 1952 this is strictly a 40's flick. Even then certainly the governor would simply have effected a special edict making these unions legitimate and even if not Gabor however devious her purpose would have been able to claim some sort of commonlaw entitlement or rights under whatever passed for palimony then.Still it's now a nostalgic piece with nearly all the thespians gone except for a couple or so including Zsa Zsa now 90 plus however many years are still fudged from her birth date.".
+
+<#tt0045317-caa821-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "A previous person described this film as fluff. This is a perfect word to describe it and should contain a capital F.But it's also entertaining and interesting. It has a host of 1930's and 1940's actors and some predating talking pictures as well youngsters Mitzi Gaynor Marilyn Monroe and Lee Marvin latter in an uncredited bit part.The premise is pristine and the plot revolves in a silly fashion around the supposed customs of that period with people scurrying about with issues which wouldn't warrant any dramatic presentation today.The thin plot involves several couples whose marriages were ruled invalid by the governor since they were married by a justiceofthepeace near the end of the year sometime back with his certification not valid until the following January 1st.Rogers and Allen are a pair with a morning couples radio program seemingly consisting of nothing but sponsor plugs and inane nastynice banter with a sham marriage for purely economic purposes. Bracken and Gaynor are a young couple who need to be remarried before his army unit embarks or else their expected child won't be legitimate but according to his sergeant a foul ball. Golddigger Gabor not a stretch here literally faints when the letter from the governor arrives at her wealthy husband's Calhoun office while her lawyer is discussing her plundering his assets during a divorce settlement precipitated by a setup when a fullyclothed impostor who resembles a conservativelydressed elementary teacher poses as his wife in a hotel room for about three minutes while her confederates note the incident. Although released in 1952 this is strictly a 40's flick. Even then certainly the governor would simply have effected a special edict making these unions legitimate and even if not Gabor however devious her purpose would have been able to claim some sort of commonlaw entitlement or rights under whatever passed for palimony then.Still it's now a nostalgic piece with nearly all the thespians gone except for a couple or so including Zsa Zsa now 90 plus however many years are still fudged from her birth date.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-caa821>.
+
+<#tt0045317-caa821-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-caa821-random>.
+
+<#tt0045317-dcjimd>
+	schema:about <#tt0045317>;
+	schema:author "dcjimd";
+	schema:dateCreated "Wed Aug 02 2006 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 7;
+	schema:headline " Clever Comedy But Probably Not Legally Accurate";
+	schema:reviewBody "This is a clever sketch comedy movie about what happens when a half dozen couples discover that they are not legally married. All of the sketches are amusing and one or two are hilarious and it stars some of the best character and up and coming actor and actresses that Hollywood had to offer at the time Ginger Rogers Louis Calhern Marilyn Monroe David Wayne Eddie Bracken Paul Douglas Eve Arden one of the Gabor sisters and many more.However as an attorney I cannot help but mention that the technical legal flaw that in the movie causes the invalidation of these marriages the fact that the Justice of the Peace's term of office did not actually start until a few days after the marriages were celebrated probably would not actually matter at all. The law of most states states that if a couple goes through the legal forms of marriage in good faith and then lives and present themselves to the world as a married couple for a substantial period of time they ARE married in the eyes of the law despite any minor technical quibbles to the contrary. In fact in many places a couple that does not even bother to go through with a marriage ceremony but lives together and acts like a married couple can be considered legally man and wife this is sometimes known as a common law marriage.So much as I enjoyed seeing the greedy Gabor sister stymied when she tries to take Louis Calhern to the cleaners in their divorce settlement I am afraid that under the community property law of California he would still be obliged to pay up. And Eddie Bracken and Mitzi Gaynor's characters need not be concerned about the status of their unborn child there is no question under the law that the little tyke would be regarded as legitimate.".
+
+<#tt0045317-dcjimd-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This is a clever sketch comedy movie about what happens when a half dozen couples discover that they are not legally married. All of the sketches are amusing and one or two are hilarious and it stars some of the best character and up and coming actor and actresses that Hollywood had to offer at the time Ginger Rogers Louis Calhern Marilyn Monroe David Wayne Eddie Bracken Paul Douglas Eve Arden one of the Gabor sisters and many more.However as an attorney I cannot help but mention that the technical legal flaw that in the movie causes the invalidation of these marriages the fact that the Justice of the Peace's term of office did not actually start until a few days after the marriages were celebrated probably would not actually matter at all. The law of most states states that if a couple goes through the legal forms of marriage in good faith and then lives and present themselves to the world as a married couple for a substantial period of time they ARE married in the eyes of the law despite any minor technical quibbles to the contrary. In fact in many places a couple that does not even bother to go through with a marriage ceremony but lives together and acts like a married couple can be considered legally man and wife this is sometimes known as a common law marriage.So much as I enjoyed seeing the greedy Gabor sister stymied when she tries to take Louis Calhern to the cleaners in their divorce settlement I am afraid that under the community property law of California he would still be obliged to pay up. And Eddie Bracken and Mitzi Gaynor's characters need not be concerned about the status of their unborn child there is no question under the law that the little tyke would be regarded as legitimate.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-dcjimd>.
+
+<#tt0045317-dcjimd-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-dcjimd-random>.
+
+<#tt0045317-Bunuel1976>
+	schema:about <#tt0045317>;
+	schema:author "Bunuel1976";
+	schema:dateCreated "Wed Dec 12 2007 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 8;
+	schema:headline " WE'RE NOT MARRIED! Edmund Goulding 1952 12";
+	schema:reviewBody "This is another early Marilyn Monroe picture in this case it's a compendium of stories involving a handful of marriages  presided over by reliable Victor Moore  which are discovered to have been illegal because his term of office hadn't yet officially started when the ceremony was performed! So he's made to send each of these a letter explaining the awkward situation and according to where they stand at that particular moment in their married life see how they decide to act upon it. The couples are played by Fred Allen and Ginger Rogers David Wayne and Marilyn Monroe Paul Douglas and Eve Arden Louis Calhern and Zsa Zsa Gabor and Eddie Bracken and Mitzi Gaynor. The least episode is the one with Douglas and Arden where the latter becomes suspicious of just what goes on during the former's business trips the CalhernGabor episode is mildly interesting for having her turn out a schemer  planning to appropriate her husband's fortune with the help of shyster lawyer Paul Stewartuntil he's saved by the propitious arrival of Moore's letter! Wayne has a hard time adjusting because of Monroe's triumph in a Mrs. Mississippi contest  believing his troubles over when the marriage is revealed to have been null his 'wife' promptly enrolls in a Miss Mississippi competition which naturally she wins Bracken is a soldier who goes AWOL in order to consolidate his wedding vows when it transpires that his child whose birth is imminent may be declared illegitimate  Lee Marvin appears briefly as Bracken's buddy in this one of the two most satisfying episodes the other is the one featuring constantlybickering pair Rogers and Allen which unbearable situation threatens to sink their earlymorning radio show where they're ironically billed as the ideal married couple! Again the film is handled with utmost professionalism  and is undeniably entertaining while it's on  but which now feels dated and undistinguished.".
+
+<#tt0045317-Bunuel1976-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This is another early Marilyn Monroe picture in this case it's a compendium of stories involving a handful of marriages  presided over by reliable Victor Moore  which are discovered to have been illegal because his term of office hadn't yet officially started when the ceremony was performed! So he's made to send each of these a letter explaining the awkward situation and according to where they stand at that particular moment in their married life see how they decide to act upon it. The couples are played by Fred Allen and Ginger Rogers David Wayne and Marilyn Monroe Paul Douglas and Eve Arden Louis Calhern and Zsa Zsa Gabor and Eddie Bracken and Mitzi Gaynor. The least episode is the one with Douglas and Arden where the latter becomes suspicious of just what goes on during the former's business trips the CalhernGabor episode is mildly interesting for having her turn out a schemer  planning to appropriate her husband's fortune with the help of shyster lawyer Paul Stewartuntil he's saved by the propitious arrival of Moore's letter! Wayne has a hard time adjusting because of Monroe's triumph in a Mrs. Mississippi contest  believing his troubles over when the marriage is revealed to have been null his 'wife' promptly enrolls in a Miss Mississippi competition which naturally she wins Bracken is a soldier who goes AWOL in order to consolidate his wedding vows when it transpires that his child whose birth is imminent may be declared illegitimate  Lee Marvin appears briefly as Bracken's buddy in this one of the two most satisfying episodes the other is the one featuring constantlybickering pair Rogers and Allen which unbearable situation threatens to sink their earlymorning radio show where they're ironically billed as the ideal married couple! Again the film is handled with utmost professionalism  and is undeniably entertaining while it's on  but which now feels dated and undistinguished.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-Bunuel1976>.
+
+<#tt0045317-Bunuel1976-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-Bunuel1976-random>.
+
+<#tt0045317-MartinHafer>
+	schema:about <#tt0045317>;
+	schema:author "MartinHafer";
+	schema:dateCreated "Mon Feb 09 2009 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 7;
+	schema:headline " A lot of funand I sure wish Hollywood had made more films like it.";
+	schema:reviewBody "WE'RE NOT MARRIED was a terrific filmhighly enjoyable and in a format very reminiscent of a great old film IF I HAD A MILLION 1932. Both stories have many small stories that are all connected by a common theme. In MILLION a variety of strangers are given a million dollars and the impact of this on their lives is explored. Here in WE'RE NOT MARRIED the theme is that six marriages turn out NOT to be legal! It seems that the justice of the peace jumped the gun and married these couples just before his license took effect! You hear about the first case they discovered and then the rest of the film follows the remaining five couples. Most of the stories are comical and even the more serious ones still have a funny twist.Each story is excellent though probably the weakest of these is the one unfortunately that gets the most attention when you look up the title on IMDb. This is because it happens to costar Marilyn Monroe. While she is just fine in the film she really has little to do other than to look pretty and her role is one of the smaller ones in the filmso naturally publicity department guys plastered her all over posters and video cases!! In fact no one star dominated in the filmit was truly a group effort. And fortunately none of the stories were poor and a few were simply terrific especially the Louis CalhernZsa Zsa Gabor one as well as the Eddie BrackenMitzi Gaynor ones.By the way one of the other better skits has an interesting story. The Fred AllenGinger Rogers story is quite good but Fred ALSO used this bit on the radio and made it a good bit funnier. Along with Tallulah Bankhead Fred did the same sappy and commercial ridden bit on the radio. Then he did the same bit again with Tallulah assuming the couple were having a really really bad day. They slap the kid and call her names they shoot the canary and have a thoroughly miserable morning. Having this story end this way in the film would have been great but instead a more conventional ending was used. And by the way I am NOT old enough to remember this radio bitbut I heard it on a record album a while back featuring great radio bits.".
+
+<#tt0045317-MartinHafer-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "WE'RE NOT MARRIED was a terrific filmhighly enjoyable and in a format very reminiscent of a great old film IF I HAD A MILLION 1932. Both stories have many small stories that are all connected by a common theme. In MILLION a variety of strangers are given a million dollars and the impact of this on their lives is explored. Here in WE'RE NOT MARRIED the theme is that six marriages turn out NOT to be legal! It seems that the justice of the peace jumped the gun and married these couples just before his license took effect! You hear about the first case they discovered and then the rest of the film follows the remaining five couples. Most of the stories are comical and even the more serious ones still have a funny twist.Each story is excellent though probably the weakest of these is the one unfortunately that gets the most attention when you look up the title on IMDb. This is because it happens to costar Marilyn Monroe. While she is just fine in the film she really has little to do other than to look pretty and her role is one of the smaller ones in the filmso naturally publicity department guys plastered her all over posters and video cases!! In fact no one star dominated in the filmit was truly a group effort. And fortunately none of the stories were poor and a few were simply terrific especially the Louis CalhernZsa Zsa Gabor one as well as the Eddie BrackenMitzi Gaynor ones.By the way one of the other better skits has an interesting story. The Fred AllenGinger Rogers story is quite good but Fred ALSO used this bit on the radio and made it a good bit funnier. Along with Tallulah Bankhead Fred did the same sappy and commercial ridden bit on the radio. Then he did the same bit again with Tallulah assuming the couple were having a really really bad day. They slap the kid and call her names they shoot the canary and have a thoroughly miserable morning. Having this story end this way in the film would have been great but instead a more conventional ending was used. And by the way I am NOT old enough to remember this radio bitbut I heard it on a record album a while back featuring great radio bits.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-MartinHafer>.
+
+<#tt0045317-MartinHafer-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-MartinHafer-random>.
+
+<#tt0045317-rupie>
+	schema:about <#tt0045317>;
+	schema:author "rupie";
+	schema:dateCreated "Wed Aug 09 2000 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " pretty entertaining";
+	schema:reviewBody "This is a thoroughly entertaining little piece of fluff with a great comic premise and good performances from a fine cast. Ginger Rogers and Fred Allen in particular work wonderfully together as the bickering radio stars who must play a loveydovey couple on their morning show. It is too bad that Allen  who has such a wonderfully dry and cynical comic persona sort of a Walter Matthau prototype  didn't make more movies. This is a fun way to while away an hour and a half.".
+
+<#tt0045317-rupie-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This is a thoroughly entertaining little piece of fluff with a great comic premise and good performances from a fine cast. Ginger Rogers and Fred Allen in particular work wonderfully together as the bickering radio stars who must play a loveydovey couple on their morning show. It is too bad that Allen  who has such a wonderfully dry and cynical comic persona sort of a Walter Matthau prototype  didn't make more movies. This is a fun way to while away an hour and a half.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-rupie>.
+
+<#tt0045317-rupie-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-rupie-random>.
+
+<#tt0045317-tavm>
+	schema:about <#tt0045317>;
+	schema:author "tavm";
+	schema:dateCreated "Wed Jun 27 2012 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 9;
+	schema:headline " We're Not Married! makes a wonderful mix of comedy and drama concerning the way various couples react when they find out they're not legally wed";
+	schema:reviewBody "Just watched this on Netflix Streaming. In this one Victor Moore plays a justice of the peace who presided over six weddings before his license to do so took effect. That means none of those couples are legally married. An explanation of one of them is provided in discussion so only five is seen as depicted on screen Fred Allen and Ginger Rogers are the first we actually meet and see attempting to get hitched just before they start their morning radio show. They're the funniest as they argue just before airtime before then acting all loveydovey plugging various sponsors. Reminds me of an actual skit Allen did with Tallulah Bankhead on his actual radio show in which they also played a married couple on the air doing both the lovey and bickering version of their banter that I heard once on a long playing 33 13 rpm record back in the late '80s. The next segment has Marilyn Monroe as a Mrs. America contestant while hubby David Wayne is taking care of their baby and doing housework. Then there's Eve Arden and Paul Douglas as a slightly boring couple with Douglas doing a little fantasizing with other women when he gets his letter. The next one has Louis Calhern as a Dallas oil executive talk about coincidence as this is my next review concerning original Dallas cast members in my movieTV appearances list in chronological order though the cast member I'm referring to here was Wayne who was the first Digger Barnes there who gets a divorce summons from Zsa Zsa Gabor known for many such cases herself in her reallife future. And finally there's Eddie Bracken as an Army man who doesn't want his pregnant wifeMitzi Gaynorto birth an illegitimate child while he's away. Like I said the first segment was the funniest with the MonroeWayne CalhernGabor and ArdenDouglas ones also providing some laughs but the most touching is the last one. By the way it's fascinating seeing Lee Marvin in that one not playing a tough guy. In summary We're Not Married is quite a good mix of various short stories put in one feature.".
+
+<#tt0045317-tavm-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Just watched this on Netflix Streaming. In this one Victor Moore plays a justice of the peace who presided over six weddings before his license to do so took effect. That means none of those couples are legally married. An explanation of one of them is provided in discussion so only five is seen as depicted on screen Fred Allen and Ginger Rogers are the first we actually meet and see attempting to get hitched just before they start their morning radio show. They're the funniest as they argue just before airtime before then acting all loveydovey plugging various sponsors. Reminds me of an actual skit Allen did with Tallulah Bankhead on his actual radio show in which they also played a married couple on the air doing both the lovey and bickering version of their banter that I heard once on a long playing 33 13 rpm record back in the late '80s. The next segment has Marilyn Monroe as a Mrs. America contestant while hubby David Wayne is taking care of their baby and doing housework. Then there's Eve Arden and Paul Douglas as a slightly boring couple with Douglas doing a little fantasizing with other women when he gets his letter. The next one has Louis Calhern as a Dallas oil executive talk about coincidence as this is my next review concerning original Dallas cast members in my movieTV appearances list in chronological order though the cast member I'm referring to here was Wayne who was the first Digger Barnes there who gets a divorce summons from Zsa Zsa Gabor known for many such cases herself in her reallife future. And finally there's Eddie Bracken as an Army man who doesn't want his pregnant wifeMitzi Gaynorto birth an illegitimate child while he's away. Like I said the first segment was the funniest with the MonroeWayne CalhernGabor and ArdenDouglas ones also providing some laughs but the most touching is the last one. By the way it's fascinating seeing Lee Marvin in that one not playing a tough guy. In summary We're Not Married is quite a good mix of various short stories put in one feature.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-tavm>.
+
+<#tt0045317-tavm-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-tavm-random>.
+
+<#tt0045317-MtDewdependant>
+	schema:about <#tt0045317>;
+	schema:author "MtDewdependant";
+	schema:dateCreated "Sun Jul 06 2003 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 7;
+	schema:headline " Not bad not bad";
+	schema:reviewBody "This was one of Marilyn's earliest films. It's a cute little movie and a mustsee for Marilyn fans.To me the best part was at the end with Ava Gabor. That was hilarious.If you're up for a good light comedy pop this one in one night relax  enjoy!".
+
+<#tt0045317-MtDewdependant-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This was one of Marilyn's earliest films. It's a cute little movie and a mustsee for Marilyn fans.To me the best part was at the end with Ava Gabor. That was hilarious.If you're up for a good light comedy pop this one in one night relax  enjoy!";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-MtDewdependant>.
+
+<#tt0045317-MtDewdependant-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-MtDewdependant-random>.
+
+<#tt0045317-SimonJack>
+	schema:about <#tt0045317>;
+	schema:author "SimonJack";
+	schema:dateCreated "Mon Sep 02 2019 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 4;
+	schema:headline " Big cast in this multitale comedy romance";
+	schema:reviewBody "A stellar cast fills this comedy drama about five couples who went to Niagara Falls to get married only to learn two years later that their marriages weren't legal. These couples now live all across the country and the news that they aren't legally married affects each couple differently. There's humor in each couple's particular circumstances and a couple of them are real lulus.We're Not Married spans a couple of years during WW II. It begins when Melvin Bush marries his first couple on Christmas Eve. Ramona and Steve Gladwyn Ginger Rogers and Fred Allen are the lucky first couple to be married by the new justice of the peace played by Victor Moore. Jane Darwell plays Mrs. Bush and helps the befuddled elderly and newly commissioned JP do his thing. The film doesn't show the other four couples getting hitched by Bush but they were married by him between Christmas and New Year's Eve that year.The trouble for the couples  and ostensibly the State of New York began when Attorney General Frank Bush discovered that his cousin Melvin had married five couples before the effective date of his commission and appointment as a JP. Melvin has been summoned to the office of Governor Bush where all three meet over the problem. It turns out that when Melvin got the notice of his appointment in the mail he didn't bother to read it carefully and note that his commission wasn't effective until the first of the new yearBy now the humor is obvious in the apparent nepotism within the Bush family. The governor and attorney general had to stand for election but cousin Melvin was appointed a justice of the peace by his attorney general cousin. After some discussion about the seriousness of the matter they decide that the state must notify each of the five couples that their marriages were not legal so that the couples can take whatever followup steps they desire. Those individual stories unfold from there.The film has a great cast of wellknown actors of the day. Besides those already mentioned Marilyn Monroe David Wayne Eve Arden Paul Douglas Eddie Bracken Mitzi Gaynor Louis Cathern and Zsa Zsa Gabor play the roles of the other four married couples. Each story is different and all are good and wellacted.But the best is saved for last. Calhern and Gabor play Frederick and Eve Melrose. From the other stories I couldn't guess how this one would come out. But it has the funniest and most satisfying ending. Most people adults especially should enjoy this film. Not that it's an adult film but it's the stuff of grownups that most kids find boring. That was so in the early 20th century and it seems even more so today.".
+
+<#tt0045317-SimonJack-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "A stellar cast fills this comedy drama about five couples who went to Niagara Falls to get married only to learn two years later that their marriages weren't legal. These couples now live all across the country and the news that they aren't legally married affects each couple differently. There's humor in each couple's particular circumstances and a couple of them are real lulus.We're Not Married spans a couple of years during WW II. It begins when Melvin Bush marries his first couple on Christmas Eve. Ramona and Steve Gladwyn Ginger Rogers and Fred Allen are the lucky first couple to be married by the new justice of the peace played by Victor Moore. Jane Darwell plays Mrs. Bush and helps the befuddled elderly and newly commissioned JP do his thing. The film doesn't show the other four couples getting hitched by Bush but they were married by him between Christmas and New Year's Eve that year.The trouble for the couples  and ostensibly the State of New York began when Attorney General Frank Bush discovered that his cousin Melvin had married five couples before the effective date of his commission and appointment as a JP. Melvin has been summoned to the office of Governor Bush where all three meet over the problem. It turns out that when Melvin got the notice of his appointment in the mail he didn't bother to read it carefully and note that his commission wasn't effective until the first of the new yearBy now the humor is obvious in the apparent nepotism within the Bush family. The governor and attorney general had to stand for election but cousin Melvin was appointed a justice of the peace by his attorney general cousin. After some discussion about the seriousness of the matter they decide that the state must notify each of the five couples that their marriages were not legal so that the couples can take whatever followup steps they desire. Those individual stories unfold from there.The film has a great cast of wellknown actors of the day. Besides those already mentioned Marilyn Monroe David Wayne Eve Arden Paul Douglas Eddie Bracken Mitzi Gaynor Louis Cathern and Zsa Zsa Gabor play the roles of the other four married couples. Each story is different and all are good and wellacted.But the best is saved for last. Calhern and Gabor play Frederick and Eve Melrose. From the other stories I couldn't guess how this one would come out. But it has the funniest and most satisfying ending. Most people adults especially should enjoy this film. Not that it's an adult film but it's the stuff of grownups that most kids find boring. That was so in the early 20th century and it seems even more so today.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-SimonJack>.
+
+<#tt0045317-SimonJack-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-SimonJack-random>.
+
+<#tt0045317-RodrigAndrisan>
+	schema:about <#tt0045317>;
+	schema:author "RodrigAndrisan";
+	schema:dateCreated "Wed Dec 27 2017 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 6;
+	schema:headline " A very good movie!";
+	schema:reviewBody "Marilyn fails to steal the movie but she is very close too small role in one of those 5 episodes. All the other actors are excellent and all the stories are exciting true like in real life and the the whole movie is a real moral lesson. A true delight in seeing so many precious stars some of them smaller some of them bigger such as Ginger Rogers Mitzi Gaynor Zsa Zsa Gabor Louis Calhern Jane Darwell Victor Moore etc. They all have real charm they are very talented they are natural credible. Very entertaining!".
+
+<#tt0045317-RodrigAndrisan-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Marilyn fails to steal the movie but she is very close too small role in one of those 5 episodes. All the other actors are excellent and all the stories are exciting true like in real life and the the whole movie is a real moral lesson. A true delight in seeing so many precious stars some of them smaller some of them bigger such as Ginger Rogers Mitzi Gaynor Zsa Zsa Gabor Louis Calhern Jane Darwell Victor Moore etc. They all have real charm they are very talented they are natural credible. Very entertaining!";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-RodrigAndrisan>.
+
+<#tt0045317-RodrigAndrisan-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-RodrigAndrisan-random>.
+
+<#tt0045317-dsmith6068>
+	schema:about <#tt0045317>;
+	schema:author "dsmith6068";
+	schema:dateCreated "Sat Oct 14 2017 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " Common Law Marriage";
+	schema:reviewBody "The section with Louis Calhern getting out of nasty divorce with gold digger Zsa Zsa Gabor due to the letter stating they weren't married was great but probably doesn't work. I believe they lived in Dallas Texas which was and is a common law state. In Texas a common law marriage can be created if a couple meets a threeprong test showing evidence of all of the followingfirst an agreement to be married after such agreement cohabitation within the State of Texas and after such agreement representation to others within the State of Texas that the parties are married. So they were probably legally married.Rich people beware always get a prenuptial agreement which existed under different names even when this movie was made".
+
+<#tt0045317-dsmith6068-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "The section with Louis Calhern getting out of nasty divorce with gold digger Zsa Zsa Gabor due to the letter stating they weren't married was great but probably doesn't work. I believe they lived in Dallas Texas which was and is a common law state. In Texas a common law marriage can be created if a couple meets a threeprong test showing evidence of all of the followingfirst an agreement to be married after such agreement cohabitation within the State of Texas and after such agreement representation to others within the State of Texas that the parties are married. So they were probably legally married.Rich people beware always get a prenuptial agreement which existed under different names even when this movie was made";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-dsmith6068>.
+
+<#tt0045317-dsmith6068-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-dsmith6068-random>.
+
+<#tt0045317-Gideon24>
+	schema:about <#tt0045317>;
+	schema:author "Gideon24";
+	schema:dateCreated "Tue Sep 27 2016 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 4;
+	schema:headline " A sparkling allstar cast in a comedy classic";
+	schema:reviewBody "A sparkling allstar cast and a clever cinematic concept are the primary selling points of a surprisingly fun 1952 comedy called We're Not Married.Nunnally Johnson who wrote the screenplay for How To Marry the Millionaire also penned this story of a dotty old justice of the peace Victor Moore who receives his appointment papers before they actually go into effect and marries five different couples without realizing that he wasn't an actual justice yet. Two years later the snafu comes to light and the five couples are all sent a letter informing them they are not legally married. What is so fun about this movie is that the news that they're not legally married anymore brings unexpected reactions from the various couples and the lives they have built together in two years.Ginger Rogers and Fred Allen play a couple who have a radio show together but they hate each other however their continued employment makes being married a contractual obligation Marilyn Monroe plays a housewife and mother who is the breadwinner in her household by entering beauty contests for married women Louis Calhern plays a wealthy businessman about to be taken to the cleaners by his hedonistic wife Zsa Zsa Gabor Paul Douglas and Eve Arden play a couple who are just in a rut and Eddie Bracken plays a soldier who learns his bride Mitzi Gaynor is pregnant and goes to extreme measure to make sure his child will be born legitimately.Despite the multiple story lines this movie is surprisingly economic and moves along at a very nice pace making each story just long enough to make the audience care but not become bored with them either. The performances are terrific with standout work from Rogers Allen David Wayne as Monroe's husband and especially Calhern who is absolutely brilliant in his vignette with Gabor. The film doesn't provide a lot in terms of production values but what it does is provide solid entertainment that is still watchable some 60 years later".
+
+<#tt0045317-Gideon24-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "A sparkling allstar cast and a clever cinematic concept are the primary selling points of a surprisingly fun 1952 comedy called We're Not Married.Nunnally Johnson who wrote the screenplay for How To Marry the Millionaire also penned this story of a dotty old justice of the peace Victor Moore who receives his appointment papers before they actually go into effect and marries five different couples without realizing that he wasn't an actual justice yet. Two years later the snafu comes to light and the five couples are all sent a letter informing them they are not legally married. What is so fun about this movie is that the news that they're not legally married anymore brings unexpected reactions from the various couples and the lives they have built together in two years.Ginger Rogers and Fred Allen play a couple who have a radio show together but they hate each other however their continued employment makes being married a contractual obligation Marilyn Monroe plays a housewife and mother who is the breadwinner in her household by entering beauty contests for married women Louis Calhern plays a wealthy businessman about to be taken to the cleaners by his hedonistic wife Zsa Zsa Gabor Paul Douglas and Eve Arden play a couple who are just in a rut and Eddie Bracken plays a soldier who learns his bride Mitzi Gaynor is pregnant and goes to extreme measure to make sure his child will be born legitimately.Despite the multiple story lines this movie is surprisingly economic and moves along at a very nice pace making each story just long enough to make the audience care but not become bored with them either. The performances are terrific with standout work from Rogers Allen David Wayne as Monroe's husband and especially Calhern who is absolutely brilliant in his vignette with Gabor. The film doesn't provide a lot in terms of production values but what it does is provide solid entertainment that is still watchable some 60 years later";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-Gideon24>.
+
+<#tt0045317-Gideon24-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-Gideon24-random>.
+
+<#tt0045317-zetes>
+	schema:about <#tt0045317>;
+	schema:author "zetes";
+	schema:dateCreated "Sun Jun 03 2012 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 3;
+	schema:headline " Painfully lame";
+	schema:reviewBody "Painfully lame comedy. Victor Moore gets a license to marry people on Christmas but doesn't realize it doesn't go into effect until New Year's Day. In that span he marries five couples and this film tells the five stories of what happens when they find out. The answer nothing at all interesting. Not a single one of these scenarios is the least bit amusing. Only Marilyn Monroe completists ever need watch this film. I seriously don't even remember her story though. I think she was a beauty pageant contestant who finds out she can't compete if she's married but then she finds out she's not so everything's okay. That's the level of storytelling we're dealing with here. Also starring Ginger Rogers Mitzi Gaynor Zsa Zsa Gabor Paul Douglas and Jane Darwell.".
+
+<#tt0045317-zetes-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Painfully lame comedy. Victor Moore gets a license to marry people on Christmas but doesn't realize it doesn't go into effect until New Year's Day. In that span he marries five couples and this film tells the five stories of what happens when they find out. The answer nothing at all interesting. Not a single one of these scenarios is the least bit amusing. Only Marilyn Monroe completists ever need watch this film. I seriously don't even remember her story though. I think she was a beauty pageant contestant who finds out she can't compete if she's married but then she finds out she's not so everything's okay. That's the level of storytelling we're dealing with here. Also starring Ginger Rogers Mitzi Gaynor Zsa Zsa Gabor Paul Douglas and Jane Darwell.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-zetes>.
+
+<#tt0045317-zetes-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-zetes-random>.
+
+<#tt0045317-writers_reign>
+	schema:about <#tt0045317>;
+	schema:author "writers_reign";
+	schema:dateCreated "Sat Jun 04 2011 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:headline " Five Against The Spouse";
+	schema:reviewBody "In 1952 the compendium film that dated back to at least 1932s Rome Express still had a little steam in it and We're Not Married was Fox's second entry in the genre following O'Henry's Full House. The premise is that old chestnut in which several disparate couples learn that their marriage is invalid. In chronological order the couples are Fred Allen and Ginger Rogers and once you get past the stillattractive Rogers settling for Fred Allen it's not a bad start. Allen who of course made his name on radio and seldom ventured before the camera very possibly had a hand in the script which is essentially a diatribe against sponsorheavy radio shows. He and Rogers are the only couple actually seen getting wed by Victor Moore with wife Jane Darwell as witness and only do so in order to get their own Mr and Mrs radio show an obvious takeoff of Dorothy Kilgallan and Dick Kalmar. Next is the shortest sequence which is ironic as it is the one featuring Marilyn Monroe then just coming up but today 'selling' the DVD. She plays a Beauty Quenn 'Mrs. Mississippi' and hubby David Wayne is not a happy bunny because manager James Gleason is constantly whisking her away on PR trips. This sequence typifies the sloppiness of the film as a whole the letter informing Monroe and Wayne of their illegal marriage is clearly shown addressed to their home in Mississippi yet NO ONE in the entire sequence has a southern accent. The third segment involves two fine players in Eve Arden and Paul Douglas and both are totally wasted. Then comes Louis Calhern married to golddigger Zsa Zsa Gabor the good thing about this one is that Paul Stewart is also on hand as Gabors lawyer. Finally we get Mitzi Gaynor married to Eddie Bracken and pregnant. Bracken a soldier is literally shipping out overseas and is forced to go AWOL in order to remarry Gaynor and ensure his offspring's legitimacy this was 1952 remember. One of the best things about this is the casting not only the featured players but also the uncredited players Lee Marvin with enough lines to justify a credit surely Byron Foulgar Tom Powers Dabs Greer and Emile Meyer. Far from great but equally far from chopped liver.".
+
+<#tt0045317-writers_reign-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "In 1952 the compendium film that dated back to at least 1932s Rome Express still had a little steam in it and We're Not Married was Fox's second entry in the genre following O'Henry's Full House. The premise is that old chestnut in which several disparate couples learn that their marriage is invalid. In chronological order the couples are Fred Allen and Ginger Rogers and once you get past the stillattractive Rogers settling for Fred Allen it's not a bad start. Allen who of course made his name on radio and seldom ventured before the camera very possibly had a hand in the script which is essentially a diatribe against sponsorheavy radio shows. He and Rogers are the only couple actually seen getting wed by Victor Moore with wife Jane Darwell as witness and only do so in order to get their own Mr and Mrs radio show an obvious takeoff of Dorothy Kilgallan and Dick Kalmar. Next is the shortest sequence which is ironic as it is the one featuring Marilyn Monroe then just coming up but today 'selling' the DVD. She plays a Beauty Quenn 'Mrs. Mississippi' and hubby David Wayne is not a happy bunny because manager James Gleason is constantly whisking her away on PR trips. This sequence typifies the sloppiness of the film as a whole the letter informing Monroe and Wayne of their illegal marriage is clearly shown addressed to their home in Mississippi yet NO ONE in the entire sequence has a southern accent. The third segment involves two fine players in Eve Arden and Paul Douglas and both are totally wasted. Then comes Louis Calhern married to golddigger Zsa Zsa Gabor the good thing about this one is that Paul Stewart is also on hand as Gabors lawyer. Finally we get Mitzi Gaynor married to Eddie Bracken and pregnant. Bracken a soldier is literally shipping out overseas and is forced to go AWOL in order to remarry Gaynor and ensure his offspring's legitimacy this was 1952 remember. One of the best things about this is the casting not only the featured players but also the uncredited players Lee Marvin with enough lines to justify a credit surely Byron Foulgar Tom Powers Dabs Greer and Emile Meyer. Far from great but equally far from chopped liver.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-writers_reign>.
+
+<#tt0045317-writers_reign-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-writers_reign-random>.
+
+<#tt0045317-jarrodmcdonald_1>
+	schema:about <#tt0045317>;
+	schema:author "jarrodmcdonald_1";
+	schema:dateCreated "Sat Mar 01 2014 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:headline " We're living in sin";
+	schema:reviewBody "Are you ready for it? Here it comes! Married folks learn their weddings were not exactly legal. Yes it's true!There are quite a few complications in this clever romp from 20th Century Fox. Screenwriter Nunnally Johnson has created a masterpiece and come up with a smart way to subvert the production code. In the story he presents a vast array of characters that have received the benefit of marriage without actually having been hitched. In one couple's case they already have a child! At least most of the couples on screen want to stay marriedget married again. Which is more than most of the couples who probably are watching this movie.".
+
+<#tt0045317-jarrodmcdonald_1-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Are you ready for it? Here it comes! Married folks learn their weddings were not exactly legal. Yes it's true!There are quite a few complications in this clever romp from 20th Century Fox. Screenwriter Nunnally Johnson has created a masterpiece and come up with a smart way to subvert the production code. In the story he presents a vast array of characters that have received the benefit of marriage without actually having been hitched. In one couple's case they already have a child! At least most of the couples on screen want to stay marriedget married again. Which is more than most of the couples who probably are watching this movie.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-jarrodmcdonald_1>.
+
+<#tt0045317-jarrodmcdonald_1-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-jarrodmcdonald_1-random>.
+
+<#tt0045317-JohnHowardReid>
+	schema:about <#tt0045317>;
+	schema:author "JohnHowardReid";
+	schema:dateCreated "Sat Jun 09 2018 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:headline " The first episode is also the best!";
+	schema:reviewBody "Copyright 8 July 1952 by 20th CenturyFox Film Corp. New York opening at the Roxy 11 July 1952. U.S. release 10 July 1952. U.K. release September 1952. Australian release 29 January 1953. Sydney opening at the Mayfair. 85 minutes.SYNOPSIS A Justice of the Peace discovers that five marriages he performed two and a half years ago are not legally valid.NOTES Suggested by the 1911 stage play The Honeymoon by Arnold Bennett in which after being married by an imposter in cleric's clothing a couple are stopped on their honeymoon.One of the top thirty attractions at Australian cinemas for 1953. COMMENT Despite a copout conclusion which could well be eliminated now the clammy hand of censorship no longer holds the filmmaker in total bondage this is an entertaining and at times incisive look at what the State is pleased to term marriage. We are of course here concerned only with marriage as a civil and legal institution. The first episode is undoubtedly the best with a rather bitter pill cleverly sugarcoated with deadly humor which spares neither the principal characters nor their radio program and the gullible public it attracts. The script mercilessly flays their greed which forces them to live with a partner each despises and cynically enact a life of hypocrisy and deceit. They are both really tragic figures who because of a fatal weakness in their characters are unable to escape from the hideous daily round of their lives. There is laughter here because their boredom with each other their namecalling and abuse the crass commercialism of their radio program has been skilfully exaggerated so that it becomes ludicrous and ridiculous enough to be amusing  but some of us may find our laughter has a hollow and even a painful ring. Both Fred Allen and Ginger Rogers give welljudged and perfectly timed portrayals deftly conveying a wide range of emotions in the space of some 15 minutes. One of the reasons the characters are so believable despite the satiric exaggeration of their roles and milieu is that they are so wellrounded both in the writing and the acting. The support cast Maurice Cass playing the organ in a wordless role is excellent. Edmund Goulding's direction is stylish and effective. He has a keen eye for setting a scene and knows when and how to use a long static takes to get the script's point across.The other episodes don't come up to this standard. Marilyn Monroe's is slight but concise and has a satiric edge to it. She herself gives a most engaging portrayal and is most attractively costumed and gets okay support from Wayne and Gleason. And we like the bit with Paul Douglas and Eve Arden ensconced in the lap of luxury bored with life and each other but too lazy and in Douglas' case too greedy also to change it which also has a nice agreeably satiric touch though as with the MM piece the touch isn't exaggerated so the humor is mild rather than full  which is how it should be since both stories are slight and could not carry any more.But when we come to the last episodes we find the stories are overlong both in the writing and the acting. Louis Calhern's movements are so slow and he makes his character so incredibly dumb he drags the story which is slight way beyond its point of interest. The climax is dragged out until it stops being funny and becomes plain boring. Zsa Zsa Gabor also overacts to the stage where she is no longer interesting. Still Marjorie Weaver pops in and out of a scene quite arrestingly and Paul Stewart gives another of his cool nonchalant studies of legal villainy though his part too is drawn out beyond its welcome.As for the last episode it is the least pleasing. Mitzi Gaynor is photographed unattractively and is even more boring than slowtalking fumbling Eddie Bracken. The conclusion descends into pure bathos.Aside from the sprightly and apt music scoring especially during the 1st episode production credits are capable if for the most part undistinguished we like the sharply edited and atmospherically photographed fantasy montage in the ArdenDouglas sequence and we like the pleasingly attractive sets in this sequence and the AllenRogers episode  Miss Rogers incidentally is pleasingly photographed and costumed. Production values are well up to A standard.".
+
+<#tt0045317-JohnHowardReid-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Copyright 8 July 1952 by 20th CenturyFox Film Corp. New York opening at the Roxy 11 July 1952. U.S. release 10 July 1952. U.K. release September 1952. Australian release 29 January 1953. Sydney opening at the Mayfair. 85 minutes.SYNOPSIS A Justice of the Peace discovers that five marriages he performed two and a half years ago are not legally valid.NOTES Suggested by the 1911 stage play The Honeymoon by Arnold Bennett in which after being married by an imposter in cleric's clothing a couple are stopped on their honeymoon.One of the top thirty attractions at Australian cinemas for 1953. COMMENT Despite a copout conclusion which could well be eliminated now the clammy hand of censorship no longer holds the filmmaker in total bondage this is an entertaining and at times incisive look at what the State is pleased to term marriage. We are of course here concerned only with marriage as a civil and legal institution. The first episode is undoubtedly the best with a rather bitter pill cleverly sugarcoated with deadly humor which spares neither the principal characters nor their radio program and the gullible public it attracts. The script mercilessly flays their greed which forces them to live with a partner each despises and cynically enact a life of hypocrisy and deceit. They are both really tragic figures who because of a fatal weakness in their characters are unable to escape from the hideous daily round of their lives. There is laughter here because their boredom with each other their namecalling and abuse the crass commercialism of their radio program has been skilfully exaggerated so that it becomes ludicrous and ridiculous enough to be amusing  but some of us may find our laughter has a hollow and even a painful ring. Both Fred Allen and Ginger Rogers give welljudged and perfectly timed portrayals deftly conveying a wide range of emotions in the space of some 15 minutes. One of the reasons the characters are so believable despite the satiric exaggeration of their roles and milieu is that they are so wellrounded both in the writing and the acting. The support cast Maurice Cass playing the organ in a wordless role is excellent. Edmund Goulding's direction is stylish and effective. He has a keen eye for setting a scene and knows when and how to use a long static takes to get the script's point across.The other episodes don't come up to this standard. Marilyn Monroe's is slight but concise and has a satiric edge to it. She herself gives a most engaging portrayal and is most attractively costumed and gets okay support from Wayne and Gleason. And we like the bit with Paul Douglas and Eve Arden ensconced in the lap of luxury bored with life and each other but too lazy and in Douglas' case too greedy also to change it which also has a nice agreeably satiric touch though as with the MM piece the touch isn't exaggerated so the humor is mild rather than full  which is how it should be since both stories are slight and could not carry any more.But when we come to the last episodes we find the stories are overlong both in the writing and the acting. Louis Calhern's movements are so slow and he makes his character so incredibly dumb he drags the story which is slight way beyond its point of interest. The climax is dragged out until it stops being funny and becomes plain boring. Zsa Zsa Gabor also overacts to the stage where she is no longer interesting. Still Marjorie Weaver pops in and out of a scene quite arrestingly and Paul Stewart gives another of his cool nonchalant studies of legal villainy though his part too is drawn out beyond its welcome.As for the last episode it is the least pleasing. Mitzi Gaynor is photographed unattractively and is even more boring than slowtalking fumbling Eddie Bracken. The conclusion descends into pure bathos.Aside from the sprightly and apt music scoring especially during the 1st episode production credits are capable if for the most part undistinguished we like the sharply edited and atmospherically photographed fantasy montage in the ArdenDouglas sequence and we like the pleasingly attractive sets in this sequence and the AllenRogers episode  Miss Rogers incidentally is pleasingly photographed and costumed. Production values are well up to A standard.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-JohnHowardReid>.
+
+<#tt0045317-JohnHowardReid-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-JohnHowardReid-random>.
+
+<#tt0045317-thejcowboy22>
+	schema:about <#tt0045317>;
+	schema:author "thejcowboy22";
+	schema:dateCreated "Wed May 17 2017 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:headline " Mulligan Marriage";
+	schema:reviewBody "When it comes to marriage I been down the alter three times. Yes that's What a i said. Three times. Two in front of a Rabbi and once in front of a judge of the court of New York State. Five separate novellas a bit dated for the contemporary viewer but I watched this movie twice and second impressions did some justice to this film. Basic story line Two Golden agers Newly appointed Justice of the Peace Melvin Bush Victor Moore and his Wife Mrs. Bush played by Jane Darwell receive a disturbing letter that reads that Five couple they married were not legal due to the fact that the justice's license wasn't processed while he married five couples at his residence. All five couple are notified with different set of circumstances. Marilyn Monroe plays a professional beauty pageant contestant and bread winner as Mrs. America but the letter states that she never married. Her husband Jeff David Wayne and babysitter realize she can't run as Mrs. America. Story number two has a popular radio couple live from their luxury penthouse sipping coffee and gossip about their past evenings together. Yet off the air neither one speaks to each other. Fred Allen and Ginger Rogers play their parts to perfection as this episode was very representative of today's celebrities. Our third portrait shows two of my favorite character actors Eve Arden and Paul Douglas as Katie and Hector Woodruff. Yet the sketch was promoting boredom in the extreme. Reason enough to take a trip to the kitchen or bathroom for a mild break. The fourth marriage mockery was my favorite and should be a benchmark for all elderly men marrying fast woman who are only out for their husbands wealth. Zsa Zsa Gabor sets up her husband Louis Calhern in an adultery scam. Caught on camera with witnesses Zsa Zsa quickly with attorney by her side wants whats coming to them financially. Love the stunning reaction when the telegram comes in that exclaims that she was never married . The fifth and final entry was poignant as there's no question that Newly drafted Willie Fisher Eddie Braken and wife Patsy Mitzi Gaynorlove each other deeply and are newly expected parents. Trouble is the fateful telegram is received after our new army recruit is in travel to his basic training center by train. Private Fisher doesn't want to go off to Korea without being legally married worried that he might not make it back and the shame and humiliation to the child that comes with it. Patsy travels on the next train as our desperate couple tries to straighten things out before the battle. When I thought about it if I were to get married a third time I would use a fake Justice of the Peace rather than a prenuptial agreement. More discreet and effective if the true colors emerge from the newly appointed spouse.".
+
+<#tt0045317-thejcowboy22-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "When it comes to marriage I been down the alter three times. Yes that's What a i said. Three times. Two in front of a Rabbi and once in front of a judge of the court of New York State. Five separate novellas a bit dated for the contemporary viewer but I watched this movie twice and second impressions did some justice to this film. Basic story line Two Golden agers Newly appointed Justice of the Peace Melvin Bush Victor Moore and his Wife Mrs. Bush played by Jane Darwell receive a disturbing letter that reads that Five couple they married were not legal due to the fact that the justice's license wasn't processed while he married five couples at his residence. All five couple are notified with different set of circumstances. Marilyn Monroe plays a professional beauty pageant contestant and bread winner as Mrs. America but the letter states that she never married. Her husband Jeff David Wayne and babysitter realize she can't run as Mrs. America. Story number two has a popular radio couple live from their luxury penthouse sipping coffee and gossip about their past evenings together. Yet off the air neither one speaks to each other. Fred Allen and Ginger Rogers play their parts to perfection as this episode was very representative of today's celebrities. Our third portrait shows two of my favorite character actors Eve Arden and Paul Douglas as Katie and Hector Woodruff. Yet the sketch was promoting boredom in the extreme. Reason enough to take a trip to the kitchen or bathroom for a mild break. The fourth marriage mockery was my favorite and should be a benchmark for all elderly men marrying fast woman who are only out for their husbands wealth. Zsa Zsa Gabor sets up her husband Louis Calhern in an adultery scam. Caught on camera with witnesses Zsa Zsa quickly with attorney by her side wants whats coming to them financially. Love the stunning reaction when the telegram comes in that exclaims that she was never married . The fifth and final entry was poignant as there's no question that Newly drafted Willie Fisher Eddie Braken and wife Patsy Mitzi Gaynorlove each other deeply and are newly expected parents. Trouble is the fateful telegram is received after our new army recruit is in travel to his basic training center by train. Private Fisher doesn't want to go off to Korea without being legally married worried that he might not make it back and the shame and humiliation to the child that comes with it. Patsy travels on the next train as our desperate couple tries to straighten things out before the battle. When I thought about it if I were to get married a third time I would use a fake Justice of the Peace rather than a prenuptial agreement. More discreet and effective if the true colors emerge from the newly appointed spouse.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-thejcowboy22>.
+
+<#tt0045317-thejcowboy22-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-thejcowboy22-random>.
+
+<#tt0045317-weezeralfalfa>
+	schema:about <#tt0045317>;
+	schema:author "weezeralfalfa";
+	schema:dateCreated "Sat Dec 31 2016 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:headline " Anthology drama not comedy about legal marriage problems";
+	schema:reviewBody "This is a potentially interesting topic with an allstar cast largely wasted in a screenplay that's too dispersed with too little humor. I regard this film as essentially an anthology of little dramas some with a measure of comedic content. I suspect probably 3 couples rather than 5 would be optimal in the time given.Reviewer dejimd points out that lack of a legal marriage license doesn't necessarily mean that legally a couple is not considered married. Thus the apparently difficult position of Eddie Bracken and Mitzi Gaynor in regard to her pregnancy is not as serious as they had feared. On the other hand golddigging Zsa Zsa need not have fainted when she received the notice that her marriage certificate was invalid because the justice of peace that married them was new and not legally able to perform marriage ceremonies for another week. It's perhaps surprising that the bickering couple played by Fred Allen and Ginger Rogers decide to undergo a legally valid marriage ceremony. My guess is that they made sure they were legally married because their jobs at the radio station depended on their being married to each other.The Paul Douglas and Eva Arden couple seemed bored with each other with no baby to provide a common interest. I wouldn't be surprised if they had rejected a shoring up of the legality of their marriage. I suspect they may have bowed to inertia in hopes their relationship would eventually get better. The David Wayne  Marylyn Monroe pair look to have a shortterm economic strategy with David serving as the stayathome babysitter while she is traveling around competing in beauty contests. I correctly guessed that they would renew their marriage ceremony.Of course we wouldn't expect Louis Calhern to agree to make his marriage with golddigging Zsa Zsa look any more valid.In conclusion being as how the premise that the common problem of these 5 couples is that they are not legally married is suspect and the supposed humor is minimal I can't recommend this film unless you have a star actor you want to see.".
+
+<#tt0045317-weezeralfalfa-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This is a potentially interesting topic with an allstar cast largely wasted in a screenplay that's too dispersed with too little humor. I regard this film as essentially an anthology of little dramas some with a measure of comedic content. I suspect probably 3 couples rather than 5 would be optimal in the time given.Reviewer dejimd points out that lack of a legal marriage license doesn't necessarily mean that legally a couple is not considered married. Thus the apparently difficult position of Eddie Bracken and Mitzi Gaynor in regard to her pregnancy is not as serious as they had feared. On the other hand golddigging Zsa Zsa need not have fainted when she received the notice that her marriage certificate was invalid because the justice of peace that married them was new and not legally able to perform marriage ceremonies for another week. It's perhaps surprising that the bickering couple played by Fred Allen and Ginger Rogers decide to undergo a legally valid marriage ceremony. My guess is that they made sure they were legally married because their jobs at the radio station depended on their being married to each other.The Paul Douglas and Eva Arden couple seemed bored with each other with no baby to provide a common interest. I wouldn't be surprised if they had rejected a shoring up of the legality of their marriage. I suspect they may have bowed to inertia in hopes their relationship would eventually get better. The David Wayne  Marylyn Monroe pair look to have a shortterm economic strategy with David serving as the stayathome babysitter while she is traveling around competing in beauty contests. I correctly guessed that they would renew their marriage ceremony.Of course we wouldn't expect Louis Calhern to agree to make his marriage with golddigging Zsa Zsa look any more valid.In conclusion being as how the premise that the common problem of these 5 couples is that they are not legally married is suspect and the supposed humor is minimal I can't recommend this film unless you have a star actor you want to see.";
+	onyx:describesObject <#tt0045317>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0045317-weezeralfalfa>.
+
+<#tt0045317-weezeralfalfa-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0045317/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0045317-weezeralfalfa-random>.
+
+<#RbertKoltai>
+	rdf:type schema:Person;
+	schema:name "Rbert Koltai".
+
+<#MihlySzabados>
+	rdf:type schema:Person;
+	schema:name "Mihly Szabados".
+
+<#GborMt>
+	rdf:type schema:Person;
+	schema:name "Gbor Mt".
+
+<#TamsJordn>
+	rdf:type schema:Person;
+	schema:name "Tams Jordn".
+
+<#KathleenGati>
+	rdf:type schema:Person;
+	schema:name "Kathleen Gati".
+
+<#AndorLukts>
+	rdf:type schema:Person;
+	schema:name "Andor Lukts".
+
+<#GyrgyHunyadkrthy>
+	rdf:type schema:Person;
+	schema:name "Gyrgy Hunyadkrthy".
+
+<#PterBlask>
+	rdf:type schema:Person;
+	schema:name "Pter Blask".
+
+<#JuditPogny>
+	rdf:type schema:Person;
+	schema:name "Judit Pogny".
+
+<#LiliMonori>
+	rdf:type schema:Person;
+	schema:name "Lili Monori".
+
+<#LszlVajda>
+	rdf:type schema:Person;
+	schema:name "Lszl Vajda".
+
+<#KatiLzr>
+	rdf:type schema:Person;
+	schema:name "Kati Lzr".
+
+<#LszlCsknyi>
+	rdf:type schema:Person;
+	schema:name "Lszl Csknyi".
+
+<#MargitLontay>
+	rdf:type schema:Person;
+	schema:name "Margit Lontay".
+
+<#LszlHelyey>
+	rdf:type schema:Person;
+	schema:name "Lszl Helyey".
+
+<#tt0108194-aggregateRating>
+	schema:ratingCount 1,704;
+	schema:ratingValue 7.7;
+	schema:bestRating 10;
+	schema:itemReviewed <#tt0108194>.
+
+<#tt0108194>
+	rdf:type schema:Movie;
+	mcb:hasId "tt0108194";
+	mcb:hasTitle "Sose halunk meg (1993)  IMDb";
+	schema:duration "1h35min";
+	schema:dateCreated "1993";
+	schema:text "    This story has a horserace fan main character who sells clotheshangers On one trip a young teenager boy relative goes with him. They have a lot of adventures as they become friends. Girls dance and horseracing are the themes while they sell the clotheshangers this summer...";
+	schema:aggregateRating <#tt0108194-aggregateRating>;
+	mcb:hasActor <#RbertKoltai>;
+	mcb:hasActor <#MihlySzabados>;
+	mcb:hasActor <#GborMt>;
+	mcb:hasActor <#TamsJordn>;
+	mcb:hasActor <#KathleenGati>;
+	mcb:hasActor <#AndorLukts>;
+	mcb:hasActor <#GyrgyHunyadkrthy>;
+	mcb:hasActor <#PterBlask>;
+	mcb:hasActor <#JuditPogny>;
+	mcb:hasActor <#LiliMonori>;
+	mcb:hasActor <#LszlVajda>;
+	mcb:hasActor <#KatiLzr>;
+	mcb:hasActor <#LszlCsknyi>;
+	mcb:hasActor <#MargitLontay>;
+	mcb:hasActor <#LszlHelyey>;
+	schema:character "Gyula";
+	schema:character "Imi";
+	schema:character "Imre";
+	schema:character "Vigc";
+	schema:character "Nusi";
+	schema:character "Pap";
+	schema:character "Pucus";
+	schema:character "Apa";
+	schema:character "Anya";
+	schema:character "Terz";
+	schema:character "Csocs";
+	schema:character "Csocsfelesge";
+	schema:character "Deutschbcsi";
+	schema:character "Deutschnni";
+	schema:character "BaloghII.";
+	schema:image "https://m.media-amazon.com/images/M/MV5BOTY4OTM5OGItNDNjOC00ZmVmLWE0Y2MtMGI2MjQ2ZWVhY2E0XkEyXkFqcGdeQXVyNjExODE1MDc@._V1_UY1200_CR98,0,630,1200_AL_.jpg".
+
+<#tt0108194-laci_5>
+	schema:about <#tt0108194>;
+	schema:author "laci_5";
+	schema:dateCreated "Thu Jan 31 2002 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 10;
+	schema:headline " Beautiful";
+	schema:reviewBody "Nice music living characters sexual awakening of a boy the smell of life the way of enjoying life in the communist era even if we're beaten till death...a wonderful movie to watch again and again. Strongly recommended for everyone who wants to see a nonpopcorn but really popular Hungarian movie.This movie started the awakening of Hungarian cinema after years of selfimportant art movies with no one in the cinemas.".
+
+<#tt0108194-laci_5-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Nice music living characters sexual awakening of a boy the smell of life the way of enjoying life in the communist era even if we're beaten till death...a wonderful movie to watch again and again. Strongly recommended for everyone who wants to see a nonpopcorn but really popular Hungarian movie.This movie started the awakening of Hungarian cinema after years of selfimportant art movies with no one in the cinemas.";
+	onyx:describesObject <#tt0108194>;
+	onyx:hasEmotion <#Positive-Expectation>;
+	prov:Entity <#tt0108194-laci_5>.
+
+<#tt0108194-laci_5-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0108194/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0108194-laci_5-random>.
+
+<#tt0108194-ggazda>
+	schema:about <#tt0108194>;
+	schema:author "ggazda";
+	schema:dateCreated "Wed Feb 20 2002 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:headline " Magical";
+	schema:reviewBody "A really delightful film from Hungarian director and star Robert Koltai.It captured the deliciousness of smalltime Hungarian life as viewed through the eyes of a teenage boy and his lively uncle. Although weepy and sentimental at times it has enough colorful humor and subtle wit to please everyone. Highly recommended.".
+
+<#tt0108194-ggazda-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "A really delightful film from Hungarian director and star Robert Koltai.It captured the deliciousness of smalltime Hungarian life as viewed through the eyes of a teenage boy and his lively uncle. Although weepy and sentimental at times it has enough colorful humor and subtle wit to please everyone. Highly recommended.";
+	onyx:describesObject <#tt0108194>;
+	onyx:hasEmotion <#Positive-Expectation>;
+	prov:Entity <#tt0108194-ggazda>.
+
+<#tt0108194-ggazda-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0108194/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0108194-ggazda-random>.
+
+<#RupertIsaacson>
+	rdf:type schema:Person;
+	schema:name "Rupert Isaacson".
+
+<#KristinNeff>
+	rdf:type schema:Person;
+	schema:name "Kristin Neff".
+
+<#RowanIsaacson>
+	rdf:type schema:Person;
+	schema:name "Rowan Isaacson".
+
+<#KendalStewart>
+	rdf:type schema:Person;
+	schema:name "Kendal Stewart".
+
+<#TempleGrandin>
+	rdf:type schema:Person;
+	schema:name "Temple Grandin".
+
+<#DaleRudin>
+	rdf:type schema:Person;
+	schema:name "Dale Rudin".
+
+<#SimonBaronCohen>
+	rdf:type schema:Person;
+	schema:name "Simon BaronCohen".
+
+<#RoyRichardGrinker>
+	rdf:type schema:Person;
+	schema:name "Roy Richard Grinker".
+
+<#tt1333668-aggregateRating>
+	schema:ratingCount 671;
+	schema:ratingValue 7.3;
+	schema:bestRating 10;
+	schema:itemReviewed <#tt1333668>.
+
+<#tt1333668>
+	rdf:type schema:Movie;
+	mcb:hasId "tt1333668";
+	mcb:hasTitle "The Horse Boy (2009)  IMDb";
+	schema:duration "1h33min";
+	schema:dateCreated "2009";
+	schema:text "    OVER THE HILLS AND FAR AWAY chronicles the journey of the Isaacson family as they travel through Mongolia in search of a mysterious shaman who they believe can heal their autistic son. This film delves into the strange world of autism horses shamanism and Mongolia while telling the story of a family that will go to the end of the earth to find a way into their son's life.";
+	schema:aggregateRating <#tt1333668-aggregateRating>;
+	mcb:hasActor <#RupertIsaacson>;
+	mcb:hasActor <#KristinNeff>;
+	mcb:hasActor <#RowanIsaacson>;
+	mcb:hasActor <#KendalStewart>;
+	mcb:hasActor <#TempleGrandin>;
+	mcb:hasActor <#DaleRudin>;
+	mcb:hasActor <#SimonBaronCohen>;
+	mcb:hasActor <#RoyRichardGrinker>;
+	schema:character "SelfNarrator";
+	schema:character "Self";
+	schema:character "Self";
+	schema:character "Self";
+	schema:character "Self";
+	schema:character "Self";
+	schema:character "Self";
+	schema:character "Self";
+	schema:image "https://m.media-amazon.com/images/M/MV5BMTcxMDg4MjE1M15BMl5BanBnXkFtZTcwOTMwNzI3Mg@@._V1_UY1200_CR95,0,630,1200_AL_.jpg".
+
+<#tt1333668-chuck_526>
+	schema:about <#tt1333668>;
+	schema:author "chuck_526";
+	schema:dateCreated "Fri Dec 18 2009 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 8;
+	schema:headline " shows what it's really like";
+	schema:reviewBody "As one who was already pretty knowledgeable about autism and familiar with Mongolian shamanism I found these pictures extremely interesting. I haven't seen anything else remotely like this with its very real scenes of inconsolable tantrums outrageous drug regimens traveling with incontinence frazzled parents unexpected fondnesses blue flowers and frame drums. Sure there's some selective editing going on maybe even bordering on impressing an overall narrative on a series of events that didn't really flow so linearly. And sure some of the magic is a little hard for our Enlightenment rationalism to just observe without trying to impose some evaluation or judgment. Who cares? In any case gobs of reality show through and they're much closer to being there than anything else you've ever seen unless maybe you've watched a whole lot of research footage taken through a oneway mirror. Besides it's so refreshing to me to finally see a film about autism that does not include a hand flapping scene.I suspect some of the things in this film will seem pretty strange to most viewers and others will only be grasped superficially I can't say that for sure because for me that viewing openness has already gone by and I can't get it back. I'm pretty sure though that enough will be familiar that viewers can retain their bearings  you needn't be concerned about being surreally swept away into some entirely different world.In one scene some offhand explanatory remarks are offered while mixing the daily drug cocktail. Those comments will probably seem innocuous or unremarkable to most. But if you've already got a laundry list of mostly wildly speculative possible autism treatments in your head it becomes clear they're already trying pretty much all of them.I know from other films that Mongolian scenery can be quite arresting. Some of the landscapes can be achingly beautiful drawing you into a story all by themselves. But while the landscapes here are indeed striking they're not dropdead gorgeous. Maybe it's something about the handheld camera format or maybe it's some insufficiency of depth of focus or maybe the resolution isn't quite high enough or maybe the timing's too short or... I'm not enough of a filmtechnofreak to figure out why it is  I just know this film's less about the scenery than might be expected. .The philosophy is pretty light nobody hits you over the head with anything but in the end there's no question what the parents think either. Personally I already bought into the same philosophy the film presents given the reality of people with different brain structures societies might be better served by integrating them and making them productive than by trying to divide the sick and the well by too bright a line. And there's a difference unfortunately too often lost between curing autism and no longer driving folks nuts either by mitigating a few problem behaviors or by reframing reactions to them so they lose their potency.To me the part that best summarized the point of view was Dr. Temple Grandin reiterating her statement that if she could magically wave away her autism she wouldn't. Although there's weirdness and uncomfortableness here there's great value here too.This is not a film about the wider significance possible epidemic worldwide incidence or current medical handling of autism. What it is about is one family that was given some lemons and how they're making lemonade. The biggest message I got was pay attention! Not everybody can or should take their child to Mongolia. But everybody can try hard to understand and react to their child just as they really are and that's what makes all the difference.".
+
+<#tt1333668-chuck_526-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "As one who was already pretty knowledgeable about autism and familiar with Mongolian shamanism I found these pictures extremely interesting. I haven't seen anything else remotely like this with its very real scenes of inconsolable tantrums outrageous drug regimens traveling with incontinence frazzled parents unexpected fondnesses blue flowers and frame drums. Sure there's some selective editing going on maybe even bordering on impressing an overall narrative on a series of events that didn't really flow so linearly. And sure some of the magic is a little hard for our Enlightenment rationalism to just observe without trying to impose some evaluation or judgment. Who cares? In any case gobs of reality show through and they're much closer to being there than anything else you've ever seen unless maybe you've watched a whole lot of research footage taken through a oneway mirror. Besides it's so refreshing to me to finally see a film about autism that does not include a hand flapping scene.I suspect some of the things in this film will seem pretty strange to most viewers and others will only be grasped superficially I can't say that for sure because for me that viewing openness has already gone by and I can't get it back. I'm pretty sure though that enough will be familiar that viewers can retain their bearings  you needn't be concerned about being surreally swept away into some entirely different world.In one scene some offhand explanatory remarks are offered while mixing the daily drug cocktail. Those comments will probably seem innocuous or unremarkable to most. But if you've already got a laundry list of mostly wildly speculative possible autism treatments in your head it becomes clear they're already trying pretty much all of them.I know from other films that Mongolian scenery can be quite arresting. Some of the landscapes can be achingly beautiful drawing you into a story all by themselves. But while the landscapes here are indeed striking they're not dropdead gorgeous. Maybe it's something about the handheld camera format or maybe it's some insufficiency of depth of focus or maybe the resolution isn't quite high enough or maybe the timing's too short or... I'm not enough of a filmtechnofreak to figure out why it is  I just know this film's less about the scenery than might be expected. .The philosophy is pretty light nobody hits you over the head with anything but in the end there's no question what the parents think either. Personally I already bought into the same philosophy the film presents given the reality of people with different brain structures societies might be better served by integrating them and making them productive than by trying to divide the sick and the well by too bright a line. And there's a difference unfortunately too often lost between curing autism and no longer driving folks nuts either by mitigating a few problem behaviors or by reframing reactions to them so they lose their potency.To me the part that best summarized the point of view was Dr. Temple Grandin reiterating her statement that if she could magically wave away her autism she wouldn't. Although there's weirdness and uncomfortableness here there's great value here too.This is not a film about the wider significance possible epidemic worldwide incidence or current medical handling of autism. What it is about is one family that was given some lemons and how they're making lemonade. The biggest message I got was pay attention! Not everybody can or should take their child to Mongolia. But everybody can try hard to understand and react to their child just as they really are and that's what makes all the difference.";
+	onyx:describesObject <#tt1333668>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt1333668-chuck_526>.
+
+<#tt1333668-chuck_526-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt1333668/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt1333668-chuck_526-random>.
+
+<#tt1333668-Toadinthehole>
+	schema:about <#tt1333668>;
+	schema:author "Toadinthehole";
+	schema:dateCreated "Tue Sep 22 2009 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 10;
+	schema:headline " A modern day autistic adventure that puts autism where it needs to be.";
+	schema:reviewBody "This is an excellent documentary with a message about the need for diversity in which an autistic boy with a love of animals is the main focus.A young couple and their autistic four year old boy Rowan take a pilgrimage to a sacred lake at the heart of the great Mongolian Plain where tradition has it shamans still practice ancient healing rituals that may help heal their son of his autism. Rowan seems keen enough but are they barking up the wrong tree? As we take the journey with them so we start to understand what the boy's parents are really up against. Who are they and why are they making such a public show of their autistic son? Do they have something important to say to justify their family adventure? The answer is yes.Their energy determination and openness throughout the whole film is spoken to a friendly and compassionate camera and having previously documented the plight of the Bushmen Rowan's father is clearly going to be in his element. But is it just another documentary for him? Rowan's father is clearly on familiar territory as a journalist having previously visited remote tribes and other remote parts of the world but here he is completely unable to walk away from the subject matter like any other a job here his hands are tied. Why are we doing it? How will it end? Are we crazy subjecting ourselves and our son to suchpublic expectations? We share their doubt.For me the wild landscape of the high Mongolian Plain captured perfectly the wilderness and inner vulnerability of dealing with autism in the modern world. From start to finish one wonders where will it end and marvels at how Rowan's parents cope. Amazing stamina but sustained by true love and compassion.The films greatest strength is its vulnerability for this is no easy fiction. A film which could so easily have fallen into the modern day pit of an obsession for awkward personal exposure resounds with love where personal revelation reaches far wider and may touch you as much as it did me.Well paced and nicely edited this is a motion picture about autism that had to be made and has to be seen that puts the vital worth back into autism as part of the greater diversity of our expansive human soul.".
+
+<#tt1333668-Toadinthehole-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This is an excellent documentary with a message about the need for diversity in which an autistic boy with a love of animals is the main focus.A young couple and their autistic four year old boy Rowan take a pilgrimage to a sacred lake at the heart of the great Mongolian Plain where tradition has it shamans still practice ancient healing rituals that may help heal their son of his autism. Rowan seems keen enough but are they barking up the wrong tree? As we take the journey with them so we start to understand what the boy's parents are really up against. Who are they and why are they making such a public show of their autistic son? Do they have something important to say to justify their family adventure? The answer is yes.Their energy determination and openness throughout the whole film is spoken to a friendly and compassionate camera and having previously documented the plight of the Bushmen Rowan's father is clearly going to be in his element. But is it just another documentary for him? Rowan's father is clearly on familiar territory as a journalist having previously visited remote tribes and other remote parts of the world but here he is completely unable to walk away from the subject matter like any other a job here his hands are tied. Why are we doing it? How will it end? Are we crazy subjecting ourselves and our son to suchpublic expectations? We share their doubt.For me the wild landscape of the high Mongolian Plain captured perfectly the wilderness and inner vulnerability of dealing with autism in the modern world. From start to finish one wonders where will it end and marvels at how Rowan's parents cope. Amazing stamina but sustained by true love and compassion.The films greatest strength is its vulnerability for this is no easy fiction. A film which could so easily have fallen into the modern day pit of an obsession for awkward personal exposure resounds with love where personal revelation reaches far wider and may touch you as much as it did me.Well paced and nicely edited this is a motion picture about autism that had to be made and has to be seen that puts the vital worth back into autism as part of the greater diversity of our expansive human soul.";
+	onyx:describesObject <#tt1333668>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt1333668-Toadinthehole>.
+
+<#tt1333668-Toadinthehole-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt1333668/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt1333668-Toadinthehole-random>.
+
+<#tt1333668-emptyskies>
+	schema:about <#tt1333668>;
+	schema:author "emptyskies";
+	schema:dateCreated "Tue Jan 20 2009 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 8;
+	schema:headline " Uplifting and interesting movie";
+	schema:reviewBody "I got tickets to the premiere at Sundance and must confess I wasn't that excited about going to this movie. I thought it was going to be pretty depressing.It turns out that was pretty unfair. It's a great movie you begin to really relate to the people and their struggles with their autistic son. The parents are absolutely saints I have no idea how they coped for as long as they did. The backdrop of Mongolia is beautiful and all the while you're hoping for a miracle without letting those hopes get too far up.Definitely worth seeing.".
+
+<#tt1333668-emptyskies-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "I got tickets to the premiere at Sundance and must confess I wasn't that excited about going to this movie. I thought it was going to be pretty depressing.It turns out that was pretty unfair. It's a great movie you begin to really relate to the people and their struggles with their autistic son. The parents are absolutely saints I have no idea how they coped for as long as they did. The backdrop of Mongolia is beautiful and all the while you're hoping for a miracle without letting those hopes get too far up.Definitely worth seeing.";
+	onyx:describesObject <#tt1333668>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt1333668-emptyskies>.
+
+<#tt1333668-emptyskies-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt1333668/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt1333668-emptyskies-random>.
+
+<#tt1333668-ynoel_2>
+	schema:about <#tt1333668>;
+	schema:author "ynoel_2";
+	schema:dateCreated "Wed Aug 14 2013 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " Compelled to respond to a reviewer above";
+	schema:reviewBody "it's slightly odd that i even feel the need to write this... it's about Mr 'rick James' review above. I have nothing to do with anything or anyone in the film or even autism. I guess I enjoyed the film especially the Mongolian landscapes. What on the other hand struck me as I read that review was how simply deranged he sounded. Having serious personal issues is one thing but not taming them and then going so far as to write such a pretentious review wreaking of selfimportance and instability like this one is another thing. I guess I write this as I sometimes tire of fully grown 'normal' people so clearly suffering from issues they choose to ignore and who confuse their need to expiate personal venom with a 'review'. It sounds grotesque and helps no one to understand anything about the film  more about the author's instabilities. In passing I congratulate the filmmakers on a well made and touching nearzero budget film. We'd be so much poorer if we didn't have such people making these films.".
+
+<#tt1333668-ynoel_2-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "it's slightly odd that i even feel the need to write this... it's about Mr 'rick James' review above. I have nothing to do with anything or anyone in the film or even autism. I guess I enjoyed the film especially the Mongolian landscapes. What on the other hand struck me as I read that review was how simply deranged he sounded. Having serious personal issues is one thing but not taming them and then going so far as to write such a pretentious review wreaking of selfimportance and instability like this one is another thing. I guess I write this as I sometimes tire of fully grown 'normal' people so clearly suffering from issues they choose to ignore and who confuse their need to expiate personal venom with a 'review'. It sounds grotesque and helps no one to understand anything about the film  more about the author's instabilities. In passing I congratulate the filmmakers on a well made and touching nearzero budget film. We'd be so much poorer if we didn't have such people making these films.";
+	onyx:describesObject <#tt1333668>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt1333668-ynoel_2>.
+
+<#tt1333668-ynoel_2-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt1333668/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt1333668-ynoel_2-random>.
+
+<#tt1333668-gnaysmith>
+	schema:about <#tt1333668>;
+	schema:author "gnaysmith";
+	schema:dateCreated "Fri Aug 20 2010 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 10;
+	schema:headline " An Incredible adventure";
+	schema:reviewBody "This story brings hope to all of us parents of children with Autism... It is honest and full of hope. Autism shouldn't mean that we can't have a life  it should bring us hope and adventure... The professionals who took part in the interviews for the movie did so with open minds. Temple Grandin is fantastic and makes me believe that my son can do anything he chooses if I can help him to do it  I have read all of her books too and to know that she was behind Ru and Kristin on this adventure is great. This book and movie changed my life and the lives of my partner and kids. Thank you Ru for all you have done for us  you are truly inspirational and a very wonderful friend.".
+
+<#tt1333668-gnaysmith-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This story brings hope to all of us parents of children with Autism... It is honest and full of hope. Autism shouldn't mean that we can't have a life  it should bring us hope and adventure... The professionals who took part in the interviews for the movie did so with open minds. Temple Grandin is fantastic and makes me believe that my son can do anything he chooses if I can help him to do it  I have read all of her books too and to know that she was behind Ru and Kristin on this adventure is great. This book and movie changed my life and the lives of my partner and kids. Thank you Ru for all you have done for us  you are truly inspirational and a very wonderful friend.";
+	onyx:describesObject <#tt1333668>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt1333668-gnaysmith>.
+
+<#tt1333668-gnaysmith-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt1333668/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt1333668-gnaysmith-random>.
+
+<#tt1333668-yetanotherreviewer>
+	schema:about <#tt1333668>;
+	schema:author "yetanotherreviewer";
+	schema:dateCreated "Tue Mar 23 2021 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 3;
+	schema:headline " I wanted to believe";
+	schema:reviewBody "There is no proof given as to whether or not the child was truly autistic or if he was being exploited for the family to write and produce a film for their 15 minutes of fame. For anyone who has had multiple children these tantrums could simply be the result of parents who can't connect are not getting the right help or providing the right resources. As for the a shaman healing a child or horses bringing clarity the idea has merit but how and why he chose to do this was not well established. It made for a fun to watch film but left me with so many unanswered questions afterwards that I realized I may have been taken.".
+
+<#tt1333668-yetanotherreviewer-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "There is no proof given as to whether or not the child was truly autistic or if he was being exploited for the family to write and produce a film for their 15 minutes of fame. For anyone who has had multiple children these tantrums could simply be the result of parents who can't connect are not getting the right help or providing the right resources. As for the a shaman healing a child or horses bringing clarity the idea has merit but how and why he chose to do this was not well established. It made for a fun to watch film but left me with so many unanswered questions afterwards that I realized I may have been taken.";
+	onyx:describesObject <#tt1333668>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt1333668-yetanotherreviewer>.
+
+<#tt1333668-yetanotherreviewer-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt1333668/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt1333668-yetanotherreviewer-random>.
+
+<#tt1333668-druid333_2>
+	schema:about <#tt1333668>;
+	schema:author "druid333_2";
+	schema:dateCreated "Mon Oct 19 2009 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " From The West To The East";
+	schema:reviewBody "Rowan Isaacson is a four yearold boywho has to live with a severe form of Autism. His parents are at wits end with his uncontrollable fits of screaming and crying and carrying on. During a walk with his Father Rupert Isaacsonhe bonds with an old horseowned by their next door neighbour. Rupert gets the idea of taking his family to Mongolia to have his son healed by tribal Shamans spiritual healers. It seems like the trip may be a failure from the startbut things begin to happen to Rowan and the rest of the familywhich also includes Rowan's MotherKristin Neff as well. First time directorMichel O.Scott who also photographed  edited this documentarywent along to record the proceedings. The documentary video shot on HD videohas some real nice scenic photography of the ruggeduntamed countryside of Mongolia. We get to see some of the healing rituals of the tribal Shamans which I really admiredas this culture is pretty much a mystery to most Westerners. This documentary isn't perfectbut still well worth checking out my only two quirks I could have easily lived without are the occasional sojourns into toilet trainingas Rowan had a real incontinence problemwhich is rather graphically depicted on screenplus the music score tended to feature some schmaltzyNew Age dronerather than some Tuvan throat singerswhich I would have much preferred. Not rated by the MPAAbut contains some brief strong language  some unnecessary gastric accidents from young Rowan that could have been left on the cutting room floor".
+
+<#tt1333668-druid333_2-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Rowan Isaacson is a four yearold boywho has to live with a severe form of Autism. His parents are at wits end with his uncontrollable fits of screaming and crying and carrying on. During a walk with his Father Rupert Isaacsonhe bonds with an old horseowned by their next door neighbour. Rupert gets the idea of taking his family to Mongolia to have his son healed by tribal Shamans spiritual healers. It seems like the trip may be a failure from the startbut things begin to happen to Rowan and the rest of the familywhich also includes Rowan's MotherKristin Neff as well. First time directorMichel O.Scott who also photographed  edited this documentarywent along to record the proceedings. The documentary video shot on HD videohas some real nice scenic photography of the ruggeduntamed countryside of Mongolia. We get to see some of the healing rituals of the tribal Shamans which I really admiredas this culture is pretty much a mystery to most Westerners. This documentary isn't perfectbut still well worth checking out my only two quirks I could have easily lived without are the occasional sojourns into toilet trainingas Rowan had a real incontinence problemwhich is rather graphically depicted on screenplus the music score tended to feature some schmaltzyNew Age dronerather than some Tuvan throat singerswhich I would have much preferred. Not rated by the MPAAbut contains some brief strong language  some unnecessary gastric accidents from young Rowan that could have been left on the cutting room floor";
+	onyx:describesObject <#tt1333668>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt1333668-druid333_2>.
+
+<#tt1333668-druid333_2-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt1333668/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt1333668-druid333_2-random>.
+
+<#tt1333668-galenmorbury>
+	schema:about <#tt1333668>;
+	schema:author "galenmorbury";
+	schema:dateCreated "Thu Nov 05 2009 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 7;
+	schema:headline " Heartwarming";
+	schema:reviewBody "Happiness love and understanding!This film brings the beautiful message that the autistic can and will be cured by physical exercise. We all know it's true and it is wonderful to see depicted in real life. The young boy's turnaround is nothing short of a miracle.The boy rides the horse. He commutes with the goat. He speaks to the chicken.You must take your children to Siberia. Autism cancer all will be cured by the horse and the goat. The chicken not so much.Scientology? No Science Totally.".
+
+<#tt1333668-galenmorbury-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Happiness love and understanding!This film brings the beautiful message that the autistic can and will be cured by physical exercise. We all know it's true and it is wonderful to see depicted in real life. The young boy's turnaround is nothing short of a miracle.The boy rides the horse. He commutes with the goat. He speaks to the chicken.You must take your children to Siberia. Autism cancer all will be cured by the horse and the goat. The chicken not so much.Scientology? No Science Totally.";
+	onyx:describesObject <#tt1333668>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt1333668-galenmorbury>.
+
+<#tt1333668-galenmorbury-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt1333668/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt1333668-galenmorbury-random>.
+
+<#tt1333668-RickManhattan>
+	schema:about <#tt1333668>;
+	schema:author "RickManhattan";
+	schema:dateCreated "Sat May 26 2012 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 3;
+	schema:headline " Shameful exploitation";
+	schema:reviewBody "This film is not about autism it is about selfish selfabsorption of adults. The very idea that a mentally retarded child can be brought out of his delirium by a bunch of witch doctors with no scientific training and no verifiable results is ridiculous. One commentator states clearly it that these selfish parents fit a pattern of despair that leads those in this situation to resort to any extreme and taking a helpless child to Mongolia to cure him instead of to a farm in upstate New York to meet animals is shameful and unforgivable. Why did they make this movie at all? Simply to conclude the exploitation of this helpless child. Forgive them.".
+
+<#tt1333668-RickManhattan-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This film is not about autism it is about selfish selfabsorption of adults. The very idea that a mentally retarded child can be brought out of his delirium by a bunch of witch doctors with no scientific training and no verifiable results is ridiculous. One commentator states clearly it that these selfish parents fit a pattern of despair that leads those in this situation to resort to any extreme and taking a helpless child to Mongolia to cure him instead of to a farm in upstate New York to meet animals is shameful and unforgivable. Why did they make this movie at all? Simply to conclude the exploitation of this helpless child. Forgive them.";
+	onyx:describesObject <#tt1333668>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt1333668-RickManhattan>.
+
+<#tt1333668-RickManhattan-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt1333668/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt1333668-RickManhattan-random>.
+
+<#tt1333668-mergen>
+	schema:about <#tt1333668>;
+	schema:author "mergen";
+	schema:dateCreated "Tue Aug 31 2010 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 2;
+	schema:headline " please correct the information on this film it's Mongolia not Inner Mongolia a province of China";
+	schema:reviewBody "please correct your information on this film it's shot in Mongolia not Inner Mongolia a province of China. It's great that the Isaacson's can exploit their son's mental condition to make a movie but spare us the New Age bull about shamanism. Both parents come across as so selfabsorbed that it's no wonder that the kid has tantrums. I'm sure that the parents of children with mental disabilities must wonder how these unlikeable people get to perform for profit. Did Dr. Temple Grandin Dr. Grinker and the other talking heads really know how silly this movie was going to be. Why did they lend their names and reputations to this?".
+
+<#tt1333668-mergen-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "please correct your information on this film it's shot in Mongolia not Inner Mongolia a province of China. It's great that the Isaacson's can exploit their son's mental condition to make a movie but spare us the New Age bull about shamanism. Both parents come across as so selfabsorbed that it's no wonder that the kid has tantrums. I'm sure that the parents of children with mental disabilities must wonder how these unlikeable people get to perform for profit. Did Dr. Temple Grandin Dr. Grinker and the other talking heads really know how silly this movie was going to be. Why did they lend their names and reputations to this?";
+	onyx:describesObject <#tt1333668>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt1333668-mergen>.
+
+<#tt1333668-mergen-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt1333668/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt1333668-mergen-random>.

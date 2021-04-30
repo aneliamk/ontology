@@ -1,0 +1,143 @@
+@base <http://movie.chatbot.org/>.
+@prefix mcb: <http://movie.chatbot.org/>.
+@prefix schema: <http://schema.org/>.
+@prefix onyx: <http://www.gsi.dit.upm.es/ontologies/onyx/ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema>.
+@prefix owl: <http://www.w3.org/2002/07/owl>.
+@prefix wnaffect: <http://www.gsi.dit.upm.es/ontologies/wnaffect/ns#>.
+
+<mcb:hasActor>
+	rdf:type owl:ObjectProperty;
+	rdfs:range schema:Person;
+	rdfs:domain schema:Movie.
+
+<mcb:hasId>
+	rdf:type owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasTitle>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasGenre>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasLanguage>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<schema:Person>
+	rdf:type owl:Class.
+
+<schema:Movie>
+	rdf:type owl:Class.
+
+<mcb:actorIsPerson>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasActor;
+	owl:allValuesFrom schema:Person.
+
+<mcb:atLeastOneGenre>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasGenre;
+	owl:minCardinality "1"^^xsd:nonNegativeInteger.
+
+<mcb:anyNumberOfLanguages>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasLanguage;
+	owl:minCardinality "0"^^xsd:nonNegativeInteger.
+
+<#Hate>
+	onyx:hasEmotionCategory wnaffect:Hate.
+
+<#Dislike>
+	onyx:hasEmotionCategory wnaffect:Dislike.
+
+<#Anger>
+	onyx:hasEmotionCategory wnaffect:Anger.
+
+<#Anxiety>
+	onyx:hasEmotionCategory wnaffect:Anxiety.
+
+<#Ingratitude>
+	onyx:hasEmotionCategory wnaffect:Ingratitude.
+
+<#Humility>
+	onyx:hasEmotionCategory wnaffect:Humility.
+
+<#Compassion>
+	onyx:hasEmotionCategory wnaffect:Compassion.
+
+<#Daze>
+	onyx:hasEmotionCategory wnaffect:Daze.
+
+<#Sadness>
+	onyx:hasEmotionCategory wnaffect:Sadness.
+
+<#Negative-Fear>
+	onyx:hasEmotionCategory wnaffect:Negative-Fear.
+
+<#Despair>
+	onyx:hasEmotionCategory wnaffect:Despair.
+
+<#Shame>
+	onyx:hasEmotionCategory wnaffect:Shame.
+
+<#Love>
+	onyx:hasEmotionCategory wnaffect:Love.
+
+<#Calmness>
+	onyx:hasEmotionCategory wnaffect:Calmness.
+
+<#Affection>
+	onyx:hasEmotionCategory wnaffect:Affection.
+
+<#Self-Pride>
+	onyx:hasEmotionCategory wnaffect:Self-Pride.
+
+<#Enthusiasm>
+	onyx:hasEmotionCategory wnaffect:Enthusiasm.
+
+<#Positivie-Fear>
+	onyx:hasEmotionCategory wnaffect:Positivie-Fear.
+
+<#Liking>
+	onyx:hasEmotionCategory wnaffect:Liking.
+
+<#Joy>
+	onyx:hasEmotionCategory wnaffect:Joy.
+
+<#Positive-Expectation>
+	onyx:hasEmotionCategory wnaffect:Positive-Expectation.
+
+<#Fearlessness>
+	onyx:hasEmotionCategory wnaffect:Fearlessness.
+
+<#Positive-Hope>
+	onyx:hasEmotionCategory wnaffect:Positive-Hope.
+
+<#Levity>
+	onyx:hasEmotionCategory wnaffect:Levity.
+
+<#Gratitude>
+	onyx:hasEmotionCategory wnaffect:Gratitude.
+
+<#Neutral-Unconcern>
+	onyx:hasEmotionCategory wnaffect:Neutral-Unconcern.
+
+<#Apathy>
+	onyx:hasEmotionCategory wnaffect:Apathy.
+
+<#Surprise>
+	onyx:hasEmotionCategory wnaffect:Surprise.
+
+<#Ambiguous-Agitation>
+	onyx:hasEmotionCategory wnaffect:Ambiguous-Agitation.

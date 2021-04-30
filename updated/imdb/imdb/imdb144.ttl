@@ -1,0 +1,1172 @@
+@base <http://movie.chatbot.org/>.
+@prefix mcb: <http://movie.chatbot.org/>.
+@prefix schema: <http://schema.org/>.
+@prefix onyx: <http://www.gsi.dit.upm.es/ontologies/onyx/ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema>.
+@prefix owl: <http://www.w3.org/2002/07/owl>.
+@prefix wnaffect: <http://www.gsi.dit.upm.es/ontologies/wnaffect/ns#>.
+
+<mcb:hasActor>
+	rdf:type owl:ObjectProperty;
+	rdfs:range schema:Person;
+	rdfs:domain schema:Movie.
+
+<mcb:hasId>
+	rdf:type owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasTitle>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasGenre>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasLanguage>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<schema:Person>
+	rdf:type owl:Class.
+
+<schema:Movie>
+	rdf:type owl:Class.
+
+<mcb:actorIsPerson>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasActor;
+	owl:allValuesFrom schema:Person.
+
+<mcb:atLeastOneGenre>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasGenre;
+	owl:minCardinality "1"^^xsd:nonNegativeInteger.
+
+<mcb:anyNumberOfLanguages>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasLanguage;
+	owl:minCardinality "0"^^xsd:nonNegativeInteger.
+
+<#Hate>
+	onyx:hasEmotionCategory wnaffect:Hate.
+
+<#Dislike>
+	onyx:hasEmotionCategory wnaffect:Dislike.
+
+<#Anger>
+	onyx:hasEmotionCategory wnaffect:Anger.
+
+<#Anxiety>
+	onyx:hasEmotionCategory wnaffect:Anxiety.
+
+<#Ingratitude>
+	onyx:hasEmotionCategory wnaffect:Ingratitude.
+
+<#Humility>
+	onyx:hasEmotionCategory wnaffect:Humility.
+
+<#Compassion>
+	onyx:hasEmotionCategory wnaffect:Compassion.
+
+<#Daze>
+	onyx:hasEmotionCategory wnaffect:Daze.
+
+<#Sadness>
+	onyx:hasEmotionCategory wnaffect:Sadness.
+
+<#Negative-Fear>
+	onyx:hasEmotionCategory wnaffect:Negative-Fear.
+
+<#Despair>
+	onyx:hasEmotionCategory wnaffect:Despair.
+
+<#Shame>
+	onyx:hasEmotionCategory wnaffect:Shame.
+
+<#Love>
+	onyx:hasEmotionCategory wnaffect:Love.
+
+<#Calmness>
+	onyx:hasEmotionCategory wnaffect:Calmness.
+
+<#Affection>
+	onyx:hasEmotionCategory wnaffect:Affection.
+
+<#Self-Pride>
+	onyx:hasEmotionCategory wnaffect:Self-Pride.
+
+<#Enthusiasm>
+	onyx:hasEmotionCategory wnaffect:Enthusiasm.
+
+<#Positivie-Fear>
+	onyx:hasEmotionCategory wnaffect:Positivie-Fear.
+
+<#Liking>
+	onyx:hasEmotionCategory wnaffect:Liking.
+
+<#Joy>
+	onyx:hasEmotionCategory wnaffect:Joy.
+
+<#Positive-Expectation>
+	onyx:hasEmotionCategory wnaffect:Positive-Expectation.
+
+<#Fearlessness>
+	onyx:hasEmotionCategory wnaffect:Fearlessness.
+
+<#Positive-Hope>
+	onyx:hasEmotionCategory wnaffect:Positive-Hope.
+
+<#Levity>
+	onyx:hasEmotionCategory wnaffect:Levity.
+
+<#Gratitude>
+	onyx:hasEmotionCategory wnaffect:Gratitude.
+
+<#Neutral-Unconcern>
+	onyx:hasEmotionCategory wnaffect:Neutral-Unconcern.
+
+<#Apathy>
+	onyx:hasEmotionCategory wnaffect:Apathy.
+
+<#Surprise>
+	onyx:hasEmotionCategory wnaffect:Surprise.
+
+<#Ambiguous-Agitation>
+	onyx:hasEmotionCategory wnaffect:Ambiguous-Agitation.
+
+<#CraigHill>
+	rdf:type schema:Person;
+	schema:name "Craig Hill".
+
+<#SusyAndersen>
+	rdf:type schema:Person;
+	schema:name "Susy Andersen".
+
+<#AldoSambrell>
+	rdf:type schema:Person;
+	schema:name "Aldo Sambrell".
+
+<#AndreaBosic>
+	rdf:type schema:Person;
+	schema:name "Andrea Bosic".
+
+<#JosManuelMartn>
+	rdf:type schema:Person;
+	schema:name "Jos Manuel Martn".
+
+<#GiovanniIvanScratuglia>
+	rdf:type schema:Person;
+	schema:name "Giovanni Ivan Scratuglia".
+
+<#TomsBlanco>
+	rdf:type schema:Person;
+	schema:name "Toms Blanco".
+
+<#UmbertoRaho>
+	rdf:type schema:Person;
+	schema:name "Umberto Raho".
+
+<#LuisDurn>
+	rdf:type schema:Person;
+	schema:name "Luis Durn".
+
+<#MaraMontez>
+	rdf:type schema:Person;
+	schema:name "Mara Montez".
+
+<#MargaritaLozano>
+	rdf:type schema:Person;
+	schema:name "Margarita Lozano".
+
+<#LauraRedi>
+	rdf:type schema:Person;
+	schema:name "Laura Redi".
+
+<#EleonoraBrown>
+	rdf:type schema:Person;
+	schema:name "Eleonora Brown".
+
+<#HowardRoss>
+	rdf:type schema:Person;
+	schema:name "Howard Ross".
+
+<#GeorgeMartin>
+	rdf:type schema:Person;
+	schema:name "George Martin".
+
+<#tt0063482-aggregateRating>
+	schema:ratingCount 97;
+	schema:ratingValue 5.8;
+	schema:bestRating 10;
+	schema:itemReviewed <#tt0063482>.
+
+<#tt0063482>
+	rdf:type schema:Movie;
+	mcb:hasId "tt0063482";
+	mcb:hasTitle "15 Scaffolds for a Murderer (1967)  IMDb";
+	schema:duration "1h40min";
+	schema:dateCreated "1967";
+	schema:text "    A number of thugs from two different gangs are evading capture by all means. The city prepares fifteen gallows believing their harsh cruel Sheriff will manage to do it. The two gang leaders unite many men fall in gunfights three women are murdered but the end is a surprise to all.";
+	schema:aggregateRating <#tt0063482-aggregateRating>;
+	mcb:hasActor <#CraigHill>;
+	mcb:hasActor <#SusyAndersen>;
+	mcb:hasActor <#AldoSambrell>;
+	mcb:hasActor <#AndreaBosic>;
+	mcb:hasActor <#JosManuelMartn>;
+	mcb:hasActor <#GiovanniIvanScratuglia>;
+	mcb:hasActor <#TomsBlanco>;
+	mcb:hasActor <#UmbertoRaho>;
+	mcb:hasActor <#LuisDurn>;
+	mcb:hasActor <#MaraMontez>;
+	mcb:hasActor <#MargaritaLozano>;
+	mcb:hasActor <#LauraRedi>;
+	mcb:hasActor <#EleonoraBrown>;
+	mcb:hasActor <#HowardRoss>;
+	mcb:hasActor <#GeorgeMartin>;
+	schema:character "BillyMack";
+	schema:character "BarbaraFerguson";
+	schema:character "Danny";
+	schema:character "BudLee";
+	schema:character "AndrewFergusonthePastor";
+	schema:character "Benny";
+	schema:character "ClarkBenett";
+	schema:character "Doctor";
+	schema:character "AnneCook";
+	schema:character "Mrs.CooktheWidow";
+	schema:character "LizCook";
+	schema:character "Steve";
+	schema:character "SandyCassel";
+	schema:image "https://m.media-amazon.com/images/M/MV5BZGI4YTQzYmQtMmI2OS00NDcwLThjZjUtNjA2NWFmNjJhOTExXkEyXkFqcGdeQXVyNTI2Njg2OTI@._V1_UY1200_CR94,0,630,1200_AL_.jpg".
+
+<#tt0063482-ma_cortes>
+	schema:about <#tt0063482>;
+	schema:author "ma_cortes";
+	schema:dateCreated "Tue Mar 13 2012 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 6;
+	schema:headline " Spaghetti with Chorizo Western crammed with intrigue  murders and lots of violence and action";
+	schema:reviewBody "An ItalianSpanish coproduction full of action  exaggerated characters shootouts and loads of violence . There is plenty of action in the movie  guaranteeing some shoot'em up or stunts every few minutes . There's also an interesting intrigue and whodunit with some Giallo when happens a killing spree  and the question is  Who is the killer ? For money for pleasure for revenge he doesn't care why he kills or how  . A family formed by a mother Margarita Lozano and two daughters Eleonora Brown is cruelly killed and are accused two different bands who are facing each other . One gang Jose Canalejas is led by Billy Mack Graig Hill and another one Frank Braa is commanded by Sandy Cassel George Martin . When the fianc named Bud Lee Howard Ross of a murdered girl learns the slaughter and atrocity committed he executes a singlehandedly revenge  ravages and kills each person involved in the massacre . Bud is relentless in his vendetta  deadly in his violence . Then the two bands flee and go to the town which is inhabited by important people as the Sheriff  Antonio Molino Rojo  the banker  the priest Andrea Bosic the doctor Umberto Raho and a gorgeous Pastor's priest named Barbara Ferguson Susy Andersen  among others . But Barbara is kidnapped as hostage and the bandits get away to Mexico . They arrive in a Mexican village but are besieged by a posse Antonio Molino  Aldo Sambrell  Alvaro De Luna formed to chase them . There takes place violent fights  facing off  hangings and final surprise about the killer's identity .It's an exciting western with breathtaking showdown between the protagonist Graig Hill and George Martin and his hoodlums . Both of whom are fine  they ravage the screen kill  shoot  hit and run  besides receive violent punches kicks and hitting . Aldo Sambrell as a cruelly baddie role is terrific he subsequently would play very secondary or minimum characters . Furthermore there appears usual ItalianSpanish Western secondaries as Alvaro De Luna Rafael Albaicin Jose Canalejas  Antonio Molino Rojo  Ricardo Palacios  Jose Luis Martin and of course Frank Braa . The film blends violence  blood  tension  high bodycount and it's fast moving and quite entertaining . There is a very odd implementation of shots in the camera work during some particular scenes as the film approaches its climax  as in the final gunfights and the customary showdown conclusion . There are many fine technicians and nice production design by Wolfgang Burman who creates an excellent scenario with barren outdoors  dirty landscapes under a glimmer sun and a fine set on the little town and the surrounded Mexican village . The musician Francesco De Massi composes a nice soundtrack and well conducted  including enjoyable songs at the beginning and the end . Striking cinematography by Stelvio Massi in Eastmancolor with negative regularly processed  being necessary a perfect remastering . Interior filmed at Roman Studios and outdoor sequences filmed in Madrid and of course Almeria Spain.Nunzio Malasomma's direction is well crafted and inclined toward violence and too much action . Quince Horcas a Asesino or Fifteen scaffolds for a murderer is his only Western  he also directed Peplum as 1960 The revolt of slaves  and his speciality were Drama and Adventure as 1958 Adorabili e Bugiarde 1951 Quattro rose Rosse  1950 Il Diavolo in convent  1947 Il Diavolo 1943 La Signora in Nero  1943 In due Si Soffre Meglio 1943 Incontri di Notte . Rating  Acceptable and passable Spaghetti Western . Worthwhile watching .".
+
+<#tt0063482-ma_cortes-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "An ItalianSpanish coproduction full of action  exaggerated characters shootouts and loads of violence . There is plenty of action in the movie  guaranteeing some shoot'em up or stunts every few minutes . There's also an interesting intrigue and whodunit with some Giallo when happens a killing spree  and the question is  Who is the killer ? For money for pleasure for revenge he doesn't care why he kills or how  . A family formed by a mother Margarita Lozano and two daughters Eleonora Brown is cruelly killed and are accused two different bands who are facing each other . One gang Jose Canalejas is led by Billy Mack Graig Hill and another one Frank Braa is commanded by Sandy Cassel George Martin . When the fianc named Bud Lee Howard Ross of a murdered girl learns the slaughter and atrocity committed he executes a singlehandedly revenge  ravages and kills each person involved in the massacre . Bud is relentless in his vendetta  deadly in his violence . Then the two bands flee and go to the town which is inhabited by important people as the Sheriff  Antonio Molino Rojo  the banker  the priest Andrea Bosic the doctor Umberto Raho and a gorgeous Pastor's priest named Barbara Ferguson Susy Andersen  among others . But Barbara is kidnapped as hostage and the bandits get away to Mexico . They arrive in a Mexican village but are besieged by a posse Antonio Molino  Aldo Sambrell  Alvaro De Luna formed to chase them . There takes place violent fights  facing off  hangings and final surprise about the killer's identity .It's an exciting western with breathtaking showdown between the protagonist Graig Hill and George Martin and his hoodlums . Both of whom are fine  they ravage the screen kill  shoot  hit and run  besides receive violent punches kicks and hitting . Aldo Sambrell as a cruelly baddie role is terrific he subsequently would play very secondary or minimum characters . Furthermore there appears usual ItalianSpanish Western secondaries as Alvaro De Luna Rafael Albaicin Jose Canalejas  Antonio Molino Rojo  Ricardo Palacios  Jose Luis Martin and of course Frank Braa . The film blends violence  blood  tension  high bodycount and it's fast moving and quite entertaining . There is a very odd implementation of shots in the camera work during some particular scenes as the film approaches its climax  as in the final gunfights and the customary showdown conclusion . There are many fine technicians and nice production design by Wolfgang Burman who creates an excellent scenario with barren outdoors  dirty landscapes under a glimmer sun and a fine set on the little town and the surrounded Mexican village . The musician Francesco De Massi composes a nice soundtrack and well conducted  including enjoyable songs at the beginning and the end . Striking cinematography by Stelvio Massi in Eastmancolor with negative regularly processed  being necessary a perfect remastering . Interior filmed at Roman Studios and outdoor sequences filmed in Madrid and of course Almeria Spain.Nunzio Malasomma's direction is well crafted and inclined toward violence and too much action . Quince Horcas a Asesino or Fifteen scaffolds for a murderer is his only Western  he also directed Peplum as 1960 The revolt of slaves  and his speciality were Drama and Adventure as 1958 Adorabili e Bugiarde 1951 Quattro rose Rosse  1950 Il Diavolo in convent  1947 Il Diavolo 1943 La Signora in Nero  1943 In due Si Soffre Meglio 1943 Incontri di Notte . Rating  Acceptable and passable Spaghetti Western . Worthwhile watching .";
+	onyx:describesObject <#tt0063482>;
+	onyx:hasEmotion <#Surprise>;
+	prov:Entity <#tt0063482-ma_cortes>.
+
+<#tt0063482-ma_cortes-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0063482/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0063482-ma_cortes-random>.
+
+<#tt0063482-JohnSeal>
+	schema:about <#tt0063482>;
+	schema:author "JohnSeal";
+	schema:dateCreated "Sat Sep 08 2007 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 5;
+	schema:headline " Love the Arabic subtitles!";
+	schema:reviewBody "First the good news Quindici forche per un assassino titled The Dirty Fifteen on video features a great Francesco de Masi score and an even better theme song sung by the inimitable Raoul. Now the not so good this spaghetti western is only available for viewing on a Lebanese videotape that is incorrectly letterboxed at 1.851 the image is horribly squeezed utilizing a print in truly execrable condition. And what of the story itself? Craig Hill plays Billy Mack whose brother Jimmy we can assume still hasn't come back a jutjawed cowpoke falsely accused of the murder of a family of four women. Billy must prove his innocence to the local sheriff whilst bringing the real villains to justice. Judging from what's on display here this is a pretty good filmeven in its less than ideal condition I enjoyed it. Paging XRated Kult Video or Wild Eastthis is a top candidate for DVD resurrection!".
+
+<#tt0063482-JohnSeal-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "First the good news Quindici forche per un assassino titled The Dirty Fifteen on video features a great Francesco de Masi score and an even better theme song sung by the inimitable Raoul. Now the not so good this spaghetti western is only available for viewing on a Lebanese videotape that is incorrectly letterboxed at 1.851 the image is horribly squeezed utilizing a print in truly execrable condition. And what of the story itself? Craig Hill plays Billy Mack whose brother Jimmy we can assume still hasn't come back a jutjawed cowpoke falsely accused of the murder of a family of four women. Billy must prove his innocence to the local sheriff whilst bringing the real villains to justice. Judging from what's on display here this is a pretty good filmeven in its less than ideal condition I enjoyed it. Paging XRated Kult Video or Wild Eastthis is a top candidate for DVD resurrection!";
+	onyx:describesObject <#tt0063482>;
+	onyx:hasEmotion <#Surprise>;
+	prov:Entity <#tt0063482-JohnSeal>.
+
+<#tt0063482-JohnSeal-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0063482/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0063482-JohnSeal-random>.
+
+<#tt0063482-Wizard_8>
+	schema:about <#tt0063482>;
+	schema:author "Wizard_8";
+	schema:dateCreated "Sun Feb 14 2016 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 5;
+	schema:headline " For the most part a disappointment";
+	schema:reviewBody "Even if you are a die hard fan of spaghetti westerns it's likely that you'll find this particular one pretty disappointing. It doesn't get off to a good start the first thirty or so minutes are kind of slow and the limited action in this section of the movie is pretty flatly done. When the movie does get more or less to the thirty minute mark things do pick up  but only slightly. The action doesn't get much more exciting than what we saw in the first part of the movie even though there are many excuses for it. It doesn't help that the two leads of the movie Craig Hill and George Martin don't give very charismatic performances though to be fair the script gives them few favors. The last twenty minutes of the movie  when things really start to get desperate for the leads  aren't that bad being tough and gritty as well as kind of exciting. If the first eighty minutes had been like that we might have had something here. But as it is those good last twenty minutes are not enough to save the movie from being labelled as mediocre and drab as a whole. And with the official American DVD release of this movie using a pretty crummy print there's even less reason for spaghetti western fans to give this particular effort a look.".
+
+<#tt0063482-Wizard_8-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Even if you are a die hard fan of spaghetti westerns it's likely that you'll find this particular one pretty disappointing. It doesn't get off to a good start the first thirty or so minutes are kind of slow and the limited action in this section of the movie is pretty flatly done. When the movie does get more or less to the thirty minute mark things do pick up  but only slightly. The action doesn't get much more exciting than what we saw in the first part of the movie even though there are many excuses for it. It doesn't help that the two leads of the movie Craig Hill and George Martin don't give very charismatic performances though to be fair the script gives them few favors. The last twenty minutes of the movie  when things really start to get desperate for the leads  aren't that bad being tough and gritty as well as kind of exciting. If the first eighty minutes had been like that we might have had something here. But as it is those good last twenty minutes are not enough to save the movie from being labelled as mediocre and drab as a whole. And with the official American DVD release of this movie using a pretty crummy print there's even less reason for spaghetti western fans to give this particular effort a look.";
+	onyx:describesObject <#tt0063482>;
+	onyx:hasEmotion <#Surprise>;
+	prov:Entity <#tt0063482-Wizard_8>.
+
+<#tt0063482-Wizard_8-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0063482/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0063482-Wizard_8-random>.
+
+<#tt0063482-Leofwine_draca>
+	schema:about <#tt0063482>;
+	schema:author "Leofwine_draca";
+	schema:dateCreated "Wed Aug 23 2017 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:headline " Hackneyed spaghetti western";
+	schema:reviewBody "I saw this under the title THE DIRTY FIFTEEN although 15 SCAFFOLDS FOR A MURDERER is a much better title. The picture itself is a stock spaghetti western in which a couple of cowboy gangs are accused of murder by local townsfolk and sentenced to death. A couple of heroes emerge during the running time being stock players Craig Hill and George Martin and Aldo Sambrell is here too but none of these familiar faces add much to the movie. It does have plenty of shooting and a fastmoving plot at times so it's never particularly boring just predictable and hackneyed with a 'seen it all before' feel.".
+
+<#tt0063482-Leofwine_draca-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "I saw this under the title THE DIRTY FIFTEEN although 15 SCAFFOLDS FOR A MURDERER is a much better title. The picture itself is a stock spaghetti western in which a couple of cowboy gangs are accused of murder by local townsfolk and sentenced to death. A couple of heroes emerge during the running time being stock players Craig Hill and George Martin and Aldo Sambrell is here too but none of these familiar faces add much to the movie. It does have plenty of shooting and a fastmoving plot at times so it's never particularly boring just predictable and hackneyed with a 'seen it all before' feel.";
+	onyx:describesObject <#tt0063482>;
+	onyx:hasEmotion <#Surprise>;
+	prov:Entity <#tt0063482-Leofwine_draca>.
+
+<#tt0063482-Leofwine_draca-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0063482/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0063482-Leofwine_draca-random>.
+
+<#AxelvonAmbesser>
+	rdf:type schema:Person;
+	schema:name "Axel von Ambesser".
+
+<#IlsePetri>
+	rdf:type schema:Person;
+	schema:name "Ilse Petri".
+
+<#HubertvonMeyerinck>
+	rdf:type schema:Person;
+	schema:name "Hubert von Meyerinck".
+
+<#UrsulaKrieg>
+	rdf:type schema:Person;
+	schema:name "Ursula Krieg".
+
+<#RuthLommel>
+	rdf:type schema:Person;
+	schema:name "Ruth Lommel".
+
+<#JoachimTeege>
+	rdf:type schema:Person;
+	schema:name "Joachim Teege".
+
+<#FranzStein>
+	rdf:type schema:Person;
+	schema:name "Franz Stein".
+
+<#OttoMatthies>
+	rdf:type schema:Person;
+	schema:name "Otto Matthies".
+
+<#PaulHenckels>
+	rdf:type schema:Person;
+	schema:name "Paul Henckels".
+
+<#ArnoPaulsen>
+	rdf:type schema:Person;
+	schema:name "Arno Paulsen".
+
+<#AribertWscher>
+	rdf:type schema:Person;
+	schema:name "Aribert Wscher".
+
+<#ErnstLegal>
+	rdf:type schema:Person;
+	schema:name "Ernst Legal".
+
+<#ElseEhser>
+	rdf:type schema:Person;
+	schema:name "Else Ehser".
+
+<#FriedrichMaurer>
+	rdf:type schema:Person;
+	schema:name "Friedrich Maurer".
+
+<#HansSchwarzJr.>
+	rdf:type schema:Person;
+	schema:name "Hans Schwarz Jr.".
+
+<#tt0040772-aggregateRating>
+	schema:ratingCount 18;
+	schema:ratingValue 7.6;
+	schema:bestRating 10;
+	schema:itemReviewed <#tt0040772>.
+
+<#tt0040772>
+	rdf:type schema:Movie;
+	mcb:hasId "tt0040772";
+	mcb:hasTitle "The Adventures of Fridolin (1948)  IMDb";
+	schema:duration "1h23min";
+	schema:dateCreated "1948";
+	schema:aggregateRating <#tt0040772-aggregateRating>;
+	mcb:hasActor <#AxelvonAmbesser>;
+	mcb:hasActor <#IlsePetri>;
+	mcb:hasActor <#HubertvonMeyerinck>;
+	mcb:hasActor <#UrsulaKrieg>;
+	mcb:hasActor <#RuthLommel>;
+	mcb:hasActor <#JoachimTeege>;
+	mcb:hasActor <#FranzStein>;
+	mcb:hasActor <#OttoMatthies>;
+	mcb:hasActor <#PaulHenckels>;
+	mcb:hasActor <#ArnoPaulsen>;
+	mcb:hasActor <#AribertWscher>;
+	mcb:hasActor <#ErnstLegal>;
+	mcb:hasActor <#ElseEhser>;
+	mcb:hasActor <#FriedrichMaurer>;
+	mcb:hasActor <#HansSchwarzJr.>;
+	schema:character "FridolinBiedermann";
+	schema:character "MarlenWeberMalerin";
+	schema:character "DerfalscheBiedermann";
+	schema:character "GeliebtedesfalschenBiedermanns";
+	schema:character "ElviraSauer";
+	schema:character "HeiniBock";
+	schema:character "DerStandesbeamte";
+	schema:character "EinweitererStandesbeamter";
+	schema:character "DerScheidungsbeamte";
+	schema:character "DerGefngnisdirektor";
+	schema:character "DerPolizeikommissar";
+	schema:character "DerPolizeiprfekt";
+	schema:character "DiePensionsdame";
+	schema:character "DerHagere";
+	schema:character "DerPolizist";
+	schema:image "https://m.media-amazon.com/images/M/MV5BZjE5NDE0NjAtNGQ3Yi00MzNlLTlmNjctNmQ2NGE2YmQ1NTFmXkEyXkFqcGdeQXVyNjUzNzQ4NDQ@._V1_UY1200_CR110,0,630,1200_AL_.jpg".
+
+<#tt0040772-mart_45>
+	schema:about <#tt0040772>;
+	schema:author "mart_45";
+	schema:dateCreated "Thu Apr 12 2007 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 9;
+	schema:headline " Strange Adventure  indeed!";
+	schema:reviewBody "In 1944 Wolfgang Staudte shot a film called The Man Who Had His Name Stolen. It was finished but didn't pass the censorship and parts of it were lost in the war. After the success of the first postwar German film The Murderers Are Among Us Staudte once again undertook to film the story he had tackled in 1944. As he used many of the same actors it is believed that parts of the 1944 film were used and other sequences reshot with different actors three years later. The Strange Adventure of Mr Fridolin B was finally released in March 1948.It was a year of some of the strangest films of the 40s in Germany. Staudte released The Strange Adventure... which is a well constructed witty dry comedy about two men with identical names who for some strange reason have been listed by the official bureaucracy as one. So they obviously have to share eachothers fate to some extent. Helmut Kutner released The Apple Fell another allegorical fairytale with very similar claustrophobic atmosphere where the bureaucrat is God toying around with small people. These two films are very similar in style and feeling and both are very well crafted shot and edited.Nevertheless Staudte's film didn't meet with acclaim at the time. It was a period when Trmmerfilme Ruin films were all the rage and films of individual and national guilt and responsibility such as Staudte's next Rotation made headlines. Comedies which grazed the screen were becoming hysterically optimistic which was the trend of the nearing 1950s.Both Staudte's and Kutner's films are as far from the real world as a film can be creating a strange parallel universe within the familiar framework of our everyday lives. This kind of extreme escapism was quite popular during the War but obviously it became outdated as the political system changed radically. It's hard to tell why the first version of Fridolin B was banned by the Nazzi officials as the film is now lost. But as it stands the 1948 version is lost somewhere in noman'sland and obviously confused the viewer of that era.Still seeing it today is a pleasure. The Kafkan Angst combined with the utterly ridiculous storyline makes a tense yet gleeful viewing. The fact that you are watching a film which crosses all the imaginable borders  partially filmed during the Nazi regime partially by the Sovietcontrolled DEFA  only adds to the surreal pleasure.".
+
+<#tt0040772-mart_45-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "In 1944 Wolfgang Staudte shot a film called The Man Who Had His Name Stolen. It was finished but didn't pass the censorship and parts of it were lost in the war. After the success of the first postwar German film The Murderers Are Among Us Staudte once again undertook to film the story he had tackled in 1944. As he used many of the same actors it is believed that parts of the 1944 film were used and other sequences reshot with different actors three years later. The Strange Adventure of Mr Fridolin B was finally released in March 1948.It was a year of some of the strangest films of the 40s in Germany. Staudte released The Strange Adventure... which is a well constructed witty dry comedy about two men with identical names who for some strange reason have been listed by the official bureaucracy as one. So they obviously have to share eachothers fate to some extent. Helmut Kutner released The Apple Fell another allegorical fairytale with very similar claustrophobic atmosphere where the bureaucrat is God toying around with small people. These two films are very similar in style and feeling and both are very well crafted shot and edited.Nevertheless Staudte's film didn't meet with acclaim at the time. It was a period when Trmmerfilme Ruin films were all the rage and films of individual and national guilt and responsibility such as Staudte's next Rotation made headlines. Comedies which grazed the screen were becoming hysterically optimistic which was the trend of the nearing 1950s.Both Staudte's and Kutner's films are as far from the real world as a film can be creating a strange parallel universe within the familiar framework of our everyday lives. This kind of extreme escapism was quite popular during the War but obviously it became outdated as the political system changed radically. It's hard to tell why the first version of Fridolin B was banned by the Nazzi officials as the film is now lost. But as it stands the 1948 version is lost somewhere in noman'sland and obviously confused the viewer of that era.Still seeing it today is a pleasure. The Kafkan Angst combined with the utterly ridiculous storyline makes a tense yet gleeful viewing. The fact that you are watching a film which crosses all the imaginable borders  partially filmed during the Nazi regime partially by the Sovietcontrolled DEFA  only adds to the surreal pleasure.";
+	onyx:describesObject <#tt0040772>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0040772-mart_45>.
+
+<#tt0040772-mart_45-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0040772/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0040772-mart_45-random>.
+
+<#SonjaZiemann>
+	rdf:type schema:Person;
+	schema:name "Sonja Ziemann".
+
+<#PaulKlinger>
+	rdf:type schema:Person;
+	schema:name "Paul Klinger".
+
+<#GeorgThomalla>
+	rdf:type schema:Person;
+	schema:name "Georg Thomalla".
+
+<#WolfAlbachRetty>
+	rdf:type schema:Person;
+	schema:name "Wolf AlbachRetty".
+
+<#DorisKirchner>
+	rdf:type schema:Person;
+	schema:name "Doris Kirchner".
+
+<#LeonardSteckel>
+	rdf:type schema:Person;
+	schema:name "Leonard Steckel".
+
+<#KtheHaack>
+	rdf:type schema:Person;
+	schema:name "Kthe Haack".
+
+<#IrinaGarden>
+	rdf:type schema:Person;
+	schema:name "Irina Garden".
+
+<#HerbertHbner>
+	rdf:type schema:Person;
+	schema:name "Herbert Hbner".
+
+<#JoeFurtner>
+	rdf:type schema:Person;
+	schema:name "Joe Furtner".
+
+<#GunnarMller>
+	rdf:type schema:Person;
+	schema:name "Gunnar Mller".
+
+<#OlgaLimburg>
+	rdf:type schema:Person;
+	schema:name "Olga Limburg".
+
+<#WernerSchott>
+	rdf:type schema:Person;
+	schema:name "Werner Schott".
+
+<#KurtVespermann>
+	rdf:type schema:Person;
+	schema:name "Kurt Vespermann".
+
+<#AxelMonj>
+	rdf:type schema:Person;
+	schema:name "Axel Monj".
+
+<#tt0047487-aggregateRating>
+	schema:ratingCount 23;
+	schema:ratingValue 5.7;
+	schema:bestRating 10;
+	schema:itemReviewed <#tt0047487>.
+
+<#tt0047487>
+	rdf:type schema:Movie;
+	mcb:hasId "tt0047487";
+	mcb:hasTitle "Die sieben Kleider der Katrin (1954)  IMDb";
+	schema:duration "1h45min";
+	schema:dateCreated "1954";
+	schema:text "    Seven dresses mark the different points in the love life of a young girl growing from a teenager to a mature woman.";
+	schema:aggregateRating <#tt0047487-aggregateRating>;
+	mcb:hasActor <#SonjaZiemann>;
+	mcb:hasActor <#PaulKlinger>;
+	mcb:hasActor <#GeorgThomalla>;
+	mcb:hasActor <#WolfAlbachRetty>;
+	mcb:hasActor <#DorisKirchner>;
+	mcb:hasActor <#LeonardSteckel>;
+	mcb:hasActor <#KtheHaack>;
+	mcb:hasActor <#IrinaGarden>;
+	mcb:hasActor <#HerbertHbner>;
+	mcb:hasActor <#JoeFurtner>;
+	mcb:hasActor <#GunnarMller>;
+	mcb:hasActor <#OlgaLimburg>;
+	mcb:hasActor <#WernerSchott>;
+	mcb:hasActor <#KurtVespermann>;
+	mcb:hasActor <#AxelMonj>;
+	schema:character "KatrinBurian";
+	schema:character "Dr.PeterSchrg";
+	schema:character "GrafFelix'Lixi'Hohenstein";
+	schema:character "MartinPall";
+	schema:character "Franziska'Franzi'Tompe";
+	schema:character "MdelTheaterDirektor";
+	schema:character "TanteThereseHensel";
+	schema:character "IlseHeyse";
+	schema:character "Dr.Heyse";
+	schema:character "HerrTompe";
+	schema:character "HansderFlieger";
+	schema:character "Polizeikommissar";
+	schema:character "OnkelPhilippHensel";
+	schema:character "IlsesVerlobter";
+	schema:image "https://m.media-amazon.com/images/M/MV5BYjdjOTUyZjYtY2ZjNS00YWU1LWI0N2EtYTliYjc0YTlkMWQ0XkEyXkFqcGdeQXVyMTA3NzE5MzE@._V1_UY1200_CR106,0,630,1200_AL_.jpg".
+
+<#tt0047487-J__Steed>
+	schema:about <#tt0047487>;
+	schema:author "J__Steed";
+	schema:dateCreated "Fri Sep 17 1999 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 5;
+	schema:headline " NICELY THOUGHOF NOT WELL THOUGHTOUT";
+	schema:reviewBody "Rather boring and stuffy film about Katrin Sonja Ziemann who goes through seven phases in her love life these symbolized by seven different dresses. A nicely thoughof but not very well thoughtout story device that after the first two dresses becomes repetitive while it is just too predictable which dress will fit her perfectly. Hans Deppe's direction does not overcome the weakness of the script the cast tries hard to make something out it but to no avail.".
+
+<#tt0047487-J__Steed-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Rather boring and stuffy film about Katrin Sonja Ziemann who goes through seven phases in her love life these symbolized by seven different dresses. A nicely thoughof but not very well thoughtout story device that after the first two dresses becomes repetitive while it is just too predictable which dress will fit her perfectly. Hans Deppe's direction does not overcome the weakness of the script the cast tries hard to make something out it but to no avail.";
+	onyx:describesObject <#tt0047487>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0047487-J__Steed>.
+
+<#tt0047487-J__Steed-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0047487/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0047487-J__Steed-random>.
+
+<#JeanDesailly>
+	rdf:type schema:Person;
+	schema:name "Jean Desailly".
+
+<#FranoiseDorlac>
+	rdf:type schema:Person;
+	schema:name "Franoise Dorlac".
+
+<#NellyBenedetti>
+	rdf:type schema:Person;
+	schema:name "Nelly Benedetti".
+
+<#DanielCeccaldi>
+	rdf:type schema:Person;
+	schema:name "Daniel Ceccaldi".
+
+<#LaurenceBadie>
+	rdf:type schema:Person;
+	schema:name "Laurence Badie".
+
+<#PhilippeDumat>
+	rdf:type schema:Person;
+	schema:name "Philippe Dumat".
+
+<#PauleEmanuele>
+	rdf:type schema:Person;
+	schema:name "Paule Emanuele".
+
+<#MauriceGarrel>
+	rdf:type schema:Person;
+	schema:name "Maurice Garrel".
+
+<#SabineHaudepin>
+	rdf:type schema:Person;
+	schema:name "Sabine Haudepin".
+
+<#DominiqueLacarrire>
+	rdf:type schema:Person;
+	schema:name "Dominique Lacarrire".
+
+<#JeanLanier>
+	rdf:type schema:Person;
+	schema:name "Jean Lanier".
+
+<#PierreRisch>
+	rdf:type schema:Person;
+	schema:name "Pierre Risch".
+
+<#MauriceMagalon>
+	rdf:type schema:Person;
+	schema:name "Maurice Magalon".
+
+<#tt0058458-aggregateRating>
+	schema:ratingCount 6,967;
+	schema:ratingValue 7.5;
+	schema:bestRating 10;
+	schema:itemReviewed <#tt0058458>.
+
+<#tt0058458>
+	rdf:type schema:Movie;
+	mcb:hasId "tt0058458";
+	mcb:hasTitle "The Soft Skin (1964)  IMDb";
+	schema:duration "1h53min";
+	schema:dateCreated "1964";
+	schema:text "    Pierre Lachenay a middleaged wellknown publisher and lecturer is married to Franca an unbalanced woman and father of Sabine a 10yearold girl. While traveling to Lisbon for a lecture Pierre Lachenay has a one night stand with Nicole the Panair do Brasil air stewardess. He wants to see her again and again they travel to Reims together and Pierre hides the affair from his family mostly to spare his daughter the anguish of a separation. Nicole is taking it lightly but Pierre misunderstanding her feelings and expectations decides to live with her. The couple's breakup leads to a tragic end.";
+	schema:aggregateRating <#tt0058458-aggregateRating>;
+	mcb:hasActor <#JeanDesailly>;
+	mcb:hasActor <#FranoiseDorlac>;
+	mcb:hasActor <#NellyBenedetti>;
+	mcb:hasActor <#DanielCeccaldi>;
+	mcb:hasActor <#LaurenceBadie>;
+	mcb:hasActor <#PhilippeDumat>;
+	mcb:hasActor <#PauleEmanuele>;
+	mcb:hasActor <#MauriceGarrel>;
+	mcb:hasActor <#SabineHaudepin>;
+	mcb:hasActor <#DominiqueLacarrire>;
+	mcb:hasActor <#JeanLanier>;
+	mcb:hasActor <#PierreRisch>;
+	mcb:hasActor <#MauriceMagalon>;
+	schema:character "PierreLachenay";
+	schema:character "Nicole";
+	schema:character "FrancaLachenay";
+	schema:character "Clment";
+	schema:character "Ingrid";
+	schema:character "DirecteurcinmaReims";
+	schema:character "Odile";
+	schema:character "Bontemps";
+	schema:character "SabineLachenay";
+	schema:character "LasecrtaireDominique";
+	schema:character "Michel";
+	schema:character "Chanoine";
+	schema:image "https://m.media-amazon.com/images/M/MV5BMzliZmM3NDktNDkwZS00MDlkLWI5NzUtMGYzMzVkZjI1MjI4XkEyXkFqcGdeQXVyMjQzMzQzODY@._V1_UY1200_CR100,0,630,1200_AL_.jpg".
+
+<#tt0058458-gtzam>
+	schema:about <#tt0058458>;
+	schema:author "gtzam";
+	schema:dateCreated "Wed Sep 17 2003 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " One of Truffaut's most accomplished films";
+	schema:reviewBody "Truffaut filmed La Peau Douce immediately after the international success of Jules et Jim. Released at the heyday of the nouvelle vague critics and audiences panned the film as a futile resort to bourgeois classicism after the unconventional antics of his previous masterwork.They could not have been more mistaken. Time has treated La Peau Douce better than most of his later efforts. It is definitely a triumph of direction with each scene being carefully planned and meticulously structured not unlike a Hitchcock movie. In practice Truffaut transposes Hitchcock's mechanisms of suspense into a seemingly trivial story concerning the illicit love affair of a distinguished editorauthor with a younger stewardess and its withering consequences. The characters and the milieu of the story are effortless evoked but the main joy is derived from the visual inventiveness that Truffaut shows in scene after scene. It's a triumph of a purely cinematic mode of expression which Truffaut was one of the few who had really mastered it.".
+
+<#tt0058458-gtzam-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Truffaut filmed La Peau Douce immediately after the international success of Jules et Jim. Released at the heyday of the nouvelle vague critics and audiences panned the film as a futile resort to bourgeois classicism after the unconventional antics of his previous masterwork.They could not have been more mistaken. Time has treated La Peau Douce better than most of his later efforts. It is definitely a triumph of direction with each scene being carefully planned and meticulously structured not unlike a Hitchcock movie. In practice Truffaut transposes Hitchcock's mechanisms of suspense into a seemingly trivial story concerning the illicit love affair of a distinguished editorauthor with a younger stewardess and its withering consequences. The characters and the milieu of the story are effortless evoked but the main joy is derived from the visual inventiveness that Truffaut shows in scene after scene. It's a triumph of a purely cinematic mode of expression which Truffaut was one of the few who had really mastered it.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-gtzam>.
+
+<#tt0058458-gtzam-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-gtzam-random>.
+
+<#tt0058458-R__J_>
+	schema:about <#tt0058458>;
+	schema:author "R__J_";
+	schema:dateCreated "Sun Apr 13 2003 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 10;
+	schema:headline " A stunningly modern film on the most classic of all melodramas";
+	schema:reviewBody "Franois Truffaut's fourth feature and his first true masterpiece is essentially a classic love triangle filmed like a quiet juggernaut that eventually overwhelms all those involved. On a quick trip to Lisbon for a lecture literary essayist Jean Desailly's eye catches the lovely Franoise Dorlac the air hostess on his flight. Soon he's asking her out for a drink and a love affair develops in between her flights as his married life with seductive but demanding wife Nelly Benedetti slowly unravels. Much to Truffaut's credit there is no judgment passed on any of the characters whether Desailly is undergoing a dreaded midlife crisis and wishes to be young again or is merely indulging an intellectual whim whether he really wants to prove himself he is still a man capable of passion or just looking for a way out of his stifling marriage is entirely up to the viewer to decide. But the director doesn't avert his eye from the seedy unpleasantness of the central situation as the masterfully extended Reims interlude and the shock ending prove. Basically it's a film about the mess people make when they think they're in love all the more disturbing because Truffaut bases it all on chance meetings and missed opportunities  had Desailly not arrived late for his plane to Lisbon had Dorlac not called him back at the hotel maybe none of this would have happened. Marvelously shot in black and white by Nouvelle Vague lenser Raoul Coutard this was the very first film where Truffaut showed the world all he was capable of it's a stunningly modern film on the most classic of all melodramatic stories.".
+
+<#tt0058458-R__J_-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Franois Truffaut's fourth feature and his first true masterpiece is essentially a classic love triangle filmed like a quiet juggernaut that eventually overwhelms all those involved. On a quick trip to Lisbon for a lecture literary essayist Jean Desailly's eye catches the lovely Franoise Dorlac the air hostess on his flight. Soon he's asking her out for a drink and a love affair develops in between her flights as his married life with seductive but demanding wife Nelly Benedetti slowly unravels. Much to Truffaut's credit there is no judgment passed on any of the characters whether Desailly is undergoing a dreaded midlife crisis and wishes to be young again or is merely indulging an intellectual whim whether he really wants to prove himself he is still a man capable of passion or just looking for a way out of his stifling marriage is entirely up to the viewer to decide. But the director doesn't avert his eye from the seedy unpleasantness of the central situation as the masterfully extended Reims interlude and the shock ending prove. Basically it's a film about the mess people make when they think they're in love all the more disturbing because Truffaut bases it all on chance meetings and missed opportunities  had Desailly not arrived late for his plane to Lisbon had Dorlac not called him back at the hotel maybe none of this would have happened. Marvelously shot in black and white by Nouvelle Vague lenser Raoul Coutard this was the very first film where Truffaut showed the world all he was capable of it's a stunningly modern film on the most classic of all melodramatic stories.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-R__J_>.
+
+<#tt0058458-R__J_-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-R__J_-random>.
+
+<#tt0058458-jdeferrari>
+	schema:about <#tt0058458>;
+	schema:author "jdeferrari";
+	schema:dateCreated "Wed Dec 17 2003 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 8;
+	schema:headline " Sure and unflinching";
+	schema:reviewBody "Truffaut's study of a middleaged man losing his way in life in the ageold fashion is caught in a mesmerizing series of quicksuccession shots and sympatheticallycaptured quotidian details. An unthinking selfassured man his wounded passionate wife his sweet vulnerable lover an inevitable tragedy. This underrated film has no real surprises but its surefootedness is impressive and the simple story ultimately very moving.".
+
+<#tt0058458-jdeferrari-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Truffaut's study of a middleaged man losing his way in life in the ageold fashion is caught in a mesmerizing series of quicksuccession shots and sympatheticallycaptured quotidian details. An unthinking selfassured man his wounded passionate wife his sweet vulnerable lover an inevitable tragedy. This underrated film has no real surprises but its surefootedness is impressive and the simple story ultimately very moving.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-jdeferrari>.
+
+<#tt0058458-jdeferrari-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-jdeferrari-random>.
+
+<#tt0058458-andrabem>
+	schema:about <#tt0058458>;
+	schema:author "andrabem";
+	schema:dateCreated "Tue Jul 01 2008 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 10;
+	schema:headline " The Flight of Pierre";
+	schema:reviewBody "Pierre Lachenay Jean Desailly is a successful writer. He is leaving Paris for Lisbon to give a conference on Balzac et l'argent. On the flight to Lisbon he feels instant attraction for a beautiful flight stewardess. In Lisbon he'll discover that he's staying at the same hotel as her. Pierre wastes no time and gets to know her. Her name is Nicole Franoise Dorlac. She is spontaneous and easygoing but it's easy to detect the romantic streak in her. They start an affair right there in Lisbon. She gives him her Paris telephone number. He calls her. They meet. In Paris their relationship grows in intensity.Pierre is a married man. His wife is also a goodlooking woman and he has a 10yearold daughter that loves him as does his wife. Pierre is an intellectual with an organized life maybe having had some flings here and there but nothing that really threatened the comfortable foundations of his life. But now he has met Nicole. And Nicole represents everything that Pierre had never really experienced before she has a real joie de vivre but underneath it there is pain and above all strength  the strength to overcome sadness and start all over again that is to live right here and now.Pierre on the other hand as an intellectual lives a life of compromises. His wife Franca Nelly Benedetti loves him and has a strong personality. She knows exactly what she wants and is determined to fight for it. Pierre is between two strong women. He loves Nicole  she has opened a new life a new world for him. Will he follow his heart? And where will his heart lead him? I think that La Peau Douce is one of the more personal films made by Truffaut. It has a psychological subtlety not displayed in his later works be it his later Antoine Doinel films his literary adaptations or his homages  to Hitchcock Jean Renoir etc... Never again would Truffaut reach the depth of La Peau Douce.La Peau Douce reveals understanding and tenderness for all the characters but alongside these traits there's also a bitter irony and even some touches of dark comedy. The characters are shown in all their weaknesses and beauty. In later Truffaut films the tenderness would be the prevailing feature  the irony would come along in a watereddown form.".
+
+<#tt0058458-andrabem-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Pierre Lachenay Jean Desailly is a successful writer. He is leaving Paris for Lisbon to give a conference on Balzac et l'argent. On the flight to Lisbon he feels instant attraction for a beautiful flight stewardess. In Lisbon he'll discover that he's staying at the same hotel as her. Pierre wastes no time and gets to know her. Her name is Nicole Franoise Dorlac. She is spontaneous and easygoing but it's easy to detect the romantic streak in her. They start an affair right there in Lisbon. She gives him her Paris telephone number. He calls her. They meet. In Paris their relationship grows in intensity.Pierre is a married man. His wife is also a goodlooking woman and he has a 10yearold daughter that loves him as does his wife. Pierre is an intellectual with an organized life maybe having had some flings here and there but nothing that really threatened the comfortable foundations of his life. But now he has met Nicole. And Nicole represents everything that Pierre had never really experienced before she has a real joie de vivre but underneath it there is pain and above all strength  the strength to overcome sadness and start all over again that is to live right here and now.Pierre on the other hand as an intellectual lives a life of compromises. His wife Franca Nelly Benedetti loves him and has a strong personality. She knows exactly what she wants and is determined to fight for it. Pierre is between two strong women. He loves Nicole  she has opened a new life a new world for him. Will he follow his heart? And where will his heart lead him? I think that La Peau Douce is one of the more personal films made by Truffaut. It has a psychological subtlety not displayed in his later works be it his later Antoine Doinel films his literary adaptations or his homages  to Hitchcock Jean Renoir etc... Never again would Truffaut reach the depth of La Peau Douce.La Peau Douce reveals understanding and tenderness for all the characters but alongside these traits there's also a bitter irony and even some touches of dark comedy. The characters are shown in all their weaknesses and beauty. In later Truffaut films the tenderness would be the prevailing feature  the irony would come along in a watereddown form.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-andrabem>.
+
+<#tt0058458-andrabem-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-andrabem-random>.
+
+<#tt0058458-claudio_carvalho>
+	schema:about <#tt0058458>;
+	schema:author "claudio_carvalho";
+	schema:dateCreated "Sun Jul 23 2006 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 9;
+	schema:headline " Tragic Romance";
+	schema:reviewBody "While traveling to Lisbon for a lecture the famous middleaged writer publisher and lecturer Pierre Lachenay Jean Desailly has one night stand with the young Panair do Brasil stewardess Nicole Franoise Dorleac. Pierre becomes obsessed with flight attendant and schedules to travel with her to Reims for a lecture. Pierre hides his affair from his unbalanced wife Franca Lachenay Nelly Benedetti trying to spare their little daughter Sabine Lachenay Sabine Haudepin from a separation. Pierre becomes obsessed with Nicole misunderstanding her feelings and expectations and decides to leave Franca to live with her. Meanwhile the unbalanced Franca finds a receipt of photos in Pierre's jacket and gets the evidence that Pierre is unfaithful to her in the beginning of the tragic end of their relationship.Many of Franois Truffault's movies are autobiographic or deals with problems in the communications of love. La Peu Deuce is a wonderful and tragic romance with magnificent interpretations and stunning cinematography.In the hands of another director this movie could be a corny melodramatic story in the hands of Truffault this little gem becomes a credible melancholic and intense love story of a weak man probably in a middleage crisis and certainly having problems with his about fifteen years of marriage that does not see the real intentions of his lover and destroys his family and himself with his attitude. My vote is eight.Title Brazil Um S Pecado Just One SinNote On 17 October 2011 I saw this film again.".
+
+<#tt0058458-claudio_carvalho-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "While traveling to Lisbon for a lecture the famous middleaged writer publisher and lecturer Pierre Lachenay Jean Desailly has one night stand with the young Panair do Brasil stewardess Nicole Franoise Dorleac. Pierre becomes obsessed with flight attendant and schedules to travel with her to Reims for a lecture. Pierre hides his affair from his unbalanced wife Franca Lachenay Nelly Benedetti trying to spare their little daughter Sabine Lachenay Sabine Haudepin from a separation. Pierre becomes obsessed with Nicole misunderstanding her feelings and expectations and decides to leave Franca to live with her. Meanwhile the unbalanced Franca finds a receipt of photos in Pierre's jacket and gets the evidence that Pierre is unfaithful to her in the beginning of the tragic end of their relationship.Many of Franois Truffault's movies are autobiographic or deals with problems in the communications of love. La Peu Deuce is a wonderful and tragic romance with magnificent interpretations and stunning cinematography.In the hands of another director this movie could be a corny melodramatic story in the hands of Truffault this little gem becomes a credible melancholic and intense love story of a weak man probably in a middleage crisis and certainly having problems with his about fifteen years of marriage that does not see the real intentions of his lover and destroys his family and himself with his attitude. My vote is eight.Title Brazil Um S Pecado Just One SinNote On 17 October 2011 I saw this film again.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-claudio_carvalho>.
+
+<#tt0058458-claudio_carvalho-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-claudio_carvalho-random>.
+
+<#tt0058458-dbdumonteil>
+	schema:about <#tt0058458>;
+	schema:author "dbdumonteil";
+	schema:dateCreated "Mon Dec 02 2002 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 9;
+	schema:headline " Harsh conclusion";
+	schema:reviewBody "This Truffaut is more old cinema than new waveJean Desailly is unusual in Jules et Jim director's universe.He's certainly one of the greatest French actors I know but he's better with Jean Delannoy or Edouard Molinaro.Truffaut's touch is here anywayyou can feel it thru the fatherdaughter relationshipduring the scene when Desailly brings a classical music record to his little girl .The breakfast trail which the cat finds on this way will be here again in la nuit amricaine  day for night.A lot of details show the cine buff Truffaut wasnotably the restaurant called la Colinire the name of the mansion in Jean Renoir's la rgle du jeuthe room 813 is probably a nod to Maurice Leblanc and Arsne Lupin.The love triangle would have been be tritehad not Truffaut focused on the cheated wife Nelly Benedetti an offbeat move.The end of the movie is hers at the expense of the late Franoise Dorleac's pretty girl character.And the scene in the street with the man who treats her like a whore is woman's lib before its timewho do you think you are?take a good look at yourself!  this desperate woman screams.And the harsh conclusion heralds that of la marie tait en noir the bride wore black.0".
+
+<#tt0058458-dbdumonteil-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This Truffaut is more old cinema than new waveJean Desailly is unusual in Jules et Jim director's universe.He's certainly one of the greatest French actors I know but he's better with Jean Delannoy or Edouard Molinaro.Truffaut's touch is here anywayyou can feel it thru the fatherdaughter relationshipduring the scene when Desailly brings a classical music record to his little girl .The breakfast trail which the cat finds on this way will be here again in la nuit amricaine  day for night.A lot of details show the cine buff Truffaut wasnotably the restaurant called la Colinire the name of the mansion in Jean Renoir's la rgle du jeuthe room 813 is probably a nod to Maurice Leblanc and Arsne Lupin.The love triangle would have been be tritehad not Truffaut focused on the cheated wife Nelly Benedetti an offbeat move.The end of the movie is hers at the expense of the late Franoise Dorleac's pretty girl character.And the scene in the street with the man who treats her like a whore is woman's lib before its timewho do you think you are?take a good look at yourself!  this desperate woman screams.And the harsh conclusion heralds that of la marie tait en noir the bride wore black.0";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-dbdumonteil>.
+
+<#tt0058458-dbdumonteil-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-dbdumonteil-random>.
+
+<#tt0058458-bts1984>
+	schema:about <#tt0058458>;
+	schema:author "bts1984";
+	schema:dateCreated "Sat Jun 02 2012 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 10;
+	schema:headline " Delicious title";
+	schema:reviewBody "This is the 4th film by mister Truffaut. Despite the success achieved with the previous films this one wasn't as well received. Part of the reason might have been because at the time the previous films were considered Nouvelle Vague and this one had a more conservative philosophy. It may have been that to a degree but it still has all those little details so Truffautish.'La peau douce' is an interesting title. It sounds appealing and it is also quite suggestive  it makes you think of sexuality sensuality the sweetness and softness of the female skin.The story is from the type I've been there before telling the tale of Pierre Lachenay a writer and lecturer. He is married with an attractive woman Franca and he's got a daughter Sabine. During a travel to Lisbon he meets the charming and beautiful air hostess Nicole and soon they have a love affair. But not everything goes right and there's a tragedy in store for Pierre in the ending. This film is like a love triangle but in a different way than 'Jules et Jim'. Even though Pierre is a ladies's man we sympathize with the character rather than loathe him. He is not a bad person but he is immature. His problem is weakness of character. Sometimes he is very nice but other times he is so insensitive and selfish. The harsh ending is the sign that Pierre pays with his life for his mistakes even though I wouldn't have wanted to see him getting killed.Jean Desailly is an interesting actor and he portrays Pierre Lauchenay very well. The gorgeous Franoise Dorlac who sadly passed away early and under tragic circumstances is great as the lovely Nicole. Nelly Benedetti is pretty good as Franca and so is Sabine Haudepin as Sabine. I also like Daniel Ceccaldi as Clment  his acting is great fun even the character himself is rather amusing. Filming is generally great cinematography is pure Truffaut good the soundtrack is great especially the sweet Toy Symphony by Leopold Mozart the plot is quite interesting.Title in Portugal 'Angstia'.".
+
+<#tt0058458-bts1984-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This is the 4th film by mister Truffaut. Despite the success achieved with the previous films this one wasn't as well received. Part of the reason might have been because at the time the previous films were considered Nouvelle Vague and this one had a more conservative philosophy. It may have been that to a degree but it still has all those little details so Truffautish.'La peau douce' is an interesting title. It sounds appealing and it is also quite suggestive  it makes you think of sexuality sensuality the sweetness and softness of the female skin.The story is from the type I've been there before telling the tale of Pierre Lachenay a writer and lecturer. He is married with an attractive woman Franca and he's got a daughter Sabine. During a travel to Lisbon he meets the charming and beautiful air hostess Nicole and soon they have a love affair. But not everything goes right and there's a tragedy in store for Pierre in the ending. This film is like a love triangle but in a different way than 'Jules et Jim'. Even though Pierre is a ladies's man we sympathize with the character rather than loathe him. He is not a bad person but he is immature. His problem is weakness of character. Sometimes he is very nice but other times he is so insensitive and selfish. The harsh ending is the sign that Pierre pays with his life for his mistakes even though I wouldn't have wanted to see him getting killed.Jean Desailly is an interesting actor and he portrays Pierre Lauchenay very well. The gorgeous Franoise Dorlac who sadly passed away early and under tragic circumstances is great as the lovely Nicole. Nelly Benedetti is pretty good as Franca and so is Sabine Haudepin as Sabine. I also like Daniel Ceccaldi as Clment  his acting is great fun even the character himself is rather amusing. Filming is generally great cinematography is pure Truffaut good the soundtrack is great especially the sweet Toy Symphony by Leopold Mozart the plot is quite interesting.Title in Portugal 'Angstia'.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-bts1984>.
+
+<#tt0058458-bts1984-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-bts1984-random>.
+
+<#tt0058458-flipshoes>
+	schema:about <#tt0058458>;
+	schema:author "flipshoes";
+	schema:dateCreated "Wed Sep 28 2005 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " A beautiful gem";
+	schema:reviewBody "Very poetic early Truffaut but already at his best. This story of a middleaged intellectual man who certainly should not have too much to complain about in his life but wants to give it a try for whatever reasons midlife crisis? vanity? play instinct? the beginnings of some sort of amour fou on his part? thus bringing about a catastrophe is brought to the screen in a powerful and masterly way.It's all been described in large part by other users so far Raoul Coutard's impressive blackandwhite cinematography the acting by Dorlac Desailly and Benedetti it all fitted very well.What's more to mention however is a beautiful soundtrack by Georges Delerue in my opinion a true masterpiece of film scoring with a haunting main theme. This is really a film I shall keep in my heart for a long time. I certainly prefer it to Jules et Jim.".
+
+<#tt0058458-flipshoes-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Very poetic early Truffaut but already at his best. This story of a middleaged intellectual man who certainly should not have too much to complain about in his life but wants to give it a try for whatever reasons midlife crisis? vanity? play instinct? the beginnings of some sort of amour fou on his part? thus bringing about a catastrophe is brought to the screen in a powerful and masterly way.It's all been described in large part by other users so far Raoul Coutard's impressive blackandwhite cinematography the acting by Dorlac Desailly and Benedetti it all fitted very well.What's more to mention however is a beautiful soundtrack by Georges Delerue in my opinion a true masterpiece of film scoring with a haunting main theme. This is really a film I shall keep in my heart for a long time. I certainly prefer it to Jules et Jim.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-flipshoes>.
+
+<#tt0058458-flipshoes-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-flipshoes-random>.
+
+<#tt0058458-jcappy>
+	schema:about <#tt0058458>;
+	schema:author "jcappy";
+	schema:dateCreated "Tue Jan 22 2008 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 6;
+	schema:headline " Cupid Exposed";
+	schema:reviewBody "The soft skin or the cupidous male mind? Which comes first? This is a critical question here for the refusal to grasp it can have dire repercussions. For Pierre's eroticizing of Nicole may be natural private and individual but it is hardly static. For what begins in Pierre's mind as an arrow ends up in his own bodyas a bullet.Truffaut seems neither to blame Nicole Franca or Pierre for this outcome but he undoubtedly puts the onus on Pierre. Even though to sexualize someone may seem to be a small act it nevertheless is a form of ownershipwhich sets in motion an increasing demand for control a resistance to that control and a whirl of ensuing outcomeswhich include Pierre's betrayal of both Franca and Nicole.How does this happen? It happens because a passionless desire or a certain mental configuration of flesh can become a way of seeing and experiencing another as less than a subject. When Pierre questions Nicole's wearing jeans you know he's on the downside of a fast track. When he is embarrassed by her too loud comments in a restaurant you know he's hit the bottom. Even his age prestige and subject statuscentral to his Cupid power have abandoned him. The truth is he has eroticized one woman out of existence and abandoned his loyal warm wife in the bargain.Pierre Lachanay as a kind of bourgeois version of Everyman is totally believable and not the type of man who rouses ire in anyone. He's precise articulate shy unlucky and not outstanding in any way. That he ends up loveless utterly alone and shot would seem to crown him most sympathetic character but in line with Truffaut's disciplined control of the action it does not. For Franca owns the final scene and her husband's infidelity is written deep in her passional and physical being.".
+
+<#tt0058458-jcappy-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "The soft skin or the cupidous male mind? Which comes first? This is a critical question here for the refusal to grasp it can have dire repercussions. For Pierre's eroticizing of Nicole may be natural private and individual but it is hardly static. For what begins in Pierre's mind as an arrow ends up in his own bodyas a bullet.Truffaut seems neither to blame Nicole Franca or Pierre for this outcome but he undoubtedly puts the onus on Pierre. Even though to sexualize someone may seem to be a small act it nevertheless is a form of ownershipwhich sets in motion an increasing demand for control a resistance to that control and a whirl of ensuing outcomeswhich include Pierre's betrayal of both Franca and Nicole.How does this happen? It happens because a passionless desire or a certain mental configuration of flesh can become a way of seeing and experiencing another as less than a subject. When Pierre questions Nicole's wearing jeans you know he's on the downside of a fast track. When he is embarrassed by her too loud comments in a restaurant you know he's hit the bottom. Even his age prestige and subject statuscentral to his Cupid power have abandoned him. The truth is he has eroticized one woman out of existence and abandoned his loyal warm wife in the bargain.Pierre Lachanay as a kind of bourgeois version of Everyman is totally believable and not the type of man who rouses ire in anyone. He's precise articulate shy unlucky and not outstanding in any way. That he ends up loveless utterly alone and shot would seem to crown him most sympathetic character but in line with Truffaut's disciplined control of the action it does not. For Franca owns the final scene and her husband's infidelity is written deep in her passional and physical being.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-jcappy>.
+
+<#tt0058458-jcappy-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-jcappy-random>.
+
+<#tt0058458-Atreyu_II>
+	schema:about <#tt0058458>;
+	schema:author "Atreyu_II";
+	schema:dateCreated "Sat Jun 02 2012 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " Love is sweet and bitter. Honeymoon becomes Bittermoon.";
+	schema:reviewBody "For starters this movie wasn't really all that successful when it first came out. Things have changed since but I think that much of the people who see it today probably wouldn't if it wasn't for the prestige the director's name enjoys today. If you wanna know what I think it's superior to the okay but mildly disappointing 'Jules et Jim'.This is a movie that I'd recommend to all men who can't be loyal to their girlfriendswives. I can recommend it for two reasons depending on each case to men who are aware of their lack of loyalty but can't stop and yet want to learn something from that  or to men who simply don't want to get married and have kids or don't care about taking affairs with women seriously.This movie is well directed fun romantic and at the same a harsh and almost sick movie about love. The ending is so harsh and shocking proving how love can turn to hate and just how sick love can get.Jean Desailly and Franoise Dorlac are superb in their respective roles and despite their age difference of 20 years they have a perfect chemistry.This should definitely be on Top 250.".
+
+<#tt0058458-Atreyu_II-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "For starters this movie wasn't really all that successful when it first came out. Things have changed since but I think that much of the people who see it today probably wouldn't if it wasn't for the prestige the director's name enjoys today. If you wanna know what I think it's superior to the okay but mildly disappointing 'Jules et Jim'.This is a movie that I'd recommend to all men who can't be loyal to their girlfriendswives. I can recommend it for two reasons depending on each case to men who are aware of their lack of loyalty but can't stop and yet want to learn something from that  or to men who simply don't want to get married and have kids or don't care about taking affairs with women seriously.This movie is well directed fun romantic and at the same a harsh and almost sick movie about love. The ending is so harsh and shocking proving how love can turn to hate and just how sick love can get.Jean Desailly and Franoise Dorlac are superb in their respective roles and despite their age difference of 20 years they have a perfect chemistry.This should definitely be on Top 250.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-Atreyu_II>.
+
+<#tt0058458-Atreyu_II-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-Atreyu_II-random>.
+
+<#tt0058458-fflambeau>
+	schema:about <#tt0058458>;
+	schema:author "fflambeau";
+	schema:dateCreated "Mon Jan 30 2012 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 9;
+	schema:headline " Superb and suspenseful movie";
+	schema:reviewBody "Too bad this superb and suspenseful movie has such an inaccurate synopsis written for it. The wife is not unbalanced in the picture she is driven to madness by a series of seemingly random events just as her husband's life unravels for the same reasons. This movie has a strong noir element to it with the femme fatal being the seductive air line hostess who attracts the attention of a successful writerartist by the name of Pierre Lachenay brilliantly acted by Jean Desailly. Fate is important in the outcome as it is in all noirs. The beautiful music has a driving fatalistic theme to it that is repeated from beginning to end. Moreover a series of random events especially concerning near misses and misses in time dictates the outcome. Lachenay almost misses his plane to Lisbon he almost misses the air hostess in her hotel at first she spurns him he almost misses her again when they are back in Paris he goes to the airport again and seemingly misses her only to meet her because her own plans have changed. Tellingly he later misses calling his wife by seconds because another woman how revealing is that? occupies the sole phone booth at the restaurant he's at. He cannot reach her and misses by a few seconds note the time the director uses on this scene where the wife's maid is called to the phone asked to check the stairway to see if the wife is still about and asked to see if the maid can catch her in the car lot. Again fate destiny. He misses his wife just as she has left on her fatal journey that results in his end too. So too it is by chance that his wife finds the receipt for some developed film that she then picks up and when she sees the pictures of her husband with the air line stewardess she goes mad so once again a seemingly random event the finding of the film directly results in the husband's death. I concur with other people here who have commented on the director's focus on mechanical items. I think the director focuses on them the air line cockpit and the gas station dispenser for instance as a way of showing the nature of the unfolding of fate things work a certain way and will determine a certain outcome. Press a button and there is a certain outcome one that after something is done is not chosen. Fate or destiny or whatever it might be called in this movie is very strong and the driving force here even stronger than romantic attachments which seem fleeting and ephemeral and even stronger than family attachments between husband and wife and parents and child. This I believe is the central theme of this superb movie well acted and directed. Some professional film critics wrongly have made comparisons to Hitchcock but I do not see them. For this movie is far more introspective far more psychological much bleaker than most Hitchcocks where for instance a deranged lunatic kills madly in Psycho or again in Rope or the even weaker Frenzy. So too there is no focus on discovering or catching the murderer almost always key in Hitchcock. No the emphasis in this movie is on why something happens why a life changes in a major way caused by seemingly small inevitable changes. Here unlike in Psycho no one is deranged until fate dissolves relationships. The director of this movie Truffaut was a big fan of Orson Welles and I believe that WellesNOT Hitchcockwas a prime source of inspiration to him. For instance the fate theme is very strong in Welles superb Lady from Shanghai where the Welles character seemingly randomly meets the femme fatale ends up working for her and her husband falls in love with her and finally goes on trial for murder. Another Welles film noir the even better Touch of Evil also goes into similar themes studying the utter disintegration of the corrupt law official Hank Quinlan brilliantly played by Welles. To understand The Soft Skin I believe one must understand classic film noir and Welles. Both movies by Welles were made just a few years before this one. Contrast Truffaut's approach here black and white film lots of shadows femme fatale bleak outcome with death to the lead character with a contemporary Hitchcock like North by Northwest which is playful not bleak romantic boy gets girl story and optimistic throughout and especially in the ending and is filmed in color. This movie by contrast has many of the elements of film noir even though it is made much later than most such films it is shot in black and white often with shadows and with night scenes especially the eerie scenes in Rheims which are pivotal to the story with a deadly and eventually uncaring femme fatale with fate decreeing the outcome of husband wife and family. The male lead a seemingly powerful force at the opening of the movie has no real control over his final destiny. Another strong influence appears to be the writing of the brilliant BelgianFrench author Georges Simenon. In his books not so much the Maigret ones but the far better stand alone novels Simenon often looks at a turning point in people's lives and how something dissolves relationships which is exactly what happens here. Simenon and Welles not Hitchcock are the spring sources of Francois Truffaut's inspiration in this movie. Great acting great directing great music great movie! This movie is a little appreciated gem especially by the professional critics who dwelt on the adultery aspects of the movie to the exclusion of all else.".
+
+<#tt0058458-fflambeau-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Too bad this superb and suspenseful movie has such an inaccurate synopsis written for it. The wife is not unbalanced in the picture she is driven to madness by a series of seemingly random events just as her husband's life unravels for the same reasons. This movie has a strong noir element to it with the femme fatal being the seductive air line hostess who attracts the attention of a successful writerartist by the name of Pierre Lachenay brilliantly acted by Jean Desailly. Fate is important in the outcome as it is in all noirs. The beautiful music has a driving fatalistic theme to it that is repeated from beginning to end. Moreover a series of random events especially concerning near misses and misses in time dictates the outcome. Lachenay almost misses his plane to Lisbon he almost misses the air hostess in her hotel at first she spurns him he almost misses her again when they are back in Paris he goes to the airport again and seemingly misses her only to meet her because her own plans have changed. Tellingly he later misses calling his wife by seconds because another woman how revealing is that? occupies the sole phone booth at the restaurant he's at. He cannot reach her and misses by a few seconds note the time the director uses on this scene where the wife's maid is called to the phone asked to check the stairway to see if the wife is still about and asked to see if the maid can catch her in the car lot. Again fate destiny. He misses his wife just as she has left on her fatal journey that results in his end too. So too it is by chance that his wife finds the receipt for some developed film that she then picks up and when she sees the pictures of her husband with the air line stewardess she goes mad so once again a seemingly random event the finding of the film directly results in the husband's death. I concur with other people here who have commented on the director's focus on mechanical items. I think the director focuses on them the air line cockpit and the gas station dispenser for instance as a way of showing the nature of the unfolding of fate things work a certain way and will determine a certain outcome. Press a button and there is a certain outcome one that after something is done is not chosen. Fate or destiny or whatever it might be called in this movie is very strong and the driving force here even stronger than romantic attachments which seem fleeting and ephemeral and even stronger than family attachments between husband and wife and parents and child. This I believe is the central theme of this superb movie well acted and directed. Some professional film critics wrongly have made comparisons to Hitchcock but I do not see them. For this movie is far more introspective far more psychological much bleaker than most Hitchcocks where for instance a deranged lunatic kills madly in Psycho or again in Rope or the even weaker Frenzy. So too there is no focus on discovering or catching the murderer almost always key in Hitchcock. No the emphasis in this movie is on why something happens why a life changes in a major way caused by seemingly small inevitable changes. Here unlike in Psycho no one is deranged until fate dissolves relationships. The director of this movie Truffaut was a big fan of Orson Welles and I believe that WellesNOT Hitchcockwas a prime source of inspiration to him. For instance the fate theme is very strong in Welles superb Lady from Shanghai where the Welles character seemingly randomly meets the femme fatale ends up working for her and her husband falls in love with her and finally goes on trial for murder. Another Welles film noir the even better Touch of Evil also goes into similar themes studying the utter disintegration of the corrupt law official Hank Quinlan brilliantly played by Welles. To understand The Soft Skin I believe one must understand classic film noir and Welles. Both movies by Welles were made just a few years before this one. Contrast Truffaut's approach here black and white film lots of shadows femme fatale bleak outcome with death to the lead character with a contemporary Hitchcock like North by Northwest which is playful not bleak romantic boy gets girl story and optimistic throughout and especially in the ending and is filmed in color. This movie by contrast has many of the elements of film noir even though it is made much later than most such films it is shot in black and white often with shadows and with night scenes especially the eerie scenes in Rheims which are pivotal to the story with a deadly and eventually uncaring femme fatale with fate decreeing the outcome of husband wife and family. The male lead a seemingly powerful force at the opening of the movie has no real control over his final destiny. Another strong influence appears to be the writing of the brilliant BelgianFrench author Georges Simenon. In his books not so much the Maigret ones but the far better stand alone novels Simenon often looks at a turning point in people's lives and how something dissolves relationships which is exactly what happens here. Simenon and Welles not Hitchcock are the spring sources of Francois Truffaut's inspiration in this movie. Great acting great directing great music great movie! This movie is a little appreciated gem especially by the professional critics who dwelt on the adultery aspects of the movie to the exclusion of all else.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-fflambeau>.
+
+<#tt0058458-fflambeau-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-fflambeau-random>.
+
+<#tt0058458-jotix100>
+	schema:about <#tt0058458>;
+	schema:author "jotix100";
+	schema:dateCreated "Sat Jul 25 2009 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " The stewardess";
+	schema:reviewBody "Pierre Lachenay a literary man has lived an easy existence. He is often sought to deliver lectures by his friends in the art world. Little prepared him for the awakening he would experience when he is invited to Lisbon for a presentation. The beautiful stewardess working the first class section of the flight he almost missed flirts openly with him. To make matters worse she and the crew are staying in the same hotel. This presents an opportunity for an adventure that unknown to him will be fatal.Pierre leads a bourgeois life in Paris. He has been married for a while to a brunette beauty Franca and have a young daughter Sabine. When Pierre meets the young flight attendant he probably thought it was going to be a quick encounter but the allure of having the younger woman proves a fatal mistake on his part. His marriage begins to unravel because of the lies he tells Franca. The relationship with Nicole does not go according to plan because when he decides to abandon his wife Nicole feeling she will never be at his level dumps him without much regret.Franca the spurned woman agrees to the separation but upon finding proof that Pierre has lied to her blatantly prepares a plan of action of her own. Pierre after being rejected by Nicole tries unsuccessfully to patch things up with Franca but alas it comes too late.The Soft Skin was one of Francois Truffaut films that deviated from the canons of the New Wave movement. It had the feeling of being one of the typical French cinema offering where love triangles like the one at the center of the story were commonplace. This black and white picture is a nostalgic trip to that period in France where the Paris of that era is the background for most of the action. The director gives a nod to other directors like Jean Renoir and others with some small references to his peers' work. The screenplay is by Jean Louis Richard. Raoul Cotard the cinematographer captures the essence of the places where the story takes place in great detail. That look of the 1960s in European cinema is magical world. The most interesting aspect of the film is Jean Desailly an actor with boyish looks who did fine work in his country's movie industry as well as on the stage. He makes an impression because one can see in his face all the emotions Pierre is experiencing. Just looking at Mr. Desailly while Nicole is dancing reveals a man whose lust for her and her soft skin is tangible. Francoise Dorleac a beautiful woman whose life was ended tragically at 25 was perfect as the stewardesses that gets involved with an older man without weighing the consequences she will cause. Nelly Benedetti an attractive actress plays Franca the deceived wife. Ms. Benedetti was convincing as the wife that will not stop until she finds the right punishment for the cheating husband.".
+
+<#tt0058458-jotix100-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Pierre Lachenay a literary man has lived an easy existence. He is often sought to deliver lectures by his friends in the art world. Little prepared him for the awakening he would experience when he is invited to Lisbon for a presentation. The beautiful stewardess working the first class section of the flight he almost missed flirts openly with him. To make matters worse she and the crew are staying in the same hotel. This presents an opportunity for an adventure that unknown to him will be fatal.Pierre leads a bourgeois life in Paris. He has been married for a while to a brunette beauty Franca and have a young daughter Sabine. When Pierre meets the young flight attendant he probably thought it was going to be a quick encounter but the allure of having the younger woman proves a fatal mistake on his part. His marriage begins to unravel because of the lies he tells Franca. The relationship with Nicole does not go according to plan because when he decides to abandon his wife Nicole feeling she will never be at his level dumps him without much regret.Franca the spurned woman agrees to the separation but upon finding proof that Pierre has lied to her blatantly prepares a plan of action of her own. Pierre after being rejected by Nicole tries unsuccessfully to patch things up with Franca but alas it comes too late.The Soft Skin was one of Francois Truffaut films that deviated from the canons of the New Wave movement. It had the feeling of being one of the typical French cinema offering where love triangles like the one at the center of the story were commonplace. This black and white picture is a nostalgic trip to that period in France where the Paris of that era is the background for most of the action. The director gives a nod to other directors like Jean Renoir and others with some small references to his peers' work. The screenplay is by Jean Louis Richard. Raoul Cotard the cinematographer captures the essence of the places where the story takes place in great detail. That look of the 1960s in European cinema is magical world. The most interesting aspect of the film is Jean Desailly an actor with boyish looks who did fine work in his country's movie industry as well as on the stage. He makes an impression because one can see in his face all the emotions Pierre is experiencing. Just looking at Mr. Desailly while Nicole is dancing reveals a man whose lust for her and her soft skin is tangible. Francoise Dorleac a beautiful woman whose life was ended tragically at 25 was perfect as the stewardesses that gets involved with an older man without weighing the consequences she will cause. Nelly Benedetti an attractive actress plays Franca the deceived wife. Ms. Benedetti was convincing as the wife that will not stop until she finds the right punishment for the cheating husband.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-jotix100>.
+
+<#tt0058458-jotix100-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-jotix100-random>.
+
+<#tt0058458-sl_22>
+	schema:about <#tt0058458>;
+	schema:author "sl_22";
+	schema:dateCreated "Sun Jul 04 2004 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 7;
+	schema:headline " mechanics contra eros";
+	schema:reviewBody " contains spoiler although in fairly abstract form  only in the last sentence I noticed that none of the other reviews commented on the extensive and prolonged footage of mechanical structures in this film. For example at the gas station the camera focuses on the rolling numbers on the petrol pump and some time is spent on filming the airplane dashboard in closeup. Of course this is in stark contrast to the other more obvious main theme of the film  the destructive and irrational power of love or eros as existential psychologist Rollo May calls it. It seems to me that the film points to the conflict between these two forces  call them rationality vs. irrationality dead objects vs. living humans machine vs. spirit or what have you. I already mentioned Rollo May I'm currently reading his Love and Will from 1969 which undoubtedly has affected how I see this movie. The main theme of May's book is the exact same conflict and how people in the industrial not to mention computerized era tend to become machinelike repressing and forgetting the importance of eros  the source of both love and destruction. The results of this are either apathy or the return of the repressed eros in it's destructive form  it is of course the latter we see at the end of the film.".
+
+<#tt0058458-sl_22-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText " contains spoiler although in fairly abstract form  only in the last sentence I noticed that none of the other reviews commented on the extensive and prolonged footage of mechanical structures in this film. For example at the gas station the camera focuses on the rolling numbers on the petrol pump and some time is spent on filming the airplane dashboard in closeup. Of course this is in stark contrast to the other more obvious main theme of the film  the destructive and irrational power of love or eros as existential psychologist Rollo May calls it. It seems to me that the film points to the conflict between these two forces  call them rationality vs. irrationality dead objects vs. living humans machine vs. spirit or what have you. I already mentioned Rollo May I'm currently reading his Love and Will from 1969 which undoubtedly has affected how I see this movie. The main theme of May's book is the exact same conflict and how people in the industrial not to mention computerized era tend to become machinelike repressing and forgetting the importance of eros  the source of both love and destruction. The results of this are either apathy or the return of the repressed eros in it's destructive form  it is of course the latter we see at the end of the film.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-sl_22>.
+
+<#tt0058458-sl_22-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-sl_22-random>.
+
+<#tt0058458-preppy_3>
+	schema:about <#tt0058458>;
+	schema:author "preppy_3";
+	schema:dateCreated "Fri Jul 19 2013 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 9;
+	schema:headline " Welldone but slow and a terrible ending";
+	schema:reviewBody "A middleaged married man Jean Desailly starts an affair with young beautiful Nicole Francoise Dorleac. It leads to predictable complications and a real howler of an ending.Supposedly this is considered one of Francois Truffant's worst films. When it was shown at the Cannes Film Festival back in 1964 it was a fiasco. People were bored silly there was LOTS of shiftings in seats a few walkouts and people hissing at the ending! While I agree it's not a good movie it's not THAT bad! It is welldirected with some sharp observations on love and relationships. There's some beautiful black and white cinematography and excellent acting from Dorleac and Nelly Bendetti as the man's wife. However Desailly was a terrible actor he didn't like Truffant and it comes across loud and clear the film is slowmoving and the ending was so over the top I thought they were kidding! It's worth seeing a little for the acting cinematography and ending but don't expect any great masterpiece.".
+
+<#tt0058458-preppy_3-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "A middleaged married man Jean Desailly starts an affair with young beautiful Nicole Francoise Dorleac. It leads to predictable complications and a real howler of an ending.Supposedly this is considered one of Francois Truffant's worst films. When it was shown at the Cannes Film Festival back in 1964 it was a fiasco. People were bored silly there was LOTS of shiftings in seats a few walkouts and people hissing at the ending! While I agree it's not a good movie it's not THAT bad! It is welldirected with some sharp observations on love and relationships. There's some beautiful black and white cinematography and excellent acting from Dorleac and Nelly Bendetti as the man's wife. However Desailly was a terrible actor he didn't like Truffant and it comes across loud and clear the film is slowmoving and the ending was so over the top I thought they were kidding! It's worth seeing a little for the acting cinematography and ending but don't expect any great masterpiece.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-preppy_3>.
+
+<#tt0058458-preppy_3-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-preppy_3-random>.
+
+<#tt0058458-202222>
+	schema:about <#tt0058458>;
+	schema:author "202222";
+	schema:dateCreated "Mon Jul 12 2004 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 9;
+	schema:headline " Could have done better....";
+	schema:reviewBody "I'm a huge Truffaut fan the ending of 'Les Quatre Cent Coups' is perhaps the greatest scene of all time but this disappointed me. It became Truffaut's 'let's satirise the bourgeoisie' film. But without the intense political agenda of Godard with whom he collaborated on 'A Bout de Souffle' the satire is hollow. Ultimately it's a disappointingly conventional film and perhaps represents the difficulty in much of Truffaut's work  he never quite worked out what sort of director he was. He takes a simplistic and in some ways cliched plot which is fine but it doesn't become the starting off point for anything deeper. Truffaut can be capable of greatness but here he misses by a long way.".
+
+<#tt0058458-202222-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "I'm a huge Truffaut fan the ending of 'Les Quatre Cent Coups' is perhaps the greatest scene of all time but this disappointed me. It became Truffaut's 'let's satirise the bourgeoisie' film. But without the intense political agenda of Godard with whom he collaborated on 'A Bout de Souffle' the satire is hollow. Ultimately it's a disappointingly conventional film and perhaps represents the difficulty in much of Truffaut's work  he never quite worked out what sort of director he was. He takes a simplistic and in some ways cliched plot which is fine but it doesn't become the starting off point for anything deeper. Truffaut can be capable of greatness but here he misses by a long way.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-202222>.
+
+<#tt0058458-202222-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-202222-random>.
+
+<#tt0058458-philosopherjack>
+	schema:about <#tt0058458>;
+	schema:author "philosopherjack";
+	schema:dateCreated "Sun Jun 09 2019 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " The gulf between romantic fantasy and drab logistical reality...";
+	schema:reviewBody "The title of Francois Truffaut's The Soft Skin seems to promise a sensuousness that barely exists in the film itself thus perfectly summing up its examination of the gulf between romantic fantasy and drab logistical reality. It's among his gravest and most sober films to an extent that has sometimes left viewers puzzled or underwhelmed but might as aptly be judged as one of his most effective fusions of form and content. It's apt that the protagonist Lachenay a highprofile public intellectual of a kind that can hardly be conceived of now falls for a flight attendant as the movie dates from the period when the romance of air travel was at its highest Truffaut makes the initial mutual intrigue easy enough to grasp but after that he hardly attempts to probe the heart of the relationship focusing instead on complications and obstacles in particular a bleakly comic ulteriormotivated trip to Reims where everything intervenes to keep the two apart. The affair's ultimate end similarly comes like the brisk cut of a scalpel and although the film ends on a classic crime of passion it's hard to tell whether it's really that or whether we're watching the almost unconscious acting out of a sociallydetermined clich as much as the arc of the affair itself. The film pointedly includes moments when we witness Lachenay's mind momentarily turning at the possibilities of other barely glimpsed women and others that record how a woman can barely walk alone in the street without being harassed but then equally as significant is the way that his hosts in Reims load up his schedule with a dinner at which they pepper him with mostly trivial questions to be followed by a reception which he skips out on. That is whether in one's cultural or intimate pursuits the movie leaves a deep sense of weary dissatisfied compulsion taking precedence over truth and selfawareness.".
+
+<#tt0058458-philosopherjack-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "The title of Francois Truffaut's The Soft Skin seems to promise a sensuousness that barely exists in the film itself thus perfectly summing up its examination of the gulf between romantic fantasy and drab logistical reality. It's among his gravest and most sober films to an extent that has sometimes left viewers puzzled or underwhelmed but might as aptly be judged as one of his most effective fusions of form and content. It's apt that the protagonist Lachenay a highprofile public intellectual of a kind that can hardly be conceived of now falls for a flight attendant as the movie dates from the period when the romance of air travel was at its highest Truffaut makes the initial mutual intrigue easy enough to grasp but after that he hardly attempts to probe the heart of the relationship focusing instead on complications and obstacles in particular a bleakly comic ulteriormotivated trip to Reims where everything intervenes to keep the two apart. The affair's ultimate end similarly comes like the brisk cut of a scalpel and although the film ends on a classic crime of passion it's hard to tell whether it's really that or whether we're watching the almost unconscious acting out of a sociallydetermined clich as much as the arc of the affair itself. The film pointedly includes moments when we witness Lachenay's mind momentarily turning at the possibilities of other barely glimpsed women and others that record how a woman can barely walk alone in the street without being harassed but then equally as significant is the way that his hosts in Reims load up his schedule with a dinner at which they pepper him with mostly trivial questions to be followed by a reception which he skips out on. That is whether in one's cultural or intimate pursuits the movie leaves a deep sense of weary dissatisfied compulsion taking precedence over truth and selfawareness.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-philosopherjack>.
+
+<#tt0058458-philosopherjack-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-philosopherjack-random>.
+
+<#tt0058458-morrison_dylan_fan>
+	schema:about <#tt0058458>;
+	schema:author "morrison_dylan_fan";
+	schema:dateCreated "Mon Feb 26 2018 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:reviewRating 5;
+	schema:headline " Confidentially Yours";
+	schema:reviewBody "Whilst the previous films I've seen by auteur Franois Truffaut have been very easy to pick upThe Soft Skin has somehow been difficult to getwith each attempt to order it ending in the DVD being sold outor getting lost in the post. After visiting a friend I took a look round a DVD shopand was thrilled to find 2 copies of the moviewhich gave me a chance to find out how soft the skin is.The plotSaying goodbye to his wife Franca and daughter Sabine writer and literary magazine editor Pierre Lachenay gets on a flight to attend a conference. On the planeLachenay is unable to take his eyes off beautiful air hostess Nicole. Thinking of her when he later checks into a hotel and sets off for the conference Lachenay is surprised to spot Nicole in the hotel lobby. Getting hold of her hotel room and phone number ! Lachenay and Nicole begin to have an affairthat Lachenay hopes will remain confidentially yours.View on the filmPlanned as a quick 4 week production as the rights to Fahrenheit 451 were sortedbut ending up as a flop at the box officeand causing its maker to distance himself from the French New Wave FNW stylecowriterwith Jean LouisRichard directing auteur Franois Truffaut presents a swansong to this era in his creditswhich gathers all the themes built up across the works. Shooting scenes in his own apartmentTruffaut  cinematographer Raoul Coutard build upon their tracking shots in Shoot the Piano player with delicate extended tracking shots round the Lachenay household circling in on the declining state of their marriage. Done after he had written his book on Hitchcock Truffaut prominently uses Georges Delerue simmering score to give Nicole and Pierre's affair an atmosphere of unavoidable doomwith Truffaut continuing to use silhouettes for the most romantic scenesand on the streets walk  talks revealing a disconnection between Pierre and Nicole understanding what they each desire in the relationship.Inspired by newspaper storiestales from pals and events in their own livesthe screenplay by Truffaut and Richards trims the lovedup state of Jules and Jim for a fractured melancholy romance. Smartly making Pierre's daughter Sabine and his wife Franca played by a wonderful Nelly Benedettiwho plants Franca's seeds of doubt in a nononsense way be vocal over what Pierre is leaving behindthe writers give Pierre's love for Nicole a brittlenesswhere Pierre's dream of running off on the road with a young lover is hit by the reality of family life and their jobs.Firing up a photo finishthe writers subtly shift the point of view from the Nicole and Pierre's loving state to Franca delivering her verdict from the sight she sees in the breakdown of her marriage.Coming from the Classic era of French cinema Jean Desailly gives an excellent performance as Pierre whose meek middlemanagement manners are blended by Desailly with a burning wish to capture the sparks in a new relationship. Possibly being the most beautiful air hostess there has ever been Franoise Dorlac gives an exquisite performance as Nicolewho shares Pierre's wishful state of the romancebut is given a feisty edge by Dorlacwhich flowers at the touch of the soft skin.".
+
+<#tt0058458-morrison_dylan_fan-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Whilst the previous films I've seen by auteur Franois Truffaut have been very easy to pick upThe Soft Skin has somehow been difficult to getwith each attempt to order it ending in the DVD being sold outor getting lost in the post. After visiting a friend I took a look round a DVD shopand was thrilled to find 2 copies of the moviewhich gave me a chance to find out how soft the skin is.The plotSaying goodbye to his wife Franca and daughter Sabine writer and literary magazine editor Pierre Lachenay gets on a flight to attend a conference. On the planeLachenay is unable to take his eyes off beautiful air hostess Nicole. Thinking of her when he later checks into a hotel and sets off for the conference Lachenay is surprised to spot Nicole in the hotel lobby. Getting hold of her hotel room and phone number ! Lachenay and Nicole begin to have an affairthat Lachenay hopes will remain confidentially yours.View on the filmPlanned as a quick 4 week production as the rights to Fahrenheit 451 were sortedbut ending up as a flop at the box officeand causing its maker to distance himself from the French New Wave FNW stylecowriterwith Jean LouisRichard directing auteur Franois Truffaut presents a swansong to this era in his creditswhich gathers all the themes built up across the works. Shooting scenes in his own apartmentTruffaut  cinematographer Raoul Coutard build upon their tracking shots in Shoot the Piano player with delicate extended tracking shots round the Lachenay household circling in on the declining state of their marriage. Done after he had written his book on Hitchcock Truffaut prominently uses Georges Delerue simmering score to give Nicole and Pierre's affair an atmosphere of unavoidable doomwith Truffaut continuing to use silhouettes for the most romantic scenesand on the streets walk  talks revealing a disconnection between Pierre and Nicole understanding what they each desire in the relationship.Inspired by newspaper storiestales from pals and events in their own livesthe screenplay by Truffaut and Richards trims the lovedup state of Jules and Jim for a fractured melancholy romance. Smartly making Pierre's daughter Sabine and his wife Franca played by a wonderful Nelly Benedettiwho plants Franca's seeds of doubt in a nononsense way be vocal over what Pierre is leaving behindthe writers give Pierre's love for Nicole a brittlenesswhere Pierre's dream of running off on the road with a young lover is hit by the reality of family life and their jobs.Firing up a photo finishthe writers subtly shift the point of view from the Nicole and Pierre's loving state to Franca delivering her verdict from the sight she sees in the breakdown of her marriage.Coming from the Classic era of French cinema Jean Desailly gives an excellent performance as Pierre whose meek middlemanagement manners are blended by Desailly with a burning wish to capture the sparks in a new relationship. Possibly being the most beautiful air hostess there has ever been Franoise Dorlac gives an exquisite performance as Nicolewho shares Pierre's wishful state of the romancebut is given a feisty edge by Dorlacwhich flowers at the touch of the soft skin.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-morrison_dylan_fan>.
+
+<#tt0058458-morrison_dylan_fan-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-morrison_dylan_fan-random>.
+
+<#tt0058458-inioi>
+	schema:about <#tt0058458>;
+	schema:author "inioi";
+	schema:dateCreated "Wed Dec 30 2015 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:headline " The Beauty and The Weak";
+	schema:reviewBody "I'm hooked about this wonderful movie.I find it captivating charming and yet intriguing and uncertain. And most of all very intimate.There are many nonspoken scenes in which subtlety through camera position Truffaut makes us identify with Lachenay's role. By this means unveils the feelings of the two main characters.In some situations i believe it is fair to say that words sometimes obscure and distort so images can express by itself clearly in order to get an effective impact on the viewer.I would have liked to know which was Truffaut's intention about Lachenay's character. I found him undecided erratic inconclusive and ultimately weak behind a successful and intellectual masquerade which in turn it could be probably a widespread attitude in such situations. As a consequence it takes place some brilliant and suspenseful scenes in which two lovers are involved but but only one is displayed on the screen due to Lachenay's unwillingness to be together.The rising tension is due to the director creates a situation in which in the end turns out to be unattainable.With a clear Hitchcock's influence it is since my point of view the best film of Franciose Truffaut.910".
+
+<#tt0058458-inioi-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "I'm hooked about this wonderful movie.I find it captivating charming and yet intriguing and uncertain. And most of all very intimate.There are many nonspoken scenes in which subtlety through camera position Truffaut makes us identify with Lachenay's role. By this means unveils the feelings of the two main characters.In some situations i believe it is fair to say that words sometimes obscure and distort so images can express by itself clearly in order to get an effective impact on the viewer.I would have liked to know which was Truffaut's intention about Lachenay's character. I found him undecided erratic inconclusive and ultimately weak behind a successful and intellectual masquerade which in turn it could be probably a widespread attitude in such situations. As a consequence it takes place some brilliant and suspenseful scenes in which two lovers are involved but but only one is displayed on the screen due to Lachenay's unwillingness to be together.The rising tension is due to the director creates a situation in which in the end turns out to be unattainable.With a clear Hitchcock's influence it is since my point of view the best film of Franciose Truffaut.910";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-inioi>.
+
+<#tt0058458-inioi-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-inioi-random>.
+
+<#tt0058458-RanchoTuVu>
+	schema:about <#tt0058458>;
+	schema:author "RanchoTuVu";
+	schema:dateCreated "Tue Jul 23 2013 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:headline " expert on Balzac falls for flight attendant";
+	schema:reviewBody "A French expert on Balzac Jean Desailly falls for an attractive flight attendant Francoise Dorleac after first seeing her on a flight from Paris to Lisbon. When seeing the film it seems as if Desailly's character is not necessarily Dorleac's character's type as he looks a bit pudgy and middleaged and she's anything but. That does play into the hegotinoverhishead plot that slowly works its way through when his wife Nelly Benedetti discovers the affair and memorably takes matters into her own hands. Desailly's character for all its supposed brilliance about French literature he gives a great lecture explaining to an eager audience that Balzac wrote so prolifically because he needed the money allows himself to get too swept up in this affair rather than playing it cool in order to keep the wife and the sexy girlfriend. A dramatic climax conclusively ends a film that seems to if not crawl move a bit deliberatively. However it has some great moments such as a trip to Rheims which brings in some interesting characters. Hard not to recommend this filmespecially for Desailly's great part and for the ending.".
+
+<#tt0058458-RanchoTuVu-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "A French expert on Balzac Jean Desailly falls for an attractive flight attendant Francoise Dorleac after first seeing her on a flight from Paris to Lisbon. When seeing the film it seems as if Desailly's character is not necessarily Dorleac's character's type as he looks a bit pudgy and middleaged and she's anything but. That does play into the hegotinoverhishead plot that slowly works its way through when his wife Nelly Benedetti discovers the affair and memorably takes matters into her own hands. Desailly's character for all its supposed brilliance about French literature he gives a great lecture explaining to an eager audience that Balzac wrote so prolifically because he needed the money allows himself to get too swept up in this affair rather than playing it cool in order to keep the wife and the sexy girlfriend. A dramatic climax conclusively ends a film that seems to if not crawl move a bit deliberatively. However it has some great moments such as a trip to Rheims which brings in some interesting characters. Hard not to recommend this filmespecially for Desailly's great part and for the ending.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-RanchoTuVu>.
+
+<#tt0058458-RanchoTuVu-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-RanchoTuVu-random>.
+
+<#tt0058458-gavin6942>
+	schema:about <#tt0058458>;
+	schema:author "gavin6942";
+	schema:dateCreated "Fri Mar 27 2015 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:headline " French Love";
+	schema:reviewBody "Pierre Lachenay Jean Desailly is a wellknown publisher and lecturer married to Franca Nelly Benedetti and the father of 10year old Sabine Sabine Haudepin. He meets stewardess Nicole Franoise Dorlac and they start a hidden affair but Pierre cannot stand staying away from her.Glenn Heath Jr. called the film a mesmerizing morality play detailing the machinations of adultery and their deadly consequences. That sums it up. But indeed the French have become synonymous with love and romance though it is not clear why since they are also seen as smelly and hairy. Here we have a story that shows the difficult part of love aging.Although not appreciated in its time the film looks beautiful and is easily on par with Jules and Jim.".
+
+<#tt0058458-gavin6942-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Pierre Lachenay Jean Desailly is a wellknown publisher and lecturer married to Franca Nelly Benedetti and the father of 10year old Sabine Sabine Haudepin. He meets stewardess Nicole Franoise Dorlac and they start a hidden affair but Pierre cannot stand staying away from her.Glenn Heath Jr. called the film a mesmerizing morality play detailing the machinations of adultery and their deadly consequences. That sums it up. But indeed the French have become synonymous with love and romance though it is not clear why since they are also seen as smelly and hairy. Here we have a story that shows the difficult part of love aging.Although not appreciated in its time the film looks beautiful and is easily on par with Jules and Jim.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-gavin6942>.
+
+<#tt0058458-gavin6942-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-gavin6942-random>.
+
+<#tt0058458-edgeofreality>
+	schema:about <#tt0058458>;
+	schema:author "edgeofreality";
+	schema:dateCreated "Mon Mar 02 2020 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:headline " Sow motion train wreck";
+	schema:reviewBody "Aside from the ending  which I'm still not sure about I thought this film worked remarkably well. The protagonist at first got on my nerves because it was clear he was making a mistake by falling for the stewardess though we're also led to feel it is a kind of fate drawing him further towards his doom. As their relationship developed Truffaut uses some Hitchcockian bits of suspense to frustrate us and the heroheroine as they struggle to find a place to be alone. By then I began to sympathise with the hero only to learn eventually that he was better off being frustrated. I think the ending would have worked a bit better  be more convincing  had I come to know the wife's character better. The ending still kind of worked for me and in retrospect I like the clockwork quality of the script this mistake leads to that one leads to another and another and  BOOM! Not sure why so many people disliked this film  the acting and directing are spot on as far as I can see.".
+
+<#tt0058458-edgeofreality-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Aside from the ending  which I'm still not sure about I thought this film worked remarkably well. The protagonist at first got on my nerves because it was clear he was making a mistake by falling for the stewardess though we're also led to feel it is a kind of fate drawing him further towards his doom. As their relationship developed Truffaut uses some Hitchcockian bits of suspense to frustrate us and the heroheroine as they struggle to find a place to be alone. By then I began to sympathise with the hero only to learn eventually that he was better off being frustrated. I think the ending would have worked a bit better  be more convincing  had I come to know the wife's character better. The ending still kind of worked for me and in retrospect I like the clockwork quality of the script this mistake leads to that one leads to another and another and  BOOM! Not sure why so many people disliked this film  the acting and directing are spot on as far as I can see.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-edgeofreality>.
+
+<#tt0058458-edgeofreality-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-edgeofreality-random>.
+
+<#tt0058458-Hitchcoc>
+	schema:about <#tt0058458>;
+	schema:author "Hitchcoc";
+	schema:dateCreated "Sun Dec 02 2018 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:headline " It's Truffaut After All";
+	schema:reviewBody "This is a character study steeped in intense emotionalism and bad judgment. Unfortunately even the most deep intellectual beings make those choices. The love for Nicole is suspect. The title sort of indicates the sensuality of the characters. He is on the road and he needs to fulfill for himself a need even though it is founded in betrayal. Yes it is very dramatic and intense. But it is real and it is French. There were times when I was so uncomfortable watching this. And some would say the ending was a bit much. But it is masterfully orchestrated.".
+
+<#tt0058458-Hitchcoc-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This is a character study steeped in intense emotionalism and bad judgment. Unfortunately even the most deep intellectual beings make those choices. The love for Nicole is suspect. The title sort of indicates the sensuality of the characters. He is on the road and he needs to fulfill for himself a need even though it is founded in betrayal. Yes it is very dramatic and intense. But it is real and it is French. There were times when I was so uncomfortable watching this. And some would say the ending was a bit much. But it is masterfully orchestrated.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-Hitchcoc>.
+
+<#tt0058458-Hitchcoc-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-Hitchcoc-random>.
+
+<#tt0058458-erica_14>
+	schema:about <#tt0058458>;
+	schema:author "erica_14";
+	schema:dateCreated "Wed Aug 11 1999 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:headline " portrait of a weak man";
+	schema:reviewBody "This is not one of the best Truffaut but it is nevertheless a precise portrait of a little man passive without courage and unable to really choose he will pay for that. Best sides of the movie the rapid sketch of a small town's wealthy people trying to be acculturate and Francoise Dorleac really charming as the protagonist's young lover".
+
+<#tt0058458-erica_14-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "This is not one of the best Truffaut but it is nevertheless a precise portrait of a little man passive without courage and unable to really choose he will pay for that. Best sides of the movie the rapid sketch of a small town's wealthy people trying to be acculturate and Francoise Dorleac really charming as the protagonist's young lover";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-erica_14>.
+
+<#tt0058458-erica_14-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-erica_14-random>.
+
+<#tt0058458-bandw>
+	schema:about <#tt0058458>;
+	schema:author "bandw";
+	schema:dateCreated "Thu Jan 19 2017 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:headline " I expected more from a Truffaut movie";
+	schema:reviewBody "There is not much original in this story of a Parisian extramarital affair. Pierre Jean Desailly and Franca Nelly Benedetti are the married couple and Nicole Franoise Dorlac is Pierre's love interest. Pierre is a well known editor author and critic. Pierre is quite famous to the extent that his appearance to give an introduction to the movie With Andr Gide draws a sellout crowd. As part of this event Pierre is expected to entertain a group of local intelligentsia at a dinner. That scene had the ring of truth and Truffaut must have written it based on the many times he had been in similar situations. I wish there had been more supporting evidence for Pierre's fame since I was being asked to buy into it believing it was essential since that is the main thing that I could see that Pierre had that could attract such a woman as Nicole. Pierre comes off as a mild family man devoted to his daily habitual pleasures. Outside of one or two scenes there was no onscreen chemistry between Desailly and Dorlac. I also found the discord between Pierre and his wife more scripted than believable. The final scene was poorly motivated.On the positive side the Criterion Collection print is high quality showing off the skilled use of camera angles and film contrast. Those who appreciate black and white photography should enjoy this example. There is use of quick cuts in an attempt to add some excitement to the affair but not enough to keep this from being but a minor variation on a timeworn theme.Coming after The 400 Blows Shoot the Piano Player and Jules and Jim I was hoping for more from this.".
+
+<#tt0058458-bandw-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "There is not much original in this story of a Parisian extramarital affair. Pierre Jean Desailly and Franca Nelly Benedetti are the married couple and Nicole Franoise Dorlac is Pierre's love interest. Pierre is a well known editor author and critic. Pierre is quite famous to the extent that his appearance to give an introduction to the movie With Andr Gide draws a sellout crowd. As part of this event Pierre is expected to entertain a group of local intelligentsia at a dinner. That scene had the ring of truth and Truffaut must have written it based on the many times he had been in similar situations. I wish there had been more supporting evidence for Pierre's fame since I was being asked to buy into it believing it was essential since that is the main thing that I could see that Pierre had that could attract such a woman as Nicole. Pierre comes off as a mild family man devoted to his daily habitual pleasures. Outside of one or two scenes there was no onscreen chemistry between Desailly and Dorlac. I also found the discord between Pierre and his wife more scripted than believable. The final scene was poorly motivated.On the positive side the Criterion Collection print is high quality showing off the skilled use of camera angles and film contrast. Those who appreciate black and white photography should enjoy this example. There is use of quick cuts in an attempt to add some excitement to the affair but not enough to keep this from being but a minor variation on a timeworn theme.Coming after The 400 Blows Shoot the Piano Player and Jules and Jim I was hoping for more from this.";
+	onyx:describesObject <#tt0058458>;
+	onyx:hasEmotion <#Neutral>;
+	prov:Entity <#tt0058458-bandw>.
+
+<#tt0058458-bandw-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0058458/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0058458-bandw-random>.

@@ -1,0 +1,324 @@
+@base <http://movie.chatbot.org/>.
+@prefix mcb: <http://movie.chatbot.org/>.
+@prefix schema: <http://schema.org/>.
+@prefix onyx: <http://www.gsi.dit.upm.es/ontologies/onyx/ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema>.
+@prefix owl: <http://www.w3.org/2002/07/owl>.
+@prefix wnaffect: <http://www.gsi.dit.upm.es/ontologies/wnaffect/ns#>.
+
+<mcb:hasActor>
+	rdf:type owl:ObjectProperty;
+	rdfs:range schema:Person;
+	rdfs:domain schema:Movie.
+
+<mcb:hasId>
+	rdf:type owl:DatatypeProperty, owl:FunctionalProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasTitle>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasGenre>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<mcb:hasLanguage>
+	rdf:type owl:DatatypeProperty;
+	rdfs:range xsd:string;
+	rdfs:domain schema:Movie.
+
+<schema:Person>
+	rdf:type owl:Class.
+
+<schema:Movie>
+	rdf:type owl:Class.
+
+<mcb:actorIsPerson>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasActor;
+	owl:allValuesFrom schema:Person.
+
+<mcb:atLeastOneGenre>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasGenre;
+	owl:minCardinality "1"^^xsd:nonNegativeInteger.
+
+<mcb:anyNumberOfLanguages>
+	rdf:type owl:Restriction;
+	owl:onProperty mcb:hasLanguage;
+	owl:minCardinality "0"^^xsd:nonNegativeInteger.
+
+<#Hate>
+	onyx:hasEmotionCategory wnaffect:Hate.
+
+<#Dislike>
+	onyx:hasEmotionCategory wnaffect:Dislike.
+
+<#Anger>
+	onyx:hasEmotionCategory wnaffect:Anger.
+
+<#Anxiety>
+	onyx:hasEmotionCategory wnaffect:Anxiety.
+
+<#Ingratitude>
+	onyx:hasEmotionCategory wnaffect:Ingratitude.
+
+<#Humility>
+	onyx:hasEmotionCategory wnaffect:Humility.
+
+<#Compassion>
+	onyx:hasEmotionCategory wnaffect:Compassion.
+
+<#Daze>
+	onyx:hasEmotionCategory wnaffect:Daze.
+
+<#Sadness>
+	onyx:hasEmotionCategory wnaffect:Sadness.
+
+<#Negative-Fear>
+	onyx:hasEmotionCategory wnaffect:Negative-Fear.
+
+<#Despair>
+	onyx:hasEmotionCategory wnaffect:Despair.
+
+<#Shame>
+	onyx:hasEmotionCategory wnaffect:Shame.
+
+<#Love>
+	onyx:hasEmotionCategory wnaffect:Love.
+
+<#Calmness>
+	onyx:hasEmotionCategory wnaffect:Calmness.
+
+<#Affection>
+	onyx:hasEmotionCategory wnaffect:Affection.
+
+<#Self-Pride>
+	onyx:hasEmotionCategory wnaffect:Self-Pride.
+
+<#Enthusiasm>
+	onyx:hasEmotionCategory wnaffect:Enthusiasm.
+
+<#Positivie-Fear>
+	onyx:hasEmotionCategory wnaffect:Positivie-Fear.
+
+<#Liking>
+	onyx:hasEmotionCategory wnaffect:Liking.
+
+<#Joy>
+	onyx:hasEmotionCategory wnaffect:Joy.
+
+<#Positive-Expectation>
+	onyx:hasEmotionCategory wnaffect:Positive-Expectation.
+
+<#Fearlessness>
+	onyx:hasEmotionCategory wnaffect:Fearlessness.
+
+<#Positive-Hope>
+	onyx:hasEmotionCategory wnaffect:Positive-Hope.
+
+<#Levity>
+	onyx:hasEmotionCategory wnaffect:Levity.
+
+<#Gratitude>
+	onyx:hasEmotionCategory wnaffect:Gratitude.
+
+<#Neutral-Unconcern>
+	onyx:hasEmotionCategory wnaffect:Neutral-Unconcern.
+
+<#Apathy>
+	onyx:hasEmotionCategory wnaffect:Apathy.
+
+<#Surprise>
+	onyx:hasEmotionCategory wnaffect:Surprise.
+
+<#Ambiguous-Agitation>
+	onyx:hasEmotionCategory wnaffect:Ambiguous-Agitation.
+
+<#LeslieCheung>
+	rdf:type schema:Person;
+	schema:name "Leslie Cheung".
+
+<#AlexFong>
+	rdf:type schema:Person;
+	schema:name "Alex Fong".
+
+<#RubyWong>
+	rdf:type schema:Person;
+	schema:name "Ruby Wong".
+
+<#VincentKok>
+	rdf:type schema:Person;
+	schema:name "Vincent Kok".
+
+<#MonicaChan>
+	rdf:type schema:Person;
+	schema:name "Monica Chan".
+
+<#JoeManKwongCheung>
+	rdf:type schema:Person;
+	schema:name "Joe Man Kwong Cheung".
+
+<#HenryFong>
+	rdf:type schema:Person;
+	schema:name "Henry Fong".
+
+<#AlexanderChan>
+	rdf:type schema:Person;
+	schema:name "Alexander Chan".
+
+<#RavenChoi>
+	rdf:type schema:Person;
+	schema:name "Raven Choi".
+
+<#KwokWingChan>
+	rdf:type schema:Person;
+	schema:name "Kwok Wing Chan".
+
+<#LindzayChan>
+	rdf:type schema:Person;
+	schema:name "Lindzay Chan".
+
+<#WingFaiChan>
+	rdf:type schema:Person;
+	schema:name "WingFai Chan".
+
+<#WingYeeCheng>
+	rdf:type schema:Person;
+	schema:name "Wing Yee Cheng".
+
+<#MoChanChik>
+	rdf:type schema:Person;
+	schema:name "MoChan Chik".
+
+<#KinShingChoi>
+	rdf:type schema:Person;
+	schema:name "KinShing Choi".
+
+<#tt0258489-aggregateRating>
+	schema:ratingCount 861;
+	schema:ratingValue 6.7;
+	schema:bestRating 10;
+	schema:itemReviewed <#tt0258489>.
+
+<#tt0258489>
+	rdf:type schema:Movie;
+	mcb:hasId "tt0258489";
+	mcb:hasTitle "Double Tap (2000)  IMDb";
+	schema:duration "1h36min";
+	schema:dateCreated "2000";
+	schema:text "    What begins as an innocuous entry into a gun competition eventually steers Rick towards a path of fatal rivalry. With extensive training Rick emerges as one of the finest shooters in town. Three years down the line four members of a G4 unit have been murdered the suspects clear out any possible evidence. A top CID officer Miu narrows the suspect list down to just Rick whom he had met in the shooting arena on the final day of the gun competition three years before...";
+	schema:aggregateRating <#tt0258489-aggregateRating>;
+	mcb:hasActor <#LeslieCheung>;
+	mcb:hasActor <#AlexFong>;
+	mcb:hasActor <#RubyWong>;
+	mcb:hasActor <#VincentKok>;
+	mcb:hasActor <#MonicaChan>;
+	mcb:hasActor <#JoeManKwongCheung>;
+	mcb:hasActor <#HenryFong>;
+	mcb:hasActor <#AlexanderChan>;
+	mcb:hasActor <#RavenChoi>;
+	mcb:hasActor <#KwokWingChan>;
+	mcb:hasActor <#LindzayChan>;
+	mcb:hasActor <#WingFaiChan>;
+	mcb:hasActor <#WingYeeCheng>;
+	mcb:hasActor <#MoChanChik>;
+	mcb:hasActor <#KinShingChoi>;
+	schema:character "RickPang";
+	schema:character "MiuChishun";
+	schema:character "Colleen";
+	schema:character "Joe";
+	schema:character "Psychiatrist";
+	schema:character "Cop";
+	schema:character "Policeman";
+	schema:image "https://m.media-amazon.com/images/M/MV5BOGNhZDU4MDYtYWM1Yy00MmEzLTk4M2UtODZmMTk1NWZlZmI0XkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_UY1200_CR104,0,630,1200_AL_.jpg".
+
+<#tt0258489-bob_the_moo>
+	schema:about <#tt0258489>;
+	schema:author "bob_the_moo";
+	schema:dateCreated "Tue Jul 05 2011 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 8;
+	schema:headline " Has a good idea at its core but doesn't build on it";
+	schema:reviewBody "Rick is a professional marksman excelling at moving through the competitive target ranges hitting targets twice in very quick succession with extreme accuracy. His main rival is a police officer Miu Chishun who goads him back into competition. However a tragedy at the competition sees Rick disappear for several years with blood on his hands. It is only after several years that he comes to mind as Chishun is put in charge of an investigation into a federal witness and his four police guards killed in a fast and ruthless manner  most with double hits to the head rather than the easier target of the core body. Rick is called in along with the handful of others known to be capable of such a feat.The idea behind Double Tap is a good one and it is one that will be familiar to those that watch many Hong Kong action movies. Essentially what the entire plot boils down to is one man versus another with lots of fast gun play and shootouts on the cards those that have watched more than one John Woo film will recognise not only the dynamic but also the potential that it holds as a core idea in an action movie. At times it comes off in this film but mostly it doesn't. Indeed at times it seems so desperate to just have the idea of these two marksmen going head to head that it forgets to really build a relationship between them or fully develop the ideas that get us to the action.It starts out in the range with fast movement and skills shown for the first 20 minutes or so then heads into an unlikely and sudden event that sparks the rest of the film well sparks it  after several years!. The next action again doesn't ring true and it escalates far too fast and lacks sufficient tension and excitement. The shootouts are noisy and bloody but they lack the sense of ballet and exhilaration that better films managed to do. In this the action happens but it seems to do so regardless of what else is going on. Occasionally we will have suggested depth in the characters but it is fleeting.None of this makes the film bad though it only serves to limit it from what it could have been and instead of being a thrilling characterdriven action movie with real tension and setpieces it only manages to come in as an OK film that aspires to be that. Leslie Cheung tries to make his character more and in very brief moments you can see he is tortured but they are brief moments and mostly he is just ruthless. He communicates with his opposite number but neither he nor Alex Fong really spark off one another they have scenes but the script doesn't reproduce that respectful rivalry or opposite side of same coin thing that similar better films have done. Fong is OK individually and both do well but just the script doesn't give them as much as it could have done.".
+
+<#tt0258489-bob_the_moo-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Rick is a professional marksman excelling at moving through the competitive target ranges hitting targets twice in very quick succession with extreme accuracy. His main rival is a police officer Miu Chishun who goads him back into competition. However a tragedy at the competition sees Rick disappear for several years with blood on his hands. It is only after several years that he comes to mind as Chishun is put in charge of an investigation into a federal witness and his four police guards killed in a fast and ruthless manner  most with double hits to the head rather than the easier target of the core body. Rick is called in along with the handful of others known to be capable of such a feat.The idea behind Double Tap is a good one and it is one that will be familiar to those that watch many Hong Kong action movies. Essentially what the entire plot boils down to is one man versus another with lots of fast gun play and shootouts on the cards those that have watched more than one John Woo film will recognise not only the dynamic but also the potential that it holds as a core idea in an action movie. At times it comes off in this film but mostly it doesn't. Indeed at times it seems so desperate to just have the idea of these two marksmen going head to head that it forgets to really build a relationship between them or fully develop the ideas that get us to the action.It starts out in the range with fast movement and skills shown for the first 20 minutes or so then heads into an unlikely and sudden event that sparks the rest of the film well sparks it  after several years!. The next action again doesn't ring true and it escalates far too fast and lacks sufficient tension and excitement. The shootouts are noisy and bloody but they lack the sense of ballet and exhilaration that better films managed to do. In this the action happens but it seems to do so regardless of what else is going on. Occasionally we will have suggested depth in the characters but it is fleeting.None of this makes the film bad though it only serves to limit it from what it could have been and instead of being a thrilling characterdriven action movie with real tension and setpieces it only manages to come in as an OK film that aspires to be that. Leslie Cheung tries to make his character more and in very brief moments you can see he is tortured but they are brief moments and mostly he is just ruthless. He communicates with his opposite number but neither he nor Alex Fong really spark off one another they have scenes but the script doesn't reproduce that respectful rivalry or opposite side of same coin thing that similar better films have done. Fong is OK individually and both do well but just the script doesn't give them as much as it could have done.";
+	onyx:describesObject <#tt0258489>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0258489-bob_the_moo>.
+
+<#tt0258489-bob_the_moo-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0258489/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0258489-bob_the_moo-random>.
+
+<#tt0258489-ironsidev>
+	schema:about <#tt0258489>;
+	schema:author "ironsidev";
+	schema:dateCreated "Fri Sep 22 2000 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 6;
+	schema:headline " Pretty Good!!";
+	schema:reviewBody "Double Tap Gun King is plainly not just an action movie this movie is also filled with suspenseful drama.Leslie Cheung plays Rick an expert marksman who shoots a threatening bystander during a match against his CID competitor played by Alex Fong who could not attempt to stop the bystander.  After that killing accident Rick does not feel scared or nervous but HAPPY?!  A few years later the police suspects Rick of killing a witness and 4 cops in a trial court case. The trail turns into a catandmouse game until the final standoff.This movie is deeply emotional for Rick's first kill brings a feeling of an addiction as he becomes a threat to the police. It showed how pitted rivals faced against each other a cop afraid of shooting to kill pit off against someone who won't stop at nothing to kill. It makes you think whether killing  makes you afraid of being addicted?  Worth considered to check out.".
+
+<#tt0258489-ironsidev-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "Double Tap Gun King is plainly not just an action movie this movie is also filled with suspenseful drama.Leslie Cheung plays Rick an expert marksman who shoots a threatening bystander during a match against his CID competitor played by Alex Fong who could not attempt to stop the bystander.  After that killing accident Rick does not feel scared or nervous but HAPPY?!  A few years later the police suspects Rick of killing a witness and 4 cops in a trial court case. The trail turns into a catandmouse game until the final standoff.This movie is deeply emotional for Rick's first kill brings a feeling of an addiction as he becomes a threat to the police. It showed how pitted rivals faced against each other a cop afraid of shooting to kill pit off against someone who won't stop at nothing to kill. It makes you think whether killing  makes you afraid of being addicted?  Worth considered to check out.";
+	onyx:describesObject <#tt0258489>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0258489-ironsidev>.
+
+<#tt0258489-ironsidev-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0258489/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0258489-ironsidev-random>.
+
+<#tt0258489-paul_haakonsen>
+	schema:about <#tt0258489>;
+	schema:author "paul_haakonsen";
+	schema:dateCreated "Sun Aug 19 2012 00:00:00 GMT+0200 (Mitteleuropäische Sommerzeit)";
+	schema:reviewRating 4;
+	schema:headline " Unfortunately not an outstanding Hong Kong movie...";
+	schema:reviewBody "For a Hong Kong action movie then Double Tap was a bit on the more lame side unfortunately.The story is about Ricky played by Leslie Cheung a gunsmith and an ace marksman who is forced to kill a man at a shooting competition as the man is threatening Ricky's girlfriend with a gun. The ordeal leaves a lasting impression on Ricky and makes his develop a taste for blood. Three years later people are found dead shot through the head with the special 'double tap' technique that only a few men in Hong Kong are capable of doing. Detective Miu played by Alex Fong is the highranking detective on the case to solve these murders. And it soon becomes a chase of cat and mouse as time is running out and more dead police officers are showing up.Like many other Hong Kong action movies this movie had a great amount of action that was accompanied by a good story. However there was just something missing from this movie. It moved ahead at a slow pace and it was fairly anticlimatic all in all. The movie never really peaked but just kept pacing onward at a dull pace.Oddly enough not even Leslie Cheung was able to keep this movie afloat and it came off as just slightly over average compared to other Hong Kong movies of the same genre. The acting performances in the movie were good but without that key ingredient that was missing from the movie good acting performances are only worth so much.There are other and far better Hong Kong action movies available and Double Tap is worth watching mostly if you are a fan of Leslie Cheung or like myself just have to watch all Hong Kong movies that you come across.The DVD cover said that t his movie was in and I quote Matrix style. Yeah that was somewhat of an overexaggeration. There was surprisingly little in Double Tap that could be even remotely compared to The Matrix. So don't get suckered in by that false advertising.".
+
+<#tt0258489-paul_haakonsen-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "For a Hong Kong action movie then Double Tap was a bit on the more lame side unfortunately.The story is about Ricky played by Leslie Cheung a gunsmith and an ace marksman who is forced to kill a man at a shooting competition as the man is threatening Ricky's girlfriend with a gun. The ordeal leaves a lasting impression on Ricky and makes his develop a taste for blood. Three years later people are found dead shot through the head with the special 'double tap' technique that only a few men in Hong Kong are capable of doing. Detective Miu played by Alex Fong is the highranking detective on the case to solve these murders. And it soon becomes a chase of cat and mouse as time is running out and more dead police officers are showing up.Like many other Hong Kong action movies this movie had a great amount of action that was accompanied by a good story. However there was just something missing from this movie. It moved ahead at a slow pace and it was fairly anticlimatic all in all. The movie never really peaked but just kept pacing onward at a dull pace.Oddly enough not even Leslie Cheung was able to keep this movie afloat and it came off as just slightly over average compared to other Hong Kong movies of the same genre. The acting performances in the movie were good but without that key ingredient that was missing from the movie good acting performances are only worth so much.There are other and far better Hong Kong action movies available and Double Tap is worth watching mostly if you are a fan of Leslie Cheung or like myself just have to watch all Hong Kong movies that you come across.The DVD cover said that t his movie was in and I quote Matrix style. Yeah that was somewhat of an overexaggeration. There was surprisingly little in Double Tap that could be even remotely compared to The Matrix. So don't get suckered in by that false advertising.";
+	onyx:describesObject <#tt0258489>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0258489-paul_haakonsen>.
+
+<#tt0258489-paul_haakonsen-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0258489/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0258489-paul_haakonsen-random>.
+
+<#tt0258489-Leofwine_draca>
+	schema:about <#tt0258489>;
+	schema:author "Leofwine_draca";
+	schema:dateCreated "Sat Feb 06 2021 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)";
+	schema:headline " A bit of a slog";
+	schema:reviewBody "DOUBLE TAP is a surprisingly low budget action movie from Hong Kong and one that generally misses the mark despite a good setpiece here and there. Most of the story is extremely slow paced and more of a character piece than plotcentred we're stuck in a gun range for a very long time watching characters interacting and training together before the actual murder plot gets going. Alex Fong is a rather bland cop protagonist and Leslie Cheung isn't looking too well as top marksman Rick this was made just a few years before his untimely death. A few highlights here and there make it enjoyable in places and there's a fun 'bullet time' riff on THE MATRIX but generally it's a bit of a slog.".
+
+<#tt0258489-Leofwine_draca-random>
+	rdf:type onyx:EmotionSet;
+	onyx:emotionText "DOUBLE TAP is a surprisingly low budget action movie from Hong Kong and one that generally misses the mark despite a good setpiece here and there. Most of the story is extremely slow paced and more of a character piece than plotcentred we're stuck in a gun range for a very long time watching characters interacting and training together before the actual murder plot gets going. Alex Fong is a rather bland cop protagonist and Leslie Cheung isn't looking too well as top marksman Rick this was made just a few years before his untimely death. A few highlights here and there make it enjoyable in places and there's a fun 'bullet time' riff on THE MATRIX but generally it's a bit of a slog.";
+	onyx:describesObject <#tt0258489>;
+	onyx:hasEmotion <#Apathy>;
+	prov:Entity <#tt0258489-Leofwine_draca>.
+
+<#tt0258489-Leofwine_draca-random-analysis>
+	onyx:algorithm "BAYES";
+	onyx:source "http://www.imdb.com/title/tt0258489/reviews";
+	onyx:usesEmotionalModel "http://www.gsi.dit.upm.es/ontologies/wnaffect#WNAModel";
+	prov:generated <#tt0258489-Leofwine_draca-random>.
